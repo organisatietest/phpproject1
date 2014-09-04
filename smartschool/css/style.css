@@ -51,7 +51,7 @@ footer{
    bottom:0;
    width:100%;
    height:60px;   /* Height of the footer */
-   background:url('../images/bgImageFooter.png');
+   background:url('../images/bgImageA.png');
    margin-left: 0;
 }
 footer > blockquote{
@@ -80,10 +80,35 @@ footer > blockquote{
 }
 .hoofdmenu > ul > li > a:hover{
    padding-left: 2em;
+   background: url('../images/pijl.png') no-repeat;
 }
 .actief{
     padding-left: 2em;
 }
 .hoofding{
     visibility: hidden;
+}
+.submenu{
+    width:25%;
+    float: left;
+}
+.submenu > ul{
+    list-style-type: none;
+
+}
+.submenu > ul > li{
+   
+}
+.submenu > ul > li > a{
+    font-family: hello;
+   padding:0.5em;
+   text-decoration: none;
+   display: block;
+           background-image: url('../images/bgImageA.png');
+    margin: 1em;  
+    box-shadow: 2px 2px 1px #888888;
+   
+}
+.submenu > ul > li > a:hover{
+   margin-left: 1em;
 }
