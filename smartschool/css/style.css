@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    background: url('../images/bgImageLeerkrachtOuders.png') repeat;
+    
+}
+.wikkel{
+    background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat
+}
