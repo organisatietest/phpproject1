@@ -1,3 +1,11 @@
+@font-face {
+    font-family:Chawp ;
+    src: url(../Fonts/Chawp/chawp.otf);
+}
+@font-face {
+    font-family:hello ;
+    src: url(../Fonts/hello_goodbye/hellogoodbye.otf);
+}
 *{
     margin: 0;
     padding:0;
@@ -6,6 +14,76 @@ body{
     background: url('../images/bgImageLeerkrachtOuders.png') repeat;
     
 }
+h1{
+    background:url('../images/header.png') no-repeat;
+    height:200px;
+    width:600px;
+    float: left;
+    margin-top:-150px;
+    margin-left: -150px;
+}
+
+a:link{
+    color:maroon;
+    font-weight: bolder;
+    text-decoration: none;
+    letter-spacing: 2px;
+    
+}
+a:hover{
+    text-decoration: underline;
+    
+}
 .wikkel{
-    background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat
+    background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
+    width:56.250em;
+    margin-top:150px;
+    margin-left: auto;
+    margin-right:auto;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 10px;
+    overflow: visible;
+    height: 30em;;
+    margin-bottom: auto;
+}
+footer{
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:url('../images/bgImageFooter.png');
+   margin-left: 0;
+}
+footer > blockquote{
+    font-family: hello;
+    padding-top: 1.5em;
+    padding-left: 1em;
+}
+.hoofdmenu{
+    background:url('../images/linedpaper.png');
+    width:25%;
+    float: right;
+    margin-top: 5em;
+    margin-right: 5em;
+     box-shadow: 10px 10px 5px #888888;
+}
+.hoofdmenu > ul{
+    list-style-type: none;
+    padding:2em;
+}
+.hoofdmenu > ul > li{
+    padding:0.5em;
+}
+.hoofdmenu > ul > li > a{
+   font-family: hello;
+   text-decoration:none;
+}
+.hoofdmenu > ul > li > a:hover{
+   padding-left: 2em;
+}
+.actief{
+    padding-left: 2em;
+}
+.hoofding{
+    visibility: hidden;
 }
