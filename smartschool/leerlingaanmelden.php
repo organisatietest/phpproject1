@@ -11,7 +11,7 @@ if ($action == "process") {
     try {
         $leerlingsvc->voegNieuwLeerlingToe($_POST["voornaam"], $_POST["familienaam"]
                 , $_POST["geboortedatum"], $_POST["straat"], $_POST["huisnr"]
-                , $_POST["bus"], $_POST["postcode"], $_POST["gemeente"],$_POST["telefoonnr"], $_POST["voornaamouder1"]
+                , $_POST["bus"], $_POST["postcode"],$_POST["telefoonnr"],$_POST["klas"], $_POST["voornaamouder1"]
                 , $_POST["familienaamouder1"], $_POST["voornaamouder2"], $_POST["familienaamouder2"]
                 , $_POST["GSMouder1"], $_POST["GSMouder2"], $_POST["emailadres"]);
         //header("location:leerlingaanmelden.php");

@@ -11,7 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Smartschool</title>
 
-        <link rel="stylesheet" href="../css/style.css" media="screen">
+        <link rel="stylesheet" href="css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
     </head>
     <body>
@@ -55,7 +55,7 @@ and open the template in the editor.
                         <label for="gemeente">gemeente</label>
                         <input type="text" name="gemeente" id="gemeente"><br>
                         <label for="tel">telefoonnummer</label>
-                        <input type="text" name="telefoonnummer" placeholder="0561234567" id="tel"><br>
+                        <input type="text" name="telefoonnr" placeholder="0561234567" id="tel"><br>
                         <label for="vnouder1">voornaam ouders</label>
                         <input type="text" name="voornaamouder1" id="vnouder1"><br>
                         <label for="fnouder1">familienaam ouders</label>
@@ -65,11 +65,11 @@ and open the template in the editor.
                         <label for="fnouder2">familienaam ouders</label>
                         <input type="text" name="familienaamouder2" id="fnouder2"><br>
                         <label for="gsmouder1">gsm ouders</label>
-                        <input type="text" name="gsmouder1" placeholder="0561234567" id="gsmouder1"><br>
-                        <label for="gsmouder2">telefoonnummer</label>
-                        <input type="text" name="gsmouder2" placeholder="0561234567" id="gsmouder2"><br>
+                        <input type="text" name="GSMouder1" placeholder="0561234567" id="gsmouder1"><br>
+                        <label for="gsmouder2">gsm ouders</label>
+                        <input type="text" name="GSMouder2" placeholder="0561234567" id="gsmouder2"><br>
                         <label for="emailadresouders">emailadres voor ouder</label>
-                        <input type="mail" name="emailadresouders" placeholder="abc123@example.com" id="emailadresouders"><br>
+                        <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders"><br>
                         <input type="submit" value="toevoegen"><br>
                     </form>
                     <!-- einde form-->

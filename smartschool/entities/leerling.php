@@ -56,7 +56,7 @@ class leerling {
                     , $voornaamouder2, $familienaamouder2, $GSMouder1, $GSMouder2, $emailadres
                     , $wachtwoord);
         }
-        return self::$idMap[$id];
+        return self::$idMap[$leerlingid];
     }
 
     public function getLeerlingid() {

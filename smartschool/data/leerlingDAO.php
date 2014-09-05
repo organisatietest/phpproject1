@@ -1,14 +1,14 @@
 <?php
 
 require_once("data/dbconfig.php");
-require_once("entities/gebruiker.php");
-$bestaandgebruiker = null;
+require_once("entities/leerling.php");
+$bestaandleerling = null;
 
 class leerlingDAO {
 
     public function getById($id) {
         $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
-        $sql = "select gebruikersid, naam, voornaam, wachtwoord, telefoonnummer, emailadres, woonplaats, postcode
+        $sql = "select gebruikersid, naam, voornaam, wachtwoord, telefoonnr, emailadres, woonplaats, postcode
                 , straat , nummer from gebruiker where gebruiker.id = " . $id;
         $resultSet = $dbh->query($sql);
         $rij = $resultSet->fetch();
