@@ -14,8 +14,8 @@ if ($action == "process") {
                 , $_POST["bus"], $_POST["postcode"], $_POST["gemeente"],$_POST["telefoonnr"], $_POST["voornaamouder1"]
                 , $_POST["familienaamouder1"], $_POST["voornaamouder2"], $_POST["familienaamouder2"]
                 , $_POST["GSMouder1"], $_POST["GSMouder2"], $_POST["emailadres"]);
-        header("location:leerlingaanmelden.php");
-        exit(0);
+        //header("location:leerlingaanmelden.php");
+        //exit(0);
     } catch (EmailadresBestaatException $ebe) {
         header("location:aanmelden.php?error=emailexists");
         exit(0);
