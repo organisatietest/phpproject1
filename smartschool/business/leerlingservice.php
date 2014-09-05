@@ -3,12 +3,12 @@
 require_once ("data/leerlingDAO.php");
 
 class leerlingservice {
-    public function voegNieuwLeerlingToe(){
-        $gebruikerDao= new gebruikerDAO();
-        $wachtwoord= $gebruikerDao->randomPassword($emailadres);
-        $geblokkeerd = false;
-        return $gebruikerDao->create($naam, $voornaam,$wachtwoord,$telefoonnummer,$emailadres,$woonplaats
-                                ,$postcode,$straat,$nummer,$geblokkeerd);
+    public function voegNieuwLeerlingToe($voornaam, $familienaam, $geboortedatum, $straat, $huisnr,$bus,$postcode, $telefoonnr
+    , $klasid, $voornaamouder1, $familienaamouder1, $voornaamouder2, $familienaamouder2, $GSMouder1
+    , $GSMouder2, $emailadres){
+        $leerlingDao= new leerlingDAO();
+        $wachtwoord= $leerlingDao->randomPassword($emailadres);
+        return $leerlingDao->create($voornaam, $familienaam, $geboortedatum, $straat, $huisnr, $bus, $postcode, $telefoonnr, $klasid, $voornaamouder1, $familienaamouder1, $voornaamouder2, $familienaamouder2, $GSMouder1, $GSMouder2, $emailadres, $wachtwoord);
     }
 
     public function verwijderGebruiker($id) {

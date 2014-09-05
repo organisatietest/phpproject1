@@ -35,7 +35,7 @@ and open the template in the editor.
                 <article class="bgForm">
                     <!--hier komt de inhoud-->   
                     <!-- start form -->
-                    <form method="post" action="">
+                    <form method="post" action="process">
                         <label for="klas">klas</label>
                         <input type="text" name="klas" placeholder="1a" id="klas"><br>
                         <label for="voornaam">voornaam</label>
