@@ -9,6 +9,19 @@ and open the template in the editor.
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="/resources/demos/style.css">
+   
+    <script>
+        $(function() {
+        $( "#datepicker" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+        });
+    });
+    </script>
         <title>Smartschool</title>
 
         <link rel="stylesheet" href="css/style.css" media="screen">
@@ -39,11 +52,11 @@ and open the template in the editor.
                         <label for="klas">klas</label>
                         <input type="text" name="klas" placeholder="1a" id="klas"><br>
                         <label for="voornaam">voornaam</label>
-                        <input type="text" name="voornaam" id="voornaam"><br>
+                        <input type="text" name="voornaam" id="voornaam" required><br>
                         <label for="familienaam">familienaam</label>
-                        <input type="text" name="familienaam" id="familienaam"><br>
-                        <label for="geboortedatum">geboortedatum</label>
-                        <input type="date" name="geboortedatum" id="geboortedatum"><br>
+                        <input type="text" name="familienaam" id="familienaam" required><br>
+                        <label for="datepicker">geboortedatum</label>
+                        <input type="text" name="geboortedatum" id="datepicker" required><br>
                         <label for="straat">straat</label>
                         <input type="text" name="straat" id="straat"><br>
                         <label for="huisnr">huisnummer</label>
@@ -69,7 +82,7 @@ and open the template in the editor.
                         <label for="gsmouder2">gsm ouders</label>
                         <input type="text" name="GSMouder2" placeholder="0561234567" id="gsmouder2"><br>
                         <label for="emailadresouders">emailadres voor ouder</label>
-                        <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders"><br>
+                        <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" required><br>
                         <input type="submit" value="toevoegen"><br>
                     </form>
                     <!-- einde form-->
