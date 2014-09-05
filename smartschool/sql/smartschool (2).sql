@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2014 at 11:14 AM
+-- Generation Time: Sep 05, 2014 at 11:01 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -79,6 +79,8 @@ CREATE TABLE IF NOT EXISTS `klas` (
 
 CREATE TABLE IF NOT EXISTS `leerkracht` (
   `leerkrachid` int(3) NOT NULL AUTO_INCREMENT,
+  `emailadres` varchar(50) NOT NULL,
+  `wachtwoord` varchar(40) NOT NULL,
   `voornaam` varchar(20) NOT NULL,
   `familienaam` varchar(25) NOT NULL,
   `geboortedatum` date NOT NULL,
@@ -111,6 +113,8 @@ CREATE TABLE IF NOT EXISTS `leerling` (
   `familienaamouder2` varchar(25) NOT NULL,
   `GSMouder1` int(15) NOT NULL,
   `GSMouder2` int(15) NOT NULL,
+  `emailadres` varchar(50) NOT NULL,
+  `wachtwoord` varchar(40) NOT NULL,
   PRIMARY KEY (`leerlingid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
