@@ -17,110 +17,182 @@ class leerling {
     private $familienaamouder1;
     private $voornaamouder2;
     private $familienaamouder2;
-    private $woonplaats;
+    private $GSMouder1;
+    private $GSMouder2;
+    private $emailadres;
+    private $wachtwoord;
 
-
-    private function __construct($id, $naam, $voornaam, $wachtwoord, $telefoonnummer, $emailadres
-                                ,$woonplaats, $postcode, $straat, $nummer, $geblokkeerd) {
-        $this->id = $id;
-        $this->naam = $naam;
+    private function __construct($leerlingid, $voornaam, $familienaam, $geboortedatum, $straat, $huisnr
+    , $bus, $postcode, $telefoonnr, $klasid, $voornaamouder1, $familienaamouder1
+    , $voornaamouder2, $familienaamouder2, $GSMouder1, $GSMouder2, $emailadres
+    , $wachtwoord) {
+        $this->leerlingid = $leerlingid;
         $this->voornaam = $voornaam;
-        $this->wachtwoord = $wachtwoord;
-        $this->telefoonnummer = $telefoonnummer;
-        $this->emailadres = $emailadres;
-        $this->woonplaats = $woonplaats;
-        $this->postcode = $postcode;
+        $this->familienaam = $familienaam;
+        $this->geboortedatum = $geboortedatum;
         $this->straat = $straat;
-        $this->nummer = $nummer;
-        $this->geblokkeerd = $geblokkeerd;
+        $this->huisnr = $huisnr;
+        $this->bus = $bus;
+        $this->postcode = $postcode;
+        $this->telefoonnr = $telefoonnr;
+        $this->klasid = $klasid;
+        $this->voornaamouder1 = $voornaamouder1;
+        $this->familienaamouder1 = $familienaamouder1;
+        $this->voornaamouder2 = $voornaamouder2;
+        $this->familienaamouder2 = $familienaamouder2;
+        $this->GSMouder1 = $GSMouder1;
+        $this->GSMouder2 = $GSMouder2;
+        $this->emailadres = $emailadres;
+        $this->wachtwoord = $wachtwoord;
     }
-    
-    public static function create($id, $naam,$voornaam, $wachtwoord, $telefoonnummer, $emailadres
-                                  , $woonplaats, $postcode, $straat, $nummer,$geblokkeerd) {
-        if (!isset(self::$idMap[$id])) {
-            self::$idMap[$id] = new gebruiker($id, $naam, $voornaam, $wachtwoord, $telefoonnummer
-                                             ,$emailadres,$woonplaats,$postcode,$straat,$nummer,$geblokkeerd);
+
+    public static function create($leerlingid, $voornaam, $familienaam, $geboortedatum, $straat, $huisnr
+    , $bus, $postcode, $telefoonnr, $klasid, $voornaamouder1, $familienaamouder1
+    , $voornaamouder2, $familienaamouder2, $GSMouder1, $GSMouder2, $emailadres
+    , $wachtwoord) {
+        if (!isset(self::$idMap[$leerlingid])) {
+            self::$idMap[$leerlingid] = new leerling($leerlingid, $voornaam, $familienaam, $geboortedatum, $straat, $huisnr
+                    , $bus, $postcode, $telefoonnr, $klasid, $voornaamouder1, $familienaamouder1
+                    , $voornaamouder2, $familienaamouder2, $GSMouder1, $GSMouder2, $emailadres
+                    , $wachtwoord);
         }
         return self::$idMap[$id];
     }
 
-    public function getId() {
-        return $this->id;
+    public function getLeerlingid() {
+        return $this->leerlingid;
     }
 
-    public function getNaam() {
-        return $this->naam;
-    }
-    
-    public function getVoornaam(){
+    public function getVoornaam() {
         return $this->voornaam;
     }
 
-    public function getWachtwoord() {
-        return $this->wachtwoord;
+    public function getFamilienaam() {
+        return $this->familienaam;
     }
 
-    public function getTelefoonnummer() {
-        return $this->telefoonnummer;
+    public function getGeboortedatum() {
+        return $this->geboortedatum;
+    }
+
+    public function getStraat() {
+        return $this->straat;
+    }
+
+    public function getHuisnr() {
+        return $this->huisnr;
+    }
+
+    public function getBus() {
+        return $this->bus;
+    }
+
+    public function getPostcode() {
+        return $this->postcode;
+    }
+
+    public function getTelefoonnr() {
+        return $this->telefoonnr;
+    }
+
+    public function getKlasid() {
+        return $this->klasid;
+    }
+
+    public function getVoornaamouder1() {
+        return $this->voornaamouder1;
+    }
+
+    public function getFamilienaamouder1() {
+        return $this->familienaamouder1;
+    }
+
+    public function getVoornaamouder2() {
+        return $this->voornaamouder2;
+    }
+
+    public function getFamilienaamouder2() {
+        return $this->familienaamouder2;
+    }
+
+    public function getGSMouder1() {
+        return $this->GSMouder1;
+    }
+
+    public function getGSMouder2() {
+        return $this->GSMouder2;
     }
 
     public function getEmailadres() {
         return $this->emailadres;
     }
 
-    public function getWoonplaats(){
-        return $this->woonplaats;
+    public function getWachtwoord() {
+        return $this->wachtwoord;
     }
 
-    public function getPostcode(){
-        return $this->postcode;
-    }
-    
-    public function getStraat() {
-        return $this->straat;
-    }
-
-    public function getNummer(){
-        return $this->nummer;
-    }
-    
-    public function getGeblokkeerd(){
-        return $this->geblokkeerd;
-    }
-
-    public function setNaam($naam) {
-        $this->naam = $naam;
-    }
-    
-    public function setVoornaam($voornaam){
+    public function setVoornaam($voornaam) {
         $this->voornaam = $voornaam;
+    }
+
+    public function setFamilienaam($familienaam) {
+        $this->familienaam = $familienaam;
+    }
+
+    public function setGeboortedatum($geboortedatum) {
+        $this->geboortedatum = $geboortedatum;
+    }
+
+    public function setStraat($straat) {
+        $this->straat = $straat;
+    }
+
+    public function setHuisnr($huisnr) {
+        $this->huisnr = $huisnr;
+    }
+
+    public function setBus($bus) {
+        $this->bus = $bus;
+    }
+
+    public function setPostcode($postcode) {
+        $this->postcode = $postcode;
+    }
+
+    public function setTelefoonnr($telefoonnr) {
+        $this->telefoonnr = $telefoonnr;
+    }
+
+    public function setKlasid($klasid) {
+        $this->klasid = $klasid;
+    }
+
+    public function setVoornaamouder1($voornaamouder1) {
+        $this->voornaamouder1 = $voornaamouder1;
+    }
+
+    public function setFamilienaamouder1($familienaamouder1) {
+        $this->familienaamouder1 = $familienaamouder1;
+    }
+
+    public function setVoornaamouder2($voornaamouder2) {
+        $this->voornaamouder2 = $voornaamouder2;
+    }
+
+    public function setFamilienaamouder2($familienaamouder2) {
+        $this->familienaamouder2 = $familienaamouder2;
+    }
+
+    public function setGSMouder1($GSMouder1) {
+        $this->GSMouder1 = $GSMouder1;
+    }
+
+    public function setGSMouder2($GSMouder2) {
+        $this->GSMouder2 = $GSMouder2;
     }
 
     public function setWachtwoord($wachtwoord) {
         $this->wachtwoord = $wachtwoord;
     }
 
-    public function setTelefoonnummer($telefoonnummer) {
-        $this->telefoonnummer = $telefoonnummer;
-    }
-
-    public function setEmailadres($emailadres){
-        $this->emailadres = $emailadres;
-    }
-    
-    public function setWoonplaats($woonplaats){
-        $this->woonplaats = $woonplaats;
-    }
-    
-    public function setPostcode($postcode){
-        $this->postcode = $postcode;
-    }
-    
-    public function setStraat($straat){
-        $this->straat = $straat;
-    }
-    
-    public function setNummer($nummer){
-        $this->nummer = $nummer;
-    }
 }
