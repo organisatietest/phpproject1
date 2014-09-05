@@ -20,7 +20,7 @@ h1{
     width:600px;
     float: left;
     margin-top:-150px;
-    margin-left: -150px;
+    margin-left: -50px;
 }
 
 a:link{
@@ -40,7 +40,7 @@ a:hover{
     margin-top:150px;
     margin-left: auto;
     margin-right:auto;
-    box-shadow: 10px 10px 5px #888888;
+    box-shadow: -20px 20px 50px #4d4d4d;
     border-radius: 10px;
     overflow: visible;
     height: 30em;;
@@ -65,26 +65,51 @@ footer > blockquote{
     float: right;
     margin-top: 5em;
     margin-right: 5em;
-     box-shadow: 10px 10px 5px #888888;
+    box-shadow: -5px 5px 20px #4d4d4d;
 }
 .hoofdmenu > ul{
     list-style-type: none;
     padding:2em;
 }
 .hoofdmenu > ul > li{
-    padding:0.5em;
+ padding: 1em;
+ text-align: initial;
+
+}
+.hoofdmenu > ul > li:before {
+  display: block;
+  margin-left: -1.2em; /*same as padding-left set on li*/
+  width: 1.2em; /*same as padding-left set on li*/
+ 
 }
 .hoofdmenu > ul > li > a{
    font-family: hello;
    text-decoration:none;
    display: block;
+   color:#46437b;
+   
 }
 .hoofdmenu > ul > li > a:hover{
    padding-left: 2em;
    background: url('../images/pijl.png') no-repeat;
+   background-position: left;
 }
 .actief{
+    background:url('../images/vinkje.png') no-repeat;
+}
+.actief > a{
     padding-left: 2em;
+    color:greenyellow;
+    
+    background-position: left;
+}
+.actief > a:visited{
+    
+    color:green;
+
+}
+.actief > a:hover{
+    background:none;
 }
 .hoofding{
     visibility: hidden;
@@ -92,6 +117,7 @@ footer > blockquote{
 .submenu{
     width:25%;
     float: left;
+    position:relative;
 }
 .submenu > ul{
     list-style-type: none;
@@ -101,24 +127,73 @@ footer > blockquote{
 
 }
 .submenu > ul > li > a{
+    color:white;
     font-family: hello;
    padding:0.5em;
    text-decoration: none;
       display: block;
     
-           background-image: url('../images/bgImageA.png');
+           background-image: url('../images/bgImageB.png');
     margin: 1em;  
-    box-shadow: 2px 2px 1px #888888;
+     box-shadow: -5px 5px 20px #4d4d4d;
   
    
 }
 .submenu > ul > li > a:hover{
    margin-left:-1em;
    padding-left:1em;
+    background-image: url('../images/bgImageC.png');
 }
 .bgForm{
-    background: url('../images/bgForm.png') no-repeat;
-    height:500px;
+    background: url('../images/bgFormTemp.png') no-repeat;
+    height:450px;
     width:500px;
     margin-left: 100px;
+    margin-top:25px;
+    position: absolute;
+}
+.tempForm{
+    margin-left: 75px;
+    margin-top:10px;
+    width:62%;
+    float: left;
+    background: url('../images/bgTempForm.png');
+        box-shadow: -5px 5px 20px #4d4d4d;
+}
+.tempForm > div{
+    margin: 1em;
+    
+    
+}
+.tempForm > div > label{
+     display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: left;
+    margin:0.2em;
+    padding: 0.5em;
+    font-family: hello;
+}
+.tempForm > div > label > input{
+    display: inline-block;
+    float: right;
+    background:none;
+    border: groove 1px white;
+}
+.tempForm > div > label > input:focus{
+    border: groove 1px #515850;
+  -webkit-box-shadow:0 0 6px #515850;
+  -moz-box-shadow:0 0 5px #515850;
+  box-shadow:0 0 5px #515850;
+  outline: none;
+}
+#button{
+    font-family: hello;
+    padding: 1em;
+    width:250px;
+}
+#button:hover{
+    background: #515850;
+    color: white;
 }

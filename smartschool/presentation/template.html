@@ -23,7 +23,7 @@ and open the template in the editor.
                     <ul>
                         <!--leraar-->
                         <li><a href="">opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a></li>
+                        <li  class="actief"><a href="">leerlingen</a></li>
                         <li><a href="">agenda</a></li>
                         <!--ouders-->
                         <li><a href="">gegevens</a></li>                     
@@ -37,15 +37,43 @@ and open the template in the editor.
                     <!--kan dit submenu ook verstopt worden met php?-->
                     <nav class="submenu">
                         <ul>
-                        <li><a href="">toevoe gen</a></li>
+                        <li><a href="">toevoegen</a></li>
                         <li><a href="">verwijderen</a></li>
                         </ul>
                     </nav>
                 </aside>
 
                 <article class="bgForm">
-                    <form>
-                        <input>
+                    <form class="tempForm" action="get">
+                        <div>
+                        <label for="text-1">Voornaam
+                        <input type="text" id="text-1" />
+                       </label>
+                        <label for="text-2">Naam
+                        <input type="text" id="text-2" />    
+                        </label>
+                        <label for="text-3">Straat
+                        <input type="text" id="text-3" />    
+                        </label>
+                        <label for="text-4">Huisnr.
+                        <input type="text" id="text-4" />    
+                        </label>
+                        <label for="text-5">Postcode
+                        <input type="text" id="text-5" /> 
+                        </label>
+                        <label for="text-6">Gemeente
+                        <input type="text" id="text-6" /> 
+                        </label>
+                        <label for="text-7">telefoon
+                        <input type="text" id="text-7" />    
+                        </label>
+                        <label for="text-8">email
+                        <input type="email" id="text-8" />   
+                        </label>
+                        <label>
+                            <input id="button" type="submit" value="submit">
+                        </label>
+                        </div>         
                     </form>  
                 </article>
             </section>
