@@ -30,7 +30,7 @@ class leerlingDAO {
             $leerling = leerling::create($rij["leerlingid"], $rij["voornaam"], $rij["familienaam"], $rij["geboortedatum"]
                         , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"],$rij["klasid"]
                         , $rij["voornaamouder1"], $rij["voornaamouder2"], $rij["familienaamouder1"], $rij["familienaamouder2"]
-                        ,$rij["GSMouder1"],$rij["GSMouder2"],$emailadres,$rij["wachtwoord"]);
+                        ,$rij["GSMouder1"],$rij["GSMouder2"],$rij["emailadres"],$rij["wachtwoord"]);
         array_push($klaslijst, $leerling);
         }
         $dbh = null;
