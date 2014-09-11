@@ -1,16 +1,30 @@
 @font-face {
-    font-family:Chawp ;
-    src: url(../Fonts/Chawp/chawp.otf);
+    font-family:chalk;
+    src: url('../Fonts/david-kerkhoff_dk-cool-crayon/DK Cool Crayon.ttf');
 }
 @font-face {
     font-family:hello ;
-    src: url(../Fonts/hello_goodbye/hellogoodbye.otf);
+    src: url('../Fonts/hello_goodbye/hellogoodbye.otf');
 }
 *{
     margin: 0;
     padding:0;
 }
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
+}
+html {
+  height: 100%;
+}
 body{
+    position: relative;
+    margin: 0;
+    padding-bottom: 4rem;
+    min-height: 100%;
     background: url('../images/bgImageLeerkrachtOuders.png') repeat;
     
 }
@@ -34,6 +48,19 @@ a:hover{
     text-decoration: underline;
     
 }
+.wikkel{
+    background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
+    width:60em;
+    margin-top:150px;
+    margin-left: auto;
+    margin-right:auto;
+    box-shadow: -20px 20px 50px #4d4d4d;
+    border-radius: 10px;
+    overflow: visible;
+    height: 50em;
+    margin-bottom: 5em;
+    min-height: 100%;
+}
 .wikkelLeerlingToevoegen{
     background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
     width:60em;
@@ -43,16 +70,17 @@ a:hover{
     box-shadow: -20px 20px 50px #4d4d4d;
     border-radius: 10px;
     overflow: visible;
-    height: 50em;;
-    margin-bottom: auto;
+    height: 50em;
+    margin-bottom: 5em;
 }
 footer{
-   position:relative;
-   bottom:0;
+   position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
    width:100%;
    height:60px;   /* Height of the footer */
    background:url('../images/bgImageA.png');
-   margin-top: 5em;
 }
 footer > blockquote{
     font-family: hello;
@@ -87,18 +115,19 @@ footer > blockquote{
    text-decoration:none;
    display: block;
    color:#46437b;
+   -webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
+    transition: color 1s;
    
 }
 .hoofdmenu > ul > li > a:hover{
-   padding-left: 2em;
-   background: url('../images/pijl.png') no-repeat;
-   background-position: left;
+   color:red;
 }
 .actief{
     background:url('../images/vinkje.png') no-repeat;
+   
 }
 .actief > a{
-    padding-left: 2em;
+    padding-left: 2.5em;
     color:greenyellow;
     
     background-position: left;
@@ -108,8 +137,8 @@ footer > blockquote{
     color:green;
 
 }
-.actief > a:hover{
-    background:none;
+.hoofdmenu > ul > .actief > a:hover{
+  color:green;
 }
 .hoofding{
     visibility: hidden;
@@ -241,7 +270,7 @@ footer > blockquote{
     margin:0.2em;
     
     padding: 0.5em;
-    font-family: Chawp;
+    font-family: chalk;
     color:white;
 }
 #InlogForm > .TussenInlogForm > label > input{
@@ -252,12 +281,73 @@ footer > blockquote{
     margin-right: -8em;
     width:15em;
     border:none;
-    font-family: Chawp;
+    font-family: chalk;
     color:#fdb5f5;
     
 }
 #InlogForm > .TussenInlogForm > label > input:focus{
   outline: none;
+}
+.passpoort{
+   background: url('../images/bgImageA.png');
+   padding:1em;
+   width:400px;
+        margin-top: 25px;
+    margin-left: 50px;
+   position:absolute;
+   font-family: hello;
+    box-shadow: -5px 5px 20px #4d4d4d;
+    margin-left:auto;
+    margin-right:auto;
+}
+.passpoort > img{
+   float:left;
+   margin-right: 1em;
+   position:relative;
+   
+}
+.bgKlaslijst{
+    background: url('../images/bgImageC.png') repeat;
+    height:700px;
+    width:550px;
+    margin-top: 50px;
+    margin-left: 50px;
+    position: absolute;
+    box-shadow: -5px 5px 20px #4d4d4d;
+    border-radius: 15px;
+}
+.klaslijst{
+    background: url('../images/bgTempForm.png') repeat;
+    width:500px;
+    height:650px;
+    overflow: scroll;
+        margin-top: 25px;
+    margin-left: 25px;
+    position: absolute;
+    box-shadow: -5px 5px 20px #4d4d4d;
+}
+.klaslijst::-webkit-scrollbar{
+    width:12px;
+}
+.klaslijst::-webkit-scrollbar-track{
+    background: none;
+}
+.klaslijst::-webkit-scrollbar-thumb{
+    background: url('../images/bgScroll.png');
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    
+    background: url('../images/bgImageLeerkrachtOuders.png')
+}
+ 
+::-webkit-scrollbar-thumb {
+    
+    background: url('../images/bgImageInhoudLeerkrachtOuders.png');
+    
 }
 /*
 .tempForm{

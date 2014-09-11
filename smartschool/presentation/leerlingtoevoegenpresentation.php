@@ -36,7 +36,7 @@ and open the template in the editor.
                     <ul>
                         <!--leraar-->
                         <li><a href="">opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a></li>
+                        <li class="actief"><a href="">leerlingen</a></li>
                         <li><a href="">agenda</a></li>
                         <!--ouders-->
                         <li><a href="">gegevens</a></li>                     
