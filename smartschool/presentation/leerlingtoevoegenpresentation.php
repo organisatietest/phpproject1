@@ -28,7 +28,7 @@ and open the template in the editor.
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
     </head>
     <body>
-        <section class="wikkel">
+        <section class="wikkelLeerlingToevoegen">
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
 
@@ -44,46 +44,63 @@ and open the template in the editor.
                     </ul>
                 </nav>
             </header>
+            <img class="verfvlek" src="images/verfvlek.png" alt="verfvlek" />
             <section>
                 <article class="bgForm">
                     <!--hier komt de inhoud-->   
                     <!-- start form -->
-                    <form method="post" action="leerlingaanmelden.php?action=process">
-                        <label for="klas">klas</label>
-                        <input type="text" name="klas" placeholder="1a" id="klas"><br>
-                        <label for="voornaam">voornaam</label>
-                        <input type="text" name="voornaam" id="voornaam" required><br>
-                        <label for="familienaam">familienaam</label>
-                        <input type="text" name="familienaam" id="familienaam" required><br>
-                        <label for="datepicker">geboortedatum</label>
-                        <input type="text" name="geboortedatum" id="datepicker" required><br>
-                        <label for="straat">straat</label>
-                        <input type="text" name="straat" id="straat"><br>
-                        <label for="huisnr">huisnummer</label>
-                        <input type="number" name="huisnr" id="huisnr"><br>
-                        <label for="bus">bus</label>
-                        <input type="text" name="bus" id="bus"><br>
-                        <label for="postcode">postcode</label>
-                        <input type="number" name="postcode" placeholder="8431" id="postcode"><br>
-                        <label for="gemeente">gemeente</label>
-                        <input type="text" name="gemeente" id="gemeente"><br>
-                        <label for="tel">telefoonnummer</label>
-                        <input type="text" name="telefoonnr" placeholder="0561234567" id="tel"><br>
-                        <label for="vnouder1">voornaam ouders</label>
-                        <input type="text" name="voornaamouder1" id="vnouder1"><br>
-                        <label for="fnouder1">familienaam ouders</label>
-                        <input type="text" name="familienaamouder1"id="fnouder1"><br>
-                        <label for="vnouder2">voornaam ouders</label>
-                        <input type="text" name="voornaamouder2" id="vnouder2"><br>
-                        <label for="fnouder2">familienaam ouders</label>
-                        <input type="text" name="familienaamouder2" id="fnouder2"><br>
-                        <label for="gsmouder1">gsm ouders</label>
-                        <input type="text" name="GSMouder1" placeholder="0561234567" id="gsmouder1"><br>
-                        <label for="gsmouder2">gsm ouders</label>
-                        <input type="text" name="GSMouder2" placeholder="0561234567" id="gsmouder2"><br>
-                        <label for="emailadresouders">emailadres voor ouder</label>
-                        <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" required><br>
-                        <input type="submit" value="toevoegen"><br>
+                    <form id="InvoerForm" method="post" action="leerlingaanmelden.php?action=process">
+                        <div class="TussenForm">
+                            <label for="voornaam">voornaam *
+                            <input type="text" name="voornaam" id="voornaam" required><br>
+                            </label>
+                            <label for="familienaam">familienaam *
+                            <input type="text" name="familienaam" id="familienaam" required><br>
+                            </label>
+                            <label for="datepicker">geboortedatum *
+                            <input type="text" name="geboortedatum" id="datepicker" required><br>
+                        </label>
+                            <label for="straat">straat
+                            <input type="text" name="straat" id="straat"><br>
+                        </label>
+                            <label for="huisnr">huisnummer
+                            <input type="number" name="huisnr" id="huisnr"><br>
+                        </label>
+                            <label for="bus">bus
+                            <input type="text" name="bus" id="bus"><br>
+                        </label>
+                            <label for="postcode">postcode
+                            <input type="number" name="postcode" placeholder="8431" id="postcode"><br>
+                        </label>
+                            <label for="gemeente">gemeente
+                            <input type="text" name="gemeente" id="gemeente"><br>
+                        </label>
+                            <label for="tel">telefoonnummer
+                            <input type="text" name="telefoonnr" placeholder="0561234567" id="tel"><br>
+                        </label>
+                            <label for="vnouder1">voornaam ouder 1
+                            <input type="text" name="voornaamouder1" id="vnouder1"><br>
+                        </label>
+                            <label for="fnouder1">familienaam ouder1
+                            <input type="text" name="familienaamouder1" id="fnouder1"><br>
+                        </label>
+                            <label for="gsmouder1">gsm ouder 1
+                            <input type="text" name="GSMouder1" placeholder="0561234567" id="gsmouder1"><br>
+                        </label>
+                            <label for="vnouder2">voornaam ouder 2
+                            <input type="text" name="voornaamouder2" id="vnouder2"><br>
+                        </label>
+                            <label for="fnouder2">familienaam ouder 2
+                            <input type="text" name="familienaamouder2" id="fnouder2"><br>
+                        </label>
+                            <label for="gsmouder2">gsm ouder 2
+                            <input type="text" name="GSMouder2" placeholder="0561234567" id="gsmouder2"><br>
+                        </label>
+                            <label for="emailadresouders">emailadres voor ouder *
+                            <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" required><br>
+                        </label>
+                            <input class="buttonToevoegen" type="submit" value="toevoegen"><br>
+                            </div>
                     </form>
                     <!-- einde form-->
                 </article>

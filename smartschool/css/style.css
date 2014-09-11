@@ -34,25 +34,25 @@ a:hover{
     text-decoration: underline;
     
 }
-.wikkel{
+.wikkelLeerlingToevoegen{
     background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
-    width:56.250em;
+    width:60em;
     margin-top:150px;
     margin-left: auto;
     margin-right:auto;
     box-shadow: -20px 20px 50px #4d4d4d;
     border-radius: 10px;
     overflow: visible;
-    height: 30em;;
+    height: 50em;;
     margin-bottom: auto;
 }
 footer{
-   position:absolute;
+   position:relative;
    bottom:0;
    width:100%;
    height:60px;   /* Height of the footer */
    background:url('../images/bgImageA.png');
-   margin-left: 0;
+   margin-top: 5em;
 }
 footer > blockquote{
     font-family: hello;
@@ -145,13 +145,121 @@ footer > blockquote{
     background-image: url('../images/bgImageC.png');
 }
 .bgForm{
-    background: url('../images/bgFormTemp.png') no-repeat;
-    height:450px;
-    width:500px;
+    background: url('../images/bgForm2.png') no-repeat;
+    height:800px;
+    width:550px;
     margin-left: 100px;
-    margin-top:25px;
+    
     position: absolute;
 }
+.buttonToevoegen{
+    font-family: hello;
+    padding: 1em;
+    width:250px;
+    margin-left: 4em;
+}
+.buttonToevoegen:hover{
+    background: #515850;
+    color: white;
+}
+
+#InvoerForm{
+    margin-left: 60px;
+    margin-top:35px;
+    width:75%;
+    float: left;
+    background: url('../images/bgTempForm.png');
+        box-shadow: -5px 5px 20px #4d4d4d;
+}
+#InvoerForm > .TussenForm{
+    margin: 1em;
+    
+    
+}
+#InvoerForm > .TussenForm > label{
+     display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: left;
+    margin:0.2em;
+    padding: 0.5em;
+    font-family: hello;
+}
+#InvoerForm > .TussenForm > label > input{
+    display: inline-block;
+    float: right;
+    background:none;
+    margin-right: -8em;
+    border: groove 1px white;
+    width:15em;
+}
+#InvoerForm > .TussenForm > label > input:focus{
+    border: groove 1px #515850;
+  -webkit-box-shadow:0 0 6px #515850;
+  -moz-box-shadow:0 0 5px #515850;
+  box-shadow:0 0 5px #515850;
+  outline: none;
+}
+.verfvlek{
+    float: right;
+    right:0;
+    top:0;
+    margin-top: 30em;
+    margin-right: -15em;
+}
+#inlog{
+   background:url('../images/bgInlog.png')repeat; 
+}
+#bgInloggen{
+    background:url('../images/bgInlogForm.png')no-repeat; 
+    width:925px;
+    height:465px;
+    margin-top:17.5em;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: -5px 5px 20px #4d4d4d;
+}
+#InlogForm{
+    padding-top:10em;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+        
+}
+#InlogForm > .TussenInlogForm{
+    margin: 1em;
+    
+    
+}
+#InlogForm > .TussenInlogForm > label{
+     display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: left;
+    margin:0.2em;
+    
+    padding: 0.5em;
+    font-family: Chawp;
+    color:white;
+}
+#InlogForm > .TussenInlogForm > label > input{
+    display: inline-block;
+    float: right;
+    background:none;
+    margin-top:0.2em;
+    margin-right: -8em;
+    width:15em;
+    border:none;
+    font-family: Chawp;
+    color:#fdb5f5;
+    
+}
+#InlogForm > .TussenInlogForm > label > input:focus{
+  outline: none;
+}
+/*
 .tempForm{
     margin-left: 75px;
     margin-top:10px;
@@ -188,12 +296,4 @@ footer > blockquote{
   box-shadow:0 0 5px #515850;
   outline: none;
 }
-#button{
-    font-family: hello;
-    padding: 1em;
-    width:250px;
-}
-#button:hover{
-    background: #515850;
-    color: white;
-}
+*/
