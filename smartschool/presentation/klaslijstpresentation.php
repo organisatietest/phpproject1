@@ -39,16 +39,16 @@ and open the template in the editor.
             <section>
                 <article class="bgForm">
                     <!--hier komt de inhoud-->   
-                    <div class="klaslijst">
+                    <div class="klaslijst"><!--omvatende div die de klaslijst heeft als inhoud-->
                         <?php foreach ($klaslijst as $leerling){ ?>
-                        <div class="passpoort">
+                        <div class="passpoort"><!--repeterende div die voor iedere leerling van de klas herhaald wordt-->
                             Foto: <img src="Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"><br/>
                             Voornaam:<?php echo " ",$leerling->getVoornaam(); ?><br/>
                             Familienaam:<?php echo " ",$leerling->getFamilienaam(); ?><br/>
                             Geboortedatum:<?php echo " ",$leerling->getGeboortedatum(); ?><br/>
-                        </div>
+                        </div><!--einde reeterende div-->
                         <?php } ?>
-                    </div>
+                    </div><!--einde omvatende div-->
                 </article>
             </section>
         </section>   
