@@ -10,6 +10,12 @@ class leerlingservice {
         $wachtwoord= $leerlingDao->randomPassword($emailadres);
         return $leerlingDao->create($voornaam, $familienaam, $geboortedatum, $straat, $huisnr, $bus, $postcode, $telefoonnr, $klasid, $voornaamouder1, $familienaamouder1, $voornaamouder2, $familienaamouder2, $GSMouder1, $GSMouder2, $emailadres, $wachtwoord);
     }
+    
+    public function klasLijst($klasId){
+        $leerlingDAO= new leerlingDAO();
+        $klaslijst= $leerlingDAO->getByKlasId($klasId);
+        return $klaslijst;
+    }
 
     public function verwijderGebruiker($id) {
         $GebruikerDAO = new gebruikerDAO();
