@@ -6,9 +6,11 @@ require_once 'business/leerkrachtservice.php';
 
 if(isset($_GET["submited"]) && $_GET["submited"]){
     $emailadres=$_POST["gebruikersnaam"];
-    $wachtwoord=$_POST["wachtwoord"];
+    $wachtwoord=  sha1($_POST["wachtwoord"]);
     
-    
+    $leerkrachtservic = new leerkrachtservice();
+    $leerkracht=$leerkrachtservic->logincheck($emailadres, $wachtwoord);
+    print_r($leerkracht);
 }
 
 if(isset($_SESSION["aangemeld"])){//controle ingelogd of niet met bij ingelogd contlore op gebruikers niveau

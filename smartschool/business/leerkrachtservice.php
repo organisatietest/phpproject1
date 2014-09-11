@@ -8,6 +8,8 @@ class leerkrachtservice{
     }
     
     public function logincheck($emailadres,$wachtwoord){
-        
+        $leerkrachtDAO = new leerkrachtDAO();
+        $leerkrachtLogin = $leerkrachtDAO->getByGebruiker($emailadres, $wachtwoord);
+        return $leerkrachtLogin;
     }
 }
