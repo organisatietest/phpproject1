@@ -52,11 +52,11 @@ and open the template in the editor.
                         <label for="klas">klas</label>
                         <input type="text" name="klas" placeholder="1a" id="klas"><br>
                         <label for="voornaam">voornaam</label>
-                        <input type="text" name="voornaam" id="voornaam" required><br>
+                        <input type="text" name="voornaam" id="voornaam"><br>
                         <label for="familienaam">familienaam</label>
-                        <input type="text" name="familienaam" id="familienaam" required><br>
+                        <input type="text" name="familienaam" id="familienaam"><br>
                         <label for="datepicker">geboortedatum</label>
-                        <input type="text" name="geboortedatum" id="datepicker" required><br>
+                        <input type="text" name="geboortedatum" id="datepicker"><br>
                         <label for="straat">straat</label>
                         <input type="text" name="straat" id="straat"><br>
                         <label for="huisnr">huisnummer</label>
@@ -82,7 +82,7 @@ and open the template in the editor.
                         <label for="gsmouder2">gsm ouders</label>
                         <input type="text" name="GSMouder2" placeholder="0561234567" id="gsmouder2"><br>
                         <label for="emailadresouders">emailadres voor ouder</label>
-                        <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" required><br>
+                        <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders"><br>
                         <input type="submit" value="toevoegen"><br>
                     </form>
                     <!-- einde form-->
