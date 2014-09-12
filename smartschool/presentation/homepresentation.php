@@ -15,20 +15,23 @@ and open the template in the editor.
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
     </head>
     <body id="inlog">
-        <section class="wikkel">
+        <section class="wikkelInlog">
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
             </header>
             <section id="bgInloggen">
+                <h2><span class="Welkom">Welkom</span></h2>
                 <form id="InlogForm" method="post" action="home.php?submited=true">
                         <div class="TussenInlogForm">
                             <label for="gebruikersnaam">Gebruikersnaam
-                            <input type="text" name="gebruikersnaam" value="gebruikersnaam" id="gebruikersnaam" required><br>
+                            <input type="text" name="gebruikersnaam"  id="gebruikersnaam" required><br>
                             </label>
                             <label for="wachtwoord">Wachtwoord
-                                <input type="password" name="wachtwoord" value="wachtwoord" id="wachtwoord" required><br>
+                                <input type="password" name="wachtwoord"  id="wachtwoord" required><br>
                             </label>
+                            <div class="opmaakInlogKnop">
                             <input class="buttonInloggen" type="submit" value="Inloggen"><br>
+                            </div>
                             </div>
                 </form>
             </section>
