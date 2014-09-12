@@ -88,7 +88,7 @@ and open the template in the editor.
                     <ul>
                         <!--leraar-->
                         <li><a href="">opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a></li>
+                        <li class="actief"><a href="">leerlingen</a></li>
                         <li><a href="">agenda</a></li>
                         <!--ouders-->
                         <li><a href="">gegevens</a></li>                     
@@ -105,15 +105,15 @@ and open the template in the editor.
                         <div class="TussenForm">
                             <label for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><br>
+                                        valid_naam.checked = this.value;" id="voornaam" required><input id="Ingevuld-1-1" type="checkbox" disabled name="valid_naam"><span class="juist"></span><br>
                             </label>
                             <label for="familienaam">familienaam *
                                 <input type="text" name="familienaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><br>
+                                    valid_fnaam.checked = this.value;" id="familienaam" required><input id="Ingevuld-1-2" type="checkbox" disabled name="valid_fnaam"><span class="juist"></span><br>
                             </label>
                             <label for="datepicker">geboortedatum *
                                 <input type="text" name="geboortedatum" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><br>
+                                        valid_datum.checked = this.value;" id="datepicker" required><input id="Ingevuld-1-3" type="checkbox" disabled name="valid_datum"><span class="juist"></span><br>
                             </label>
                             <label for="straat">straat
                                 <input type="text" name="straat" id="straat"><br>
@@ -162,6 +162,9 @@ and open the template in the editor.
                     </form>
                     <!-- einde form-->
                 </article>
+            </section>
+            <section class="Uitloggen">
+                <a href="">uitloggen</a>
             </section>
         </section>   
         <footer>

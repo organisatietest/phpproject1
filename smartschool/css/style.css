@@ -2,14 +2,19 @@
     font-family:chalk;
     src: url('../Fonts/dk-cool-crayon/DK Cool Crayon.ttf');
 }
+
 @font-face {
     font-family:hello ;
     src: url('../Fonts/hello_goodbye/hellogoodbye.otf');
 }
+
+/*Op iedere pagina hetzelfde*/
+
 *{
     margin: 0;
     padding:0;
 }
+
 *,
 *:before,
 *:after {
@@ -17,9 +22,11 @@
   -moz-box-sizing:    border-box;
   box-sizing:         border-box;
 }
+
 html {
   height: 100%;
 }
+
 body{
     position: relative;
     margin: 0;
@@ -28,6 +35,7 @@ body{
     background: url('../images/bgImageLeerkrachtOuders.png') repeat;
     
 }
+
 h1{
     background:url('../images/header.png') no-repeat;
     height:200px;
@@ -36,6 +44,191 @@ h1{
     margin-top:-150px;
     margin-left: -50px;
 }
+
+a:link{
+    color:maroon;
+    font-weight: bolder;
+    text-decoration: none;
+    letter-spacing: 2px;
+    
+}
+
+a:hover{
+    text-decoration: underline;
+    
+}
+
+a:visited{
+     color:maroon;
+    font-weight: bolder;
+    text-decoration: none;
+    letter-spacing: 2px;
+    
+}
+
+footer{
+   position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:url('../images/bgImageA.png');
+}
+
+footer > blockquote{
+    font-family: hello;
+    padding-top: 1.5em;
+    padding-left: 1em;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    
+    background: url('../images/bgImageLeerkrachtOuders.png')
+}
+ 
+::-webkit-scrollbar-thumb {
+    
+    background: url('../images/bgImageInhoudLeerkrachtOuders.png');
+    
+}
+
+.Uitloggen{
+    background: url('../images/linedpaper.png');
+    float:right;
+   position: relative;
+   margin-top: 50px;
+   margin-right: -108px;
+    box-shadow: -5px 5px 20px #4d4d4d;
+}
+.Uitloggen > a{
+    display: inline-block;
+    padding:1em;
+    text-decoration: none;
+    font-family:hello;
+}
+.Uitloggen > a:hover{
+    border: 1px dotted maroon;
+}
+
+/*Hoofdmenu*/
+
+.hoofdmenu{
+    background:url('../images/linedpaper.png');
+    width:25%;
+    float: right;
+    margin-top: 7em;
+    margin-right: 5em;
+    box-shadow: -5px 5px 20px #4d4d4d;
+}
+
+.hoofdmenu > ul{
+    list-style-type: none;
+    padding:2em;
+}
+
+.hoofdmenu > ul > li{
+ padding: 1em;
+ text-align: initial;
+
+}
+
+.hoofdmenu > ul > li:before {
+  display: block;
+  margin-left: -1.2em; /*same as padding-left set on li*/
+  width: 1.2em; /*same as padding-left set on li*/
+ 
+}
+
+.hoofdmenu > ul > li > a{
+   font-family: hello;
+   text-decoration:none;
+   display: block;
+   color:#46437b;
+   -webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
+    transition: color 1s;
+   
+}
+
+.hoofdmenu > ul > li > a:hover{
+   color:red;
+}
+
+
+
+/*verandert als je op andere pagina belandt*/
+
+.actief{
+    background:url('../images/vinkje.png') no-repeat;
+   
+}
+
+.actief > a{
+    padding-left: 2.5em;
+    color:greenyellow;
+    
+    background-position: left;
+}
+
+.actief > a:visited{
+    
+    color:green;
+
+}
+
+.hoofdmenu > ul > .actief > a:hover{
+  color:green;
+}
+
+.hoofding{
+    visibility: hidden;
+}
+
+
+/*Foto onderaan pagina*/
+
+.verfvlek{
+    float: right;
+    right:0;
+    top:0;
+    margin-top: 30em;
+    margin-right: -15em;
+}
+
+
+
+/*Log in scherm*/
+
+/*Body Inlog*/
+
+#inlog{
+    background:url('../images/bgInlog.png');
+    min-height: 83.5%;
+}
+
+
+
+/*Wrapper Inlog*/
+
+.wikkelInlog{
+    position: relative;
+    width:927px;
+    height: 465px;
+    margin-top:150px;
+    margin-left: auto;
+    margin-right:auto;
+     box-shadow: -20px 20px 50px #4d4d4d;
+   margin-bottom: -250px;
+}
+
+
+
+/*Titel Welkom*/
+
 h2{
     font-family: chalk;
     font-size: 40px;
@@ -47,6 +240,9 @@ h2{
     -webkit-animation: KleurH2 7s linear infinite alternate; /* Chrome, Safari, Opera */
     animation: KleurH2 7s linear infinite alternate;
 }
+
+
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes KleurH2 {
     0% {color:#fdb5f5;}
@@ -62,17 +258,96 @@ h2{
     padding-top:10px;
     margin-left: -175px;
 }
-a:link{
-    color:maroon;
-    font-weight: bolder;
-    text-decoration: none;
-    letter-spacing: 2px;
+
+
+
+/*Inlog formulier*/
+
+#bgInloggen{
+    z-index: 2;
+    background:url('../images/bgInlogForm.png')no-repeat; 
+    width:925px;
+    height:465px;
+
+}
+
+#InlogForm{
+    padding-top:5em;
+    margin-left: 300px;
+    margin-right: auto;
+    width:50%;
+        
+}
+
+#InlogForm > .TussenInlogForm{
+    margin: 1em;
+    
     
 }
-a:hover{
-    text-decoration: underline;
+
+#InlogForm > .TussenInlogForm > label{
+     display: inline-block;
+    float: left;
+    clear: left;
+    width: 300px;
+    text-align: left;
+    margin:0.2em;
+    padding: 0.5em;
+    font-family: chalk;
+    color:white;
+    font-size: 16px;
+}
+
+#InlogForm > .TussenInlogForm > label > input{
+    display: inline-block;
+    float: right;
+    background:none;
+    margin-top:0.2em;
+    margin-right: -2em;
+    width:10em;
+    border:none;
+    border-bottom: 1px solid #fdb5f5;
+    font-family: chalk;
+    color:#fdb5f5;
     
 }
+
+#InlogForm > .TussenInlogForm > label > input:focus{
+  outline: none;
+}
+
+
+
+/*Knop om in te loggen*/
+
+.opmaakInlogKnop{
+    background: url('../images/bgKnopInlog.png');
+        height:50px;
+        width:225px;
+        float:left;
+        position: relative;
+        margin-left: 50px;
+}
+
+.opmaakInlogKnop > input[type="submit"]{
+    font-family: chalk;
+    color:white;
+    background:none;
+    border:none;
+    margin-top: 13px;
+    margin-left:25px;
+    width:180px;
+    height:20px;
+}
+
+.opmaakInlogKnop > input[type="submit"]:hover{
+    background:url('../images/bgKnopHover.png')
+}
+
+
+
+/*Klaslijst*/
+
 .wikkel{
     background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
     width:60em;
@@ -86,16 +361,72 @@ a:hover{
     margin-bottom: 5em;
     min-height: 100%;
 }
-.wikkelInlog{
-    position: relative;
-    width:927px;
-    height: 465px;
-    margin-top:150px;
-    margin-left: auto;
+
+
+
+/*Paspoort*/
+
+.passpoort{
+   background: url('../images/bgImageA.png');
+   padding:1em;
+   width:400px;
+   height:200px;
+        margin-top: 25px;
+    margin-left: 50px;
+   overflow:hidden;
+   font-family: hello;
+    box-shadow: -5px 5px 20px #4d4d4d;
+    margin-left:auto;
     margin-right:auto;
-     box-shadow: -20px 20px 50px #4d4d4d;
-   margin-bottom: -250px;
 }
+
+.passpoort > img{
+   float:left;
+   margin-right: 1em;
+   position:relative;
+   
+}
+
+.bgKlaslijst{
+    background: url('../images/bgImageC.png') repeat;
+    height:700px;
+    width:550px;
+    margin-top: 50px;
+    margin-left: 50px;
+    position: absolute;
+    box-shadow: -5px 5px 20px #4d4d4d;
+    border-radius: 15px;
+}
+
+.klaslijst{
+    background: url('../images/bgTempForm.png') repeat;
+    width:500px;
+    height:650px;
+    overflow: scroll;
+        margin-top: 25px;
+    margin-left: 25px;
+    position: absolute;
+    box-shadow: -5px 5px 20px #4d4d4d;
+}
+
+
+
+/*sidebar veranderen met css*/
+
+.klaslijst::-webkit-scrollbar{
+    width:12px;
+}
+.klaslijst::-webkit-scrollbar-track{
+    background: none;
+}
+.klaslijst::-webkit-scrollbar-thumb{
+    background: url('../images/bgScroll.png');
+}
+
+
+
+/*LeerlingenToevoegen.php*/
+
 .wikkelLeerlingToevoegen{
     background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
     width:60em;
@@ -108,110 +439,11 @@ a:hover{
     height: 50em;
     margin-bottom: 5em;
 }
-#inlog{
-    background:url('../images/bgInlog.png');
-    min-height: 83.5%;
-}
-footer{
-   position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-   background:url('../images/bgImageA.png');
-}
-footer > blockquote{
-    font-family: hello;
-    padding-top: 1.5em;
-    padding-left: 1em;
-}
-.hoofdmenu{
-    background:url('../images/linedpaper.png');
-    width:25%;
-    float: right;
-    margin-top: 5em;
-    margin-right: 5em;
-    box-shadow: -5px 5px 20px #4d4d4d;
-}
-.hoofdmenu > ul{
-    list-style-type: none;
-    padding:2em;
-}
-.hoofdmenu > ul > li{
- padding: 1em;
- text-align: initial;
 
-}
-.hoofdmenu > ul > li:before {
-  display: block;
-  margin-left: -1.2em; /*same as padding-left set on li*/
-  width: 1.2em; /*same as padding-left set on li*/
- 
-}
-.hoofdmenu > ul > li > a{
-   font-family: hello;
-   text-decoration:none;
-   display: block;
-   color:#46437b;
-   -webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
-    transition: color 1s;
-   
-}
-.hoofdmenu > ul > li > a:hover{
-   color:red;
-}
-.actief{
-    background:url('../images/vinkje.png') no-repeat;
-   
-}
-.actief > a{
-    padding-left: 2.5em;
-    color:greenyellow;
-    
-    background-position: left;
-}
-.actief > a:visited{
-    
-    color:green;
 
-}
-.hoofdmenu > ul > .actief > a:hover{
-  color:green;
-}
-.hoofding{
-    visibility: hidden;
-}
-.submenu{
-    width:25%;
-    float: left;
-    position:relative;
-}
-.submenu > ul{
-    list-style-type: none;
 
-}
-.submenu > ul > li{
+/*Leerlingen toevoegen formulier*/
 
-}
-.submenu > ul > li > a{
-    color:white;
-    font-family: hello;
-   padding:0.5em;
-   text-decoration: none;
-      display: block;
-    
-           background-image: url('../images/bgImageB.png');
-    margin: 1em;  
-     box-shadow: -5px 5px 20px #4d4d4d;
-  
-   
-}
-.submenu > ul > li > a:hover{
-   margin-left:-1em;
-   padding-left:1em;
-    background-image: url('../images/bgImageC.png');
-}
 .bgForm{
     background: url('../images/bgForm2.png') no-repeat;
     height:800px;
@@ -220,16 +452,22 @@ footer > blockquote{
     
     position: absolute;
 }
+
 .buttonToevoegen{
     font-family: hello;
     padding: 1em;
     width:250px;
     margin-left: 4em;
 }
+
 .buttonToevoegen:hover{
     background: #515850;
     color: white;
 }
+
+
+
+/*Volledig formulier voor het invoeren van neuwe leerlingen*/
 
 #InvoerForm{
     margin-left: 60px;
@@ -239,13 +477,13 @@ footer > blockquote{
     background: url('../images/bgTempForm.png');
         box-shadow: -5px 5px 20px #4d4d4d;
 }
+
 #InvoerForm > .TussenForm{
-    margin: 1em;
-    
-    
+    margin: 1em;   
 }
+
 #InvoerForm > .TussenForm > label{
-     display: inline-block;
+    display: inline-block;
     float: left;
     clear: left;
     width: 250px;
@@ -254,6 +492,7 @@ footer > blockquote{
     padding: 0.5em;
     font-family: hello;
 }
+
 #InvoerForm > .TussenForm > label > input{
     display: inline-block;
     float: right;
@@ -269,139 +508,39 @@ footer > blockquote{
   box-shadow:0 0 5px #515850;
   outline: none;
 }
-.verfvlek{
-    float: right;
-    right:0;
-    top:0;
-    margin-top: 30em;
-    margin-right: -15em;
-}
-#bgInloggen{
-    z-index: 2;
-    background:url('../images/bgInlogForm.png')no-repeat; 
-    width:925px;
-    height:465px;
 
+
+
+/*Checkboc voor het invoerformulier*/
+input[type="checkbox"]{
+    border:none;
+    float:left;
+    position: absolute;
+   visibility: hidden;
+   margin-top:0.2em;
 }
-#InlogForm{
-    padding-top:5em;
-    margin-left: 300px;
-    margin-right: auto;
-    width:50%;
-        
+#valid_email{
+        border:none;
+    float:left;
+    position: absolute;
+   margin-top:0.2em;
+   margin-left:10em;
+   visibility: hidden;
 }
-#InlogForm > .TussenInlogForm{
-    margin: 1em;
-    
-    
+#valid_email:checked{
+      visibility: visible;
+    border:none;
+    background: green;
 }
-#InlogForm > .TussenInlogForm > label{
-     display: inline-block;
-    float: left;
-    clear: left;
-    width: 250px;
-    text-align: left;
-    margin:0.2em;
-    padding: 0.5em;
-    font-family: chalk;
-    color:white;
-}
-#InlogForm > .TussenInlogForm > label > input{
-    display: inline-block;
+input[type="checkbox"]:checked + .juist{
+    width:15px;
+    height:15px;
+    border:none;
+    content: url('../images/vinkje.png');
     float: right;
-    background:none;
-    margin-top:0.2em;
-    margin-right: -9em;
-    width:15em;
-    border:none;
-    font-family: chalk;
-    color:#fdb5f5;
-    
-}
-#InlogForm > .TussenInlogForm > label > input:focus{
-  outline: none;
-}
-.passpoort{
-   background: url('../images/bgImageA.png');
-   padding:1em;
-   width:400px;
-        margin-top: 25px;
-    margin-left: 50px;
-   overflow:hidden;
-   font-family: hello;
-    box-shadow: -5px 5px 20px #4d4d4d;
-    margin-left:auto;
-    margin-right:auto;
-}
-.passpoort > img{
-   float:left;
-   margin-right: 1em;
-   position:relative;
+    position:relative;
+    margin-right: 1em;
    
-}
-.bgKlaslijst{
-    background: url('../images/bgImageC.png') repeat;
-    height:700px;
-    width:550px;
-    margin-top: 50px;
-    margin-left: 50px;
-    position: absolute;
-    box-shadow: -5px 5px 20px #4d4d4d;
-    border-radius: 15px;
-}
-.klaslijst{
-    background: url('../images/bgTempForm.png') repeat;
-    width:500px;
-    height:650px;
-    overflow: scroll;
-        margin-top: 25px;
-    margin-left: 25px;
-    position: absolute;
-    box-shadow: -5px 5px 20px #4d4d4d;
-}
-.klaslijst::-webkit-scrollbar{
-    width:12px;
-}
-.klaslijst::-webkit-scrollbar-track{
-    background: none;
-}
-.klaslijst::-webkit-scrollbar-thumb{
-    background: url('../images/bgScroll.png');
-}
-::-webkit-scrollbar {
-    width: 12px;
-}
- 
-::-webkit-scrollbar-track {
-    
-    background: url('../images/bgImageLeerkrachtOuders.png')
-}
- 
-::-webkit-scrollbar-thumb {
-    
-    background: url('../images/bgImageInhoudLeerkrachtOuders.png');
-    
-}
-.opmaakInlogKnop{
-    background: url('../images/bgKnopInlog.png');
-        height:50px;
-        width:225px;
-        float:left;
-        position: relative;
-        margin-left: 50px;
-}
-.opmaakInlogKnop > input[type="submit"]{
-    font-family: chalk;
-    color:white;
-    background:none;
-    border:none;
-    margin-top: 13px;
-    margin-left:25px;
-    width:180px;
-    height:20px;
-}
-.opmaakInlogKnop > input[type="submit"]:hover{
-    background:url('../images/bgKnopHover.png')
 }
 .Vergeet{
     float: left;
@@ -419,44 +558,7 @@ footer > blockquote{
     text-decoration: none;
    
 }
-[id^="Ingevuld-1-"]{
-    border:none;
-    float:left;
-    position: absolute;
-   visibility: hidden;
-   margin-top:0.2em;
-   
-}
-#Ingevuld-1-1{
-   margin-left:15em;
-   
-}
-#Ingevuld-1-2{
-   margin-left:14.2em;
-   
-}
-#Ingevuld-1-3{
-   margin-left:13.2em;
-   
-}
-#valid_email{
-        border:none;
-    float:left;
-    position: absolute;
-   margin-top:0.2em;
-   margin-left:10em;
-   visibility: hidden;
-}
-#valid_email:checked{
-      visibility: visible;
-    border:none;
-    background: green;
-}
-[id^="Ingevuld-1-"]:checked{
-    visibility: visible;
-    border:none;
-    background: green;
-}
+
 /*
 .tempForm{
     margin-left: 75px;
@@ -495,3 +597,33 @@ footer > blockquote{
   outline: none;
 }
 */
+.submenu{
+    width:25%;
+    float: left;
+    position:relative;
+}
+.submenu > ul{
+    list-style-type: none;
+
+}
+.submenu > ul > li{
+
+}
+.submenu > ul > li > a{
+    color:white;
+    font-family: hello;
+   padding:0.5em;
+   text-decoration: none;
+      display: block;
+    
+           background-image: url('../images/bgImageB.png');
+    margin: 1em;  
+     box-shadow: -5px 5px 20px #4d4d4d;
+  
+   
+}
+.submenu > ul > li > a:hover{
+   margin-left:-1em;
+   padding-left:1em;
+    background-image: url('../images/bgImageC.png');
+}
