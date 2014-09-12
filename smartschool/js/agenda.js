@@ -9,14 +9,14 @@ $(document).ready(function() {
 			editable: true,
                         selectable: true,
                         selectHelper: true,
-                        events: "http://localhost/smartschool/smartschool/events.php",
+                        events: "http://localhost/Kalender/events.php",
                         select: function(start, end, allDay) {
                          var title = prompt('Event Title:');
                          if (title) {
                          start = $.fullCalendar.formatDate(start, "yyyy-MM-dd HH:mm:ss");
                          end = $.fullCalendar.formatDate(end, "yyyy-MM-dd HH:mm:ss");
                          $.ajax({
-                         url: 'http://localhost/smartschool/smartschool/add_events.php',
+                         url: 'http://localhost/Kalender/add_events.php',
                          data: 'title='+ title+'&start='+ start +'&end='+ end ,
                          type: "POST",
                          success: function(json) {
@@ -40,7 +40,7 @@ $(document).ready(function() {
                          start = $.fullCalendar.formatDate(event.start, "yyyy-MM-dd HH:mm:ss");
                          end = $.fullCalendar.formatDate(event.end, "yyyy-MM-dd HH:mm:ss");
                          $.ajax({
-                         url: 'http://localhost/smartschool/smartschool/update_events.php',
+                         url: 'http://localhost/Kalender/update_events.php',
                          data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
                          type: "POST",
                          success: function(json) {
@@ -52,13 +52,28 @@ $(document).ready(function() {
                          start = $.fullCalendar.formatDate(event.start, "yyyy-MM-dd HH:mm:ss");
                          end = $.fullCalendar.formatDate(event.end, "yyyy-MM-dd HH:mm:ss");
                          $.ajax({
-                         url: 'http://localhost/smartschool/smartschool/update_events.php',
+                         url: 'http://localhost/Kalender/update_events.php',
                          data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
                          type: "POST",
                          success: function(json) {
                          alert("OK");
                          }
                          });
+
+                        },
+                        eventClick: function(event) {
+
+                                if (confirm("Wil je dit event echt verwijderen?")) {
+                                        $.ajax({
+                                        url: 'http://localhost/Kalender/delete_events.php',
+                                        data: 'id=' + event.id,
+                                        type: "POST",
+                                        success: function(json){
+                                                alert("Delete geslaagd!");
+                                                location.reload();
+                                            }
+                                        });
+                                }
 
                         }
 			
