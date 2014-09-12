@@ -110,6 +110,7 @@ a:hover{
 }
 #inlog{
     background:url('../images/bgInlog.png');
+    min-height: 83.5%;
 }
 footer{
    position: absolute;
@@ -276,6 +277,7 @@ footer > blockquote{
     margin-right: -15em;
 }
 #bgInloggen{
+    z-index: 2;
     background:url('../images/bgInlogForm.png')no-repeat; 
     width:925px;
     height:465px;
@@ -325,7 +327,7 @@ footer > blockquote{
    width:400px;
         margin-top: 25px;
     margin-left: 50px;
-   position:absolute;
+   overflow:hidden;
    font-family: hello;
     box-shadow: -5px 5px 20px #4d4d4d;
     margin-left:auto;
@@ -416,6 +418,44 @@ footer > blockquote{
     color:#ff8585;
     text-decoration: none;
    
+}
+[id^="Ingevuld-1-"]{
+    border:none;
+    float:left;
+    position: absolute;
+   visibility: hidden;
+   margin-top:0.2em;
+   
+}
+#Ingevuld-1-1{
+   margin-left:15em;
+   
+}
+#Ingevuld-1-2{
+   margin-left:14.2em;
+   
+}
+#Ingevuld-1-3{
+   margin-left:13.2em;
+   
+}
+#valid_email{
+        border:none;
+    float:left;
+    position: absolute;
+   margin-top:0.2em;
+   margin-left:10em;
+   visibility: hidden;
+}
+#valid_email:checked{
+      visibility: visible;
+    border:none;
+    background: green;
+}
+[id^="Ingevuld-1-"]:checked{
+    visibility: visible;
+    border:none;
+    background: green;
 }
 /*
 .tempForm{
