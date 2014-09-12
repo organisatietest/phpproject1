@@ -1,16 +1,30 @@
 @font-face {
-    font-family:Chawp ;
-    src: url(../Fonts/Chawp/chawp.otf);
+    font-family:chalk;
+    src: url('../Fonts/dk-cool-crayon/DK Cool Crayon.ttf');
 }
 @font-face {
     font-family:hello ;
-    src: url(../Fonts/hello_goodbye/hellogoodbye.otf);
+    src: url('../Fonts/hello_goodbye/hellogoodbye.otf');
 }
 *{
     margin: 0;
     padding:0;
 }
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
+}
+html {
+  height: 100%;
+}
 body{
+    position: relative;
+    margin: 0;
+    padding-bottom: 4rem;
+    min-height: 100%;
     background: url('../images/bgImageLeerkrachtOuders.png') repeat;
     
 }
@@ -22,7 +36,32 @@ h1{
     margin-top:-150px;
     margin-left: -50px;
 }
+h2{
+    font-family: chalk;
+    font-size: 40px;
+     height:100px;
+     width:600px;
+    background: url('../images/bgWelkom.png') no-repeat;
+    margin-left: 175px;
+    margin-top:150px;
+    -webkit-animation: KleurH2 7s linear infinite alternate; /* Chrome, Safari, Opera */
+    animation: KleurH2 7s linear infinite alternate;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes KleurH2 {
+    0% {color:#fdb5f5;}
+    25% {color: yellow;}
+    50% {color: white;}
+    75% {color: lime;}
+    100% {color:#fdb5f5;}
+}
 
+.Welkom{
+    float:left;
+    position: relative;
+    padding-top:10px;
+    margin-left: -175px;
+}
 a:link{
     color:maroon;
     font-weight: bolder;
@@ -34,6 +73,29 @@ a:hover{
     text-decoration: underline;
     
 }
+.wikkel{
+    background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
+    width:60em;
+    margin-top:150px;
+    margin-left: auto;
+    margin-right:auto;
+    box-shadow: -20px 20px 50px #4d4d4d;
+    border-radius: 10px;
+    overflow: visible;
+    height: 50em;
+    margin-bottom: 5em;
+    min-height: 100%;
+}
+.wikkelInlog{
+    position: relative;
+    width:927px;
+    height: 465px;
+    margin-top:150px;
+    margin-left: auto;
+    margin-right:auto;
+     box-shadow: -20px 20px 50px #4d4d4d;
+   margin-bottom: -250px;
+}
 .wikkelLeerlingToevoegen{
     background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
     width:60em;
@@ -43,16 +105,20 @@ a:hover{
     box-shadow: -20px 20px 50px #4d4d4d;
     border-radius: 10px;
     overflow: visible;
-    height: 50em;;
-    margin-bottom: auto;
+    height: 50em;
+    margin-bottom: 5em;
+}
+#inlog{
+    background:url('../images/bgInlog.png');
 }
 footer{
-   position:relative;
-   bottom:0;
+   position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
    width:100%;
    height:60px;   /* Height of the footer */
    background:url('../images/bgImageA.png');
-   margin-top: 5em;
 }
 footer > blockquote{
     font-family: hello;
@@ -87,18 +153,19 @@ footer > blockquote{
    text-decoration:none;
    display: block;
    color:#46437b;
+   -webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
+    transition: color 1s;
    
 }
 .hoofdmenu > ul > li > a:hover{
-   padding-left: 2em;
-   background: url('../images/pijl.png') no-repeat;
-   background-position: left;
+   color:red;
 }
 .actief{
     background:url('../images/vinkje.png') no-repeat;
+   
 }
 .actief > a{
-    padding-left: 2em;
+    padding-left: 2.5em;
     color:greenyellow;
     
     background-position: left;
@@ -108,8 +175,8 @@ footer > blockquote{
     color:green;
 
 }
-.actief > a:hover{
-    background:none;
+.hoofdmenu > ul > .actief > a:hover{
+  color:green;
 }
 .hoofding{
     visibility: hidden;
@@ -208,21 +275,15 @@ footer > blockquote{
     margin-top: 30em;
     margin-right: -15em;
 }
-#inlog{
-   background:url('../images/bgInlog.png')repeat; 
-}
 #bgInloggen{
     background:url('../images/bgInlogForm.png')no-repeat; 
     width:925px;
     height:465px;
-    margin-top:17.5em;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: -5px 5px 20px #4d4d4d;
+
 }
 #InlogForm{
-    padding-top:10em;
-    margin-left: auto;
+    padding-top:5em;
+    margin-left: 300px;
     margin-right: auto;
     width:50%;
         
@@ -239,9 +300,8 @@ footer > blockquote{
     width: 250px;
     text-align: left;
     margin:0.2em;
-    
     padding: 0.5em;
-    font-family: Chawp;
+    font-family: chalk;
     color:white;
 }
 #InlogForm > .TussenInlogForm > label > input{
@@ -249,15 +309,113 @@ footer > blockquote{
     float: right;
     background:none;
     margin-top:0.2em;
-    margin-right: -8em;
+    margin-right: -9em;
     width:15em;
     border:none;
-    font-family: Chawp;
+    font-family: chalk;
     color:#fdb5f5;
     
 }
 #InlogForm > .TussenInlogForm > label > input:focus{
   outline: none;
+}
+.passpoort{
+   background: url('../images/bgImageA.png');
+   padding:1em;
+   width:400px;
+        margin-top: 25px;
+    margin-left: 50px;
+   position:absolute;
+   font-family: hello;
+    box-shadow: -5px 5px 20px #4d4d4d;
+    margin-left:auto;
+    margin-right:auto;
+}
+.passpoort > img{
+   float:left;
+   margin-right: 1em;
+   position:relative;
+   
+}
+.bgKlaslijst{
+    background: url('../images/bgImageC.png') repeat;
+    height:700px;
+    width:550px;
+    margin-top: 50px;
+    margin-left: 50px;
+    position: absolute;
+    box-shadow: -5px 5px 20px #4d4d4d;
+    border-radius: 15px;
+}
+.klaslijst{
+    background: url('../images/bgTempForm.png') repeat;
+    width:500px;
+    height:650px;
+    overflow: scroll;
+        margin-top: 25px;
+    margin-left: 25px;
+    position: absolute;
+    box-shadow: -5px 5px 20px #4d4d4d;
+}
+.klaslijst::-webkit-scrollbar{
+    width:12px;
+}
+.klaslijst::-webkit-scrollbar-track{
+    background: none;
+}
+.klaslijst::-webkit-scrollbar-thumb{
+    background: url('../images/bgScroll.png');
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    
+    background: url('../images/bgImageLeerkrachtOuders.png')
+}
+ 
+::-webkit-scrollbar-thumb {
+    
+    background: url('../images/bgImageInhoudLeerkrachtOuders.png');
+    
+}
+.opmaakInlogKnop{
+    background: url('../images/bgKnopInlog.png');
+        height:50px;
+        width:225px;
+        float:left;
+        position: relative;
+        margin-left: 50px;
+}
+.opmaakInlogKnop > input[type="submit"]{
+    font-family: chalk;
+    color:white;
+    background:none;
+    border:none;
+    margin-top: 13px;
+    margin-left:25px;
+    width:180px;
+    height:20px;
+}
+.opmaakInlogKnop > input[type="submit"]:hover{
+    background:url('../images/bgKnopHover.png')
+}
+.Vergeet{
+    float: left;
+    position: relative;
+    margin-top: 40px;
+    margin-left:-210px;
+}
+.Vergeet > a:link{
+    font-size: 14px;
+    font-family: chalk;
+    color:#fdb5f5;
+}
+.Vergeet > a:hover{
+    color:#ff8585;
+    text-decoration: none;
+   
 }
 /*
 .tempForm{

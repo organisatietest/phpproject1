@@ -28,7 +28,7 @@ and open the template in the editor.
                     <ul>
                         <!--leraar-->
                         <li><a href="">opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a></li>
+                        <li class="actief"><a href="">leerlingen</a></li>
                         <li><a href="">agenda</a></li>
                         <!--ouders-->
                         <li><a href="">gegevens</a></li>                     
@@ -36,16 +36,17 @@ and open the template in the editor.
                     </ul>
                 </nav>
             </header>
+            <img class="verfvlek" src="images/verfvlek.png" alt="verfvlek" />
             <section>
-                <article class="bgForm">
+                <article class="bgKlaslijst">
                     <!--hier komt de inhoud-->   
                     <div class="klaslijst"><!--omvatende div die de klaslijst heeft als inhoud-->
                         <?php foreach ($klaslijst as $leerling){ ?>
                         <div class="passpoort"><!--repeterende div die voor iedere leerling van de klas herhaald wordt-->
-                            Foto: <img src="Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"><br/>
-                            Voornaam:<?php echo " ",$leerling->getVoornaam(); ?><br/>
-                            Familienaam:<?php echo " ",$leerling->getFamilienaam(); ?><br/>
-                            Geboortedatum:<?php echo " ",$leerling->getGeboortedatum(); ?><br/>
+                            <img src="../Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"><br/>
+                            <b>Voornaam</b>: <?php echo " ",$leerling->getVoornaam(); ?><br/>
+                            Familienaam: <?php echo " ",$leerling->getFamilienaam(); ?><br/>
+                            Geboortedatum: <?php echo " ",$leerling->getGeboortedatum(); ?><br/>
                         </div><!--einde reeterende div-->
                         <?php } ?>
                     </div><!--einde omvatende div-->
@@ -55,6 +56,5 @@ and open the template in the editor.
         <footer>
             <blockquote>Created by <a href="#">Niels</a>, <a href="#">Mathias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
         </footer>
-
     </body>
 </html>
