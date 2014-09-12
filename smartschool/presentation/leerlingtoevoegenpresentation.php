@@ -12,16 +12,57 @@ and open the template in the editor.
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="ajaxrequest.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
-   
-    <script>
-        $(function() {
-        $( "#datepicker" ).datepicker({
-        changeMonth: true,
-        changeYear: true
-        });
-    });
-    </script>
+
+        <script type="text/javascript">
+
+            function callAjax(method, value, target)
+            {
+                if (encodeURIComponent) {
+                    var req = new AjaxRequest();
+                    var params = "method=" + method + "&value=" + encodeURIComponent(value) + "&target=" + target;
+                    req.setMethod("POST");
+                    req.loadXMLDoc("script/validate.php", params);
+                }
+            }
+
+        </script>
+        <script>
+            $(function() {
+                $("#datepicker").datepicker({
+                    changeMonth: true,
+                    changeYear: true
+                });
+            });
+        </script>
+
+        <script>
+            function validateForm() {
+                var x = document.forms["formaanmelden"]["emailadres"].value;
+                var atpos = x.indexOf("@");
+                var dotpos = x.lastIndexOf(".");
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+                    alert("Not a valid e-mail address");
+                    return false;
+                }
+                var x = document.forms["formaanmelden"]["voornaam"].value;
+                if (x == null || x == "") {
+                    alert("voornaam moet ingevult worden");
+                    return false;
+                }
+                var x = document.forms["formaanmelden"]["familienaam"].value;
+                if (x == null || x == "") {
+                    alert("familienaam moet ingevult worden");
+                    return false;
+                }
+                var x = document.forms["formaanmelden"]["geboortedatum"].value;
+                if (x == null || x == "") {
+                    alert("First name must be filled out");
+                    return false;
+                }
+            }
+        </script>
         <title>Smartschool</title>
 
         <link rel="stylesheet" href="css/style.css" media="screen">
@@ -49,58 +90,63 @@ and open the template in the editor.
                 <article class="bgForm">
                     <!--hier komt de inhoud-->   
                     <!-- start form -->
-                    <form id="InvoerForm" method="post" action="leerlingaanmelden.php?action=process">
+                    <form id="InvoerForm" method="post" name="formaanmelden" action="leerlingaanmelden.php?action=process" onsubmit="return validateForm();">
                         <div class="TussenForm">
                             <label for="voornaam">voornaam *
-                            <input type="text" name="voornaam" id="voornaam" required><br>
+                                <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
+                                        valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><br>
                             </label>
                             <label for="familienaam">familienaam *
-                            <input type="text" name="familienaam" id="familienaam" required><br>
+                                <input type="text" name="familienaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
+                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><br>
                             </label>
                             <label for="datepicker">geboortedatum *
-                            <input type="text" name="geboortedatum" id="datepicker" required><br>
-                        </label>
+                                <input type="text" name="geboortedatum" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
+                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><br>
+                            </label>
                             <label for="straat">straat
-                            <input type="text" name="straat" id="straat"><br>
-                        </label>
+                                <input type="text" name="straat" id="straat"><br>
+                            </label>
                             <label for="huisnr">huisnummer
-                            <input type="number" name="huisnr" id="huisnr"><br>
-                        </label>
+                                <input type="number" name="huisnr" id="huisnr"><br>
+                            </label>
                             <label for="bus">bus
-                            <input type="text" name="bus" id="bus"><br>
-                        </label>
+                                <input type="text" name="bus" id="bus"><br>
+                            </label>
                             <label for="postcode">postcode
-                            <input type="number" name="postcode" placeholder="8431" id="postcode"><br>
-                        </label>
+                                <input type="number" name="postcode" placeholder="8431" id="postcode"><br>
+                            </label>
                             <label for="gemeente">gemeente
-                            <input type="text" name="gemeente" id="gemeente"><br>
-                        </label>
+                                <input type="text" name="gemeente" id="gemeente"><br>
+                            </label>
                             <label for="tel">telefoonnummer
-                            <input type="text" name="telefoonnr" placeholder="0561234567" id="tel"><br>
-                        </label>
+                                <input type="text" name="telefoonnr" placeholder="0561234567" id="tel"><br>
+                            </label>
                             <label for="vnouder1">voornaam ouder 1
-                            <input type="text" name="voornaamouder1" id="vnouder1"><br>
-                        </label>
+                                <input type="text" name="voornaamouder1" id="vnouder1"><br>
+                            </label>
                             <label for="fnouder1">familienaam ouder1
-                            <input type="text" name="familienaamouder1" id="fnouder1"><br>
-                        </label>
+                                <input type="text" name="familienaamouder1" id="fnouder1"><br>
+                            </label>
                             <label for="gsmouder1">gsm ouder 1
-                            <input type="text" name="GSMouder1" placeholder="0561234567" id="gsmouder1"><br>
-                        </label>
+                                <input type="text" name="GSMouder1" placeholder="0561234567" id="gsmouder1"><br>
+                            </label>
                             <label for="vnouder2">voornaam ouder 2
-                            <input type="text" name="voornaamouder2" id="vnouder2"><br>
-                        </label>
+                                <input type="text" name="voornaamouder2" id="vnouder2"><br>
+                            </label>
                             <label for="fnouder2">familienaam ouder 2
-                            <input type="text" name="familienaamouder2" id="fnouder2"><br>
-                        </label>
+                                <input type="text" name="familienaamouder2" id="fnouder2"><br>
+                            </label>
                             <label for="gsmouder2">gsm ouder 2
-                            <input type="text" name="GSMouder2" placeholder="0561234567" id="gsmouder2"><br>
-                        </label>
+                                <input type="text" name="GSMouder2" placeholder="0561234567" id="gsmouder2"><br>
+                            </label>
                             <label for="emailadresouders">emailadres voor ouder *
-                            <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" required><br>
-                        </label>
+                                <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" onchange="if (this.value != '')
+                                            callAjax('checkEmail', this.value, this.id);"  required><input id="valid_email" type="checkbox" disabled name="valid_email" onclick="return false;"><br>
+                            </label>
+                            <div id="rsp_email"><!-- --></div><br>
                             <input class="buttonToevoegen" type="submit" value="toevoegen"><br>
-                            </div>
+                        </div>
                     </form>
                     <!-- einde form-->
                 </article>

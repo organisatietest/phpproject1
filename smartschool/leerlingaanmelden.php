@@ -9,65 +9,78 @@ if (!isset($_GET["action"])) {
     $action = $_GET["action"];
 $doorgaan = true;
 if ($action == "process") {
-    if (!isset($_POST["voornaam"])) {
+    print("1");
+    if (empty($_POST["voornaam"])) {
         $voornaamerror = "missing";
         $doorgaan = false;
-    }
-    else {
-        $voornaam = strip_tags( trim($_POST["voornaam"]));
-        if (empty($voornaam)){
+    } else {
+        $voornaam = strip_tags(trim($_POST["voornaam"]));
+        if (empty($voornaam)) {
             $doorgaan = false;
+            $voornaamerror = "missing";
         }
     }
-    if (!isset($_POST["familienaam"])) {
+    if (empty($_POST["familienaam"])) {
         $familienaamerror = "missing";
         $doorgaan = false;
-    }
-    else {
-        $familienaam = strip_tags( trim($_POST["familienaam"]));
-        if(empty($familienaam)){
+    } else {
+        $familienaam = strip_tags(trim($_POST["familienaam"]));
+        if (empty($familienaam)) {
+            $familienaamerror = "missing";
             $doorgaan = false;
         }
     }
-    if (!isset($_POST["geboortedatum"])) {
+    if (empty($_POST["geboortedatum"])) {
         $geboortedaumerror = "missing";
         $doorgaan = false;
-    }
-    else {
-        $geboortedatum = strip_tags( trim($_POST["geboortedatum"]));
-        if(empty($geboortedatum)){
+    } else {
+        $geboortedatum = strip_tags(trim($_POST["geboortedatum"]));
+        if (empty($geboortedatum)) {
+            $geboortedaumerror = "missing";
             $doorgaan = false;
         }
     }
-    if (!isset($_POST["emailadres"])) {
+    if (empty($_POST["emailadres"])) {
         $emailadreserror = "missing";
         $doorgaan = false;
-    }
-    else {
-        if(preg_match("/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/", $_POST[ "emailadres" ] )){
-            $emailadres = strip_tags( trim($_POST["emailadres"]));
-            if(empty($emailadres)){
-                $doorgaan=false;
+    } else {
+        if (preg_match("/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/", $_POST["emailadres"])) {
+            $emailadres = strip_tags(trim($_POST["emailadres"]));
+            if (empty($emailadres)) {
+                $emailadreserror = "missing";
+                $doorgaan = false;
             }
-        } else{$doorgaan=false;}
+        } else {
+            $doorgaan = false;
+        }
     }
-    if ($doorgaan == false) {
+    if ($doorgaan == true) {
+        $straat = strip_tags(trim($_POST["straat"]));
+        $huisnr = strip_tags(trim($_POST["huisnr"]));
+        $bus = strip_tags(trim($_POST["bus"]));
+        $postcode = strip_tags(trim($_POST["postcode"]));
+        $telefoonnr = strip_tags(trim($_POST["telefoonnr"]));
+        $voornaamouder1 = strip_tags(trim($_POST["voornaamouder1"]));
+        $voornaamouder2 = strip_tags(trim($_POST["voornaamouder2"]));
+        $familienaamouder1 = strip_tags(trim($_POST["familienaamouder1"]));
+        $familienaamouder2 = strip_tags(trim($_POST["familienaamouder2"]));
+        $GSMouder1 = strip_tags(trim($_POST["GSMouder1"]));
+        $GSMouder2 = strip_tags(trim($_POST["GSMouder2"]));
         try {
-            $datetime = new DateTime($_POST["geboortedatum"]);
-            $leerlingsvc->voegNieuwLeerlingToe($_POST["voornaam"], $_POST["familienaam"]
-                    , $datetime->format('Y,m,d'), $_POST["straat"], $_POST["huisnr"]
-                    , $_POST["bus"], $_POST["postcode"], $_POST["telefoonnr"], $_POST["klas"], $_POST["voornaamouder1"]
-                    , $_POST["familienaamouder1"], $_POST["voornaamouder2"], $_POST["familienaamouder2"]
-                    , $_POST["GSMouder1"], $_POST["GSMouder2"], $_POST["emailadres"]);
-            //header("location:leerlingaanmelden.php");
-            //exit(0);
+            $datetime = new DateTime($geboortedatum);
+            $leerlingsvc->voegNieuwLeerlingToe($voornaam, $familienaam
+                    , $datetime->format('Y,m,d'), $straat, $huisnr
+                    , $bus, $postcode, $telefoonnr, 0 , $voornaamouder1
+                    , $familienaamouder1, $voornaamouder2, $familienaamouder2
+                    , $GSMouder1, $GSMouder2, $emailadres);
+            header("location:leerlingaanmelden.php");
+            exit(0);
         } catch (EmailadresBestaatException $ebe) {
             header("location:aanmelden.php?error=emailexists");
             exit(0);
         }
-    }
-    else{
-        print("gelukt");
+    } else {
+        print("oke");
     }
 } else {
     if (!isset($_GET["error"])) {
