@@ -30,10 +30,10 @@ class leerkrachtDAO{
         $rij = $resultset->fetch();
         $leerkracht = leerkracht::create($rij["leerkrachtid"],$rij["emailadres"],$rij["wachtwoord"],$rij["voornaam"],$rij["familienaam"],$rij["geboortedatum"],$rij["foto"],$rij["klasid"],$rij["admin"]);
         $dbh = null;
-        if($leerkracht!=0){
-            return $leerkracht;
-        }else{
+        if($leerkracht->getLeerkrachtid()==0){
             return false;
+        }else{
+            return $leerkracht;
         } 
     }
 }

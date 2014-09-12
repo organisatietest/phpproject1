@@ -36,6 +36,25 @@ class leerlingDAO {
         $dbh = null;
         return $klaslijst;
     }
+    
+    public function getByGebruiker($emailadres,$wachtwoord){
+        $sql = "select leerlingid, voornaam, familienaam, geboortedatum, straat, huisnr,bus,postcode, telefoonnr
+        , klasid, voornaamouder1, familienaamouder1, voornaamouder2, familienaamouder2, GSMouder1
+        , GSMouder2, emailadres, wachtwoord from leerling where emailadres ='".$emailadres."' and wachtwoord ='".$wachtwoord."' ";
+        $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
+        $resultset = $dbh->query($sql);
+        $rij = $resultset->fetch();
+        $leerling = leerling::create($rij["leerlingid"], $rij["voornaam"], $rij["familienaam"], $rij["geboortedatum"]
+                        , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"],$rij["klasid"]
+                        , $rij["voornaamouder1"], $rij["voornaamouder2"], $rij["familienaamouder1"], $rij["familienaamouder2"]
+                        ,$rij["GSMouder1"],$rij["GSMouder2"],$rij["emailadres"],$rij["wachtwoord"]);
+        $dbh = null;
+        if($leerling->getLeerlingid()==0){
+            return false;
+        }else{
+            return $leerling;
+        } 
+    }
 
     public function getByemailadresNaam($emailadres,$voornaam,$familienaam) {
         $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);

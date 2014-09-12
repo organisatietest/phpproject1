@@ -16,6 +16,12 @@ class leerlingservice {
         $klaslijst= $leerlingDAO->getByKlasId($klasId);
         return $klaslijst;
     }
+    
+    public function logincheck($emailadres,$wachtwoord){
+        $leerlingDAO = new leerlingDAO();
+        $leerlingLogin = $leerlingDAO->getByGebruiker($emailadres, $wachtwoord);
+        return $leerlingLogin;
+    }
 
     public function verwijderGebruiker($id) {
         $GebruikerDAO = new gebruikerDAO();
@@ -62,11 +68,11 @@ class leerlingservice {
         return $gelukt;
     }
 
-    public function logincheck(){
+    /*public function logincheck(){
         $gebruikerDAO = new gebruikerDAO();
         $gelukt=$gebruikerDAO->login_check();
         return $gelukt;
-    }
+    }*/
     
     public function logout(){
         session_start();

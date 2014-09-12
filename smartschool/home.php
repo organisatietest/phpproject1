@@ -1,16 +1,35 @@
 <?php
 session_start();
 require_once 'business/leerkrachtservice.php';
+require_once 'business/leerlingservice.php';
 //$addfirst= new leerkrachtservice();   werd gebruik om eens de invoeg functies te kunnen uit testen. pas is admin hashed
 //$addfirst->leerkrachttoevoegen("admin", "d033e22ae348aeb5660fc2140aec35850c4da997", "admin", "unknown", "1111-11-11", "", 1, true);
 
 if(isset($_GET["submited"]) && $_GET["submited"]){
-    $emailadres=$_POST["gebruikersnaam"];
-    $wachtwoord=  sha1($_POST["wachtwoord"]);
+    $emailadres = $_POST["gebruikersnaam"];
+    $wachtwoord =  sha1($_POST["wachtwoord"]);
     
     $leerkrachtservic = new leerkrachtservice();
-    $leerkracht=$leerkrachtservic->logincheck($emailadres, $wachtwoord);
-    print_r($leerkracht);
+    $leerkracht = $leerkrachtservic->logincheck($emailadres, $wachtwoord);
+    
+    if($leerkracht == false){
+       
+       $leerlingservice = new leerlingservice();
+       $leerling = $leerlingservice->logincheck($emailadres, $wachtwoord);
+       
+       if($leerling == false){
+           echo 'verkeerde inlog';           
+       }else{
+           print_r($leerling);
+       }
+    }else{
+        if($leerkracht->getAdmin() == true){
+            echo 'as admin logged in';
+        }else{
+            echo 'as leerkracht';
+        }
+        print_r($leerkracht);
+    }
 }
 
 if(isset($_SESSION["aangemeld"])){//controle ingelogd of niet met bij ingelogd contlore op gebruikers niveau
