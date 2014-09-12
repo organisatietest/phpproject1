@@ -52,6 +52,9 @@ and open the template in the editor.
                     </div><!--einde omvatende div-->
                 </article>
             </section>
+            <section class="Uitloggen">
+                <a href="">uitloggen</a>
+            </section>
         </section>   
         <footer>
             <blockquote>Created by <a href="#">Niels</a>, <a href="#">Mathias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
