@@ -12,4 +12,11 @@ class leerkrachtservice{
         $leerkrachtLogin = $leerkrachtDAO->getByGebruiker($emailadres, $wachtwoord);
         return $leerkrachtLogin;
     }
+    
+    public function generate($emailadres){
+        $leerkrachtDAO = new leerkrachtDAO();
+        $wachtwoord = $leerkrachtDAO->randomPassword($emailadres);
+        
+        return $wachtwoord;
+    }
 }

@@ -12,7 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
         <script type="text/javascript" src="ajaxrequest.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
 
@@ -101,8 +101,14 @@ and open the template in the editor.
                 <article class="bgForm">
                     <!--hier komt de inhoud-->   
                     <!-- start form -->
-                    <form id="InvoerForm" method="post" name="formaanmelden" action="leerlingaanmelden.php?action=process" onsubmit="return validateForm();">
+                    <form id="InvoerForm" method="post" name="formaanmelden" action="leerkrachttoeveogenpresentation.php?action=process" onsubmit="return validateForm();">
                         <div class="TussenForm">
+                            <label for="emailadresouders">emailadres voor ouder *
+                                <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" required>
+                                <img src="/images/ajax-loader.gif" width="16" height="16" style="display:none;">
+                                <span id="emailerror" class="available"></span><br>
+                                <div id="rsp_email"><!-- --></div><br>
+                            </label>
                             <label for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
                                         valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><br>
@@ -115,48 +121,9 @@ and open the template in the editor.
                                 <input type="text" name="geboortedatum" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
                                         valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><br>
                             </label>
-                            <label for="straat">straat
-                                <input type="text" name="straat" id="straat"><br>
+                            <label for="klas">klas
+                                <input type="text" name="klas" placeholder="klas" id="klas"><br>
                             </label>
-                            <label for="huisnr">huisnummer
-                                <input type="number" name="huisnr" id="huisnr"><br>
-                            </label>
-                            <label for="bus">bus
-                                <input type="text" name="bus" id="bus"><br>
-                            </label>
-                            <label for="postcode">postcode
-                                <input type="number" name="postcode" placeholder="8431" id="postcode"><br>
-                            </label>
-                            <label for="gemeente">gemeente
-                                <input type="text" name="gemeente" id="gemeente"><br>
-                            </label>
-                            <label for="tel">telefoonnummer
-                                <input type="text" name="telefoonnr" placeholder="0561234567" id="tel"><br>
-                            </label>
-                            <label for="vnouder1">voornaam ouder 1
-                                <input type="text" name="voornaamouder1" id="vnouder1"><br>
-                            </label>
-                            <label for="fnouder1">familienaam ouder1
-                                <input type="text" name="familienaamouder1" id="fnouder1"><br>
-                            </label>
-                            <label for="gsmouder1">gsm ouder 1
-                                <input type="text" name="GSMouder1" placeholder="0561234567" id="gsmouder1"><br>
-                            </label>
-                            <label for="vnouder2">voornaam ouder 2
-                                <input type="text" name="voornaamouder2" id="vnouder2"><br>
-                            </label>
-                            <label for="fnouder2">familienaam ouder 2
-                                <input type="text" name="familienaamouder2" id="fnouder2"><br>
-                            </label>
-                            <label for="gsmouder2">gsm ouder 2
-                                <input type="text" name="GSMouder2" placeholder="0561234567" id="gsmouder2"><br>
-                            </label>
-                            <label for="emailadresouders">emailadres voor ouder *
-                                <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" required>
-                                <img src="/images/ajax-loader.gif" width="16" height="16" style="display:none;">
-                                <span id="emailerror" class="available"></span><br>
-                            </label>
-                            <div id="rsp_email"><!-- --></div><br>
                             <input class="buttonToevoegen" type="submit" value="toevoegen"><br>
                         </div>
                     </form>

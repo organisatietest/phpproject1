@@ -36,4 +36,23 @@ class leerkrachtDAO{
             return $leerkracht;
         } 
     }
+    
+    public function randomPassword($emailadres) {
+        $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 8; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        $password = implode($pass);
+        $to = "$emailadres";
+        $subject = "wachtwoord nieuw account smartschool";
+        $body = "uw wachtwoord voor smartschool is:" . $password . "je kan je wachtwoord aanpassen in je profiel ";
+        $headers = "From: root@localhost.com";
+        if (mail($to, $subject, $body, $headers)) {
+            return sha1($password); //turn the array into a string
+        } else
+            throw new mailmisluktException();
+    }
 }
