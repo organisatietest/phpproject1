@@ -12,7 +12,6 @@ and open the template in the editor.
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="ajaxrequest.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
 
@@ -20,33 +19,47 @@ and open the template in the editor.
             $(document).ready(function() {
                 //listens for typing on the desired field
                 $("#emailadres").keyup(function() {
-                    alert("hier geraak ik");
                     //gets the value of the field
                     var email = $("#emailadres").val();
-                    if (preg_match("/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/", email)) {
-                        //the email is available
-                        $("#emailerror").html("Available");
+                    var atpos = email.indexOf("@");
+                    var dotpos = email.lastIndexOf(".");
+                    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+                        $("#emailerror").html("email not validate");
                     }
                     else {
                         //the email is not available
-                        $("#emailerror").html("Email not available");
+                        $("#emailerror").html("email is validate");
+                        var valid_email = true;
                     }
-
-                    //displays a loader while it is checking the database
-                    $("#emailerror").html('<img alt="" src="/images/loader.gif" />');
+                });
+                $(document).click(function() {
+                   var valid_naam = $("#voornaam").val();
+                   var valid_fnaam = $("#familienaam").val();
+                   var valid_datum = $("#datepicker").val();
+                   var email = $("#emailadres").val();
+                   var atpos = email.indexOf("@");
+                    var dotpos = email.lastIndexOf(".");
+                    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+                        $("#emailerror").html("email not validate");
+                    }
+                    else {
+                        //the email is not available
+                        $("#emailerror").html("email is validate");
+                        var valid_email = true;
+                    }
+                   if (!empty(valid_naam) || !empty(valid_fnaam) || !empty(valid_datum || valid_email === true)){
+                   }
                 });
             });
         </script>
-
-
-
         <script>
             $(function() {
                 $("#datepicker").datepicker({
                     changeMonth: true,
                     changeYear: true
                 });
-            });</script>
+            });
+        </script>
 
         <script>
             function validateForm() {
@@ -151,13 +164,13 @@ and open the template in the editor.
                             <label for="gsmouder2">gsm ouder 2
                                 <input type="text" name="GSMouder2" placeholder="0561234567" id="gsmouder2"><br>
                             </label>
-                            <label for="emailadresouders">emailadres voor ouder *
-                                <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" required>
-                                <img src="/images/ajax-loader.gif" width="16" height="16" style="display:none;">
+                            <label for="emailadres">emailadres voor ouder *
+                                <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadres" autocomplete="off" required>
                                 <span id="emailerror" class="available"></span><br>
                             </label>
                             <div id="rsp_email"><!-- --></div><br>
-                            <input class="buttonToevoegen" type="submit" value="toevoegen"><br>
+                            <input class="buttonToevoegen" type="submit" 
+                                   value="toevoegen"><br>
                         </div>
                     </form>
                     <!-- einde form-->
