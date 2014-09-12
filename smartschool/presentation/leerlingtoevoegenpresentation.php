@@ -18,61 +18,61 @@ and open the template in the editor.
 
         <script>
             $(document).ready(function() {
-            //listens for typing on the desired field
-            alert("hier?");
-                    $("#emailadres").keyup(function() {
-                alert("hier geraak ik");
+                //listens for typing on the desired field
+                $("#emailadres").keyup(function() {
+                    alert("hier geraak ik");
                     //gets the value of the field
                     var email = $("#emailadres").val();
                     if (preg_match("/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/", email)) {
-                         //the email is available
+                        //the email is available
                         $("#emailerror").html("Available");
-                        }
+                    }
                     else {
-                    //the email is not available
-                    $("#emailerror").html("Email not available");
+                        //the email is not available
+                        $("#emailerror").html("Email not available");
                     }
 
-                 //displays a loader while it is checking the database
-                $("#emailerror").html('<img alt="" src="/images/loader.gif" />');
-            }; )});
+                    //displays a loader while it is checking the database
+                    $("#emailerror").html('<img alt="" src="/images/loader.gif" />');
+                });
+            });
         </script>
 
 
 
         <script>
             $(function() {
-            $("#datepicker").datepicker({
-            changeMonth: true,
+                $("#datepicker").datepicker({
+                    changeMonth: true,
                     changeYear: true
-            });
+                });
             });</script>
 
         <script>
-                    function validateForm() {
-                    var x = document.forms["formaanmelden"]["emailadres"].value;
-                            var atpos = x.indexOf("@");
-                            var dotpos = x.lastIndexOf(".");
-                            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+            function validateForm() {
+                var x = document.forms["formaanmelden"]["emailadres"].value;
+                var atpos = x.indexOf("@");
+                var dotpos = x.lastIndexOf(".");
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
                     alert("Not a valid e-mail address");
-                            return false;
-                    }
-                    var x = document.forms["formaanmelden"]["voornaam"].value;
-                            if (x == null || x == "") {
+                    return false;
+                }
+                var x = document.forms["formaanmelden"]["voornaam"].value;
+                if (x == null || x == "") {
                     alert("voornaam moet ingevult worden");
-                            return false;
-                    }
-                    var x = document.forms["formaanmelden"]["familienaam"].value;
-                            if (x == null || x == "") {
+                    return false;
+                }
+                var x = document.forms["formaanmelden"]["familienaam"].value;
+                if (x == null || x == "") {
                     alert("familienaam moet ingevult worden");
-                            return false;
-                    }
-                    var x = document.forms["formaanmelden"]["geboortedatum"].value;
-                            if (x == null || x == "") {
+                    return false;
+                }
+                var x = document.forms["formaanmelden"]["geboortedatum"].value;
+                if (x == null || x == "") {
                     alert("First name must be filled out");
-                            return false;
-                    }
-                    }
+                    return false;
+                }
+            }
         </script>
         <title>Smartschool</title>
 
@@ -105,15 +105,15 @@ and open the template in the editor.
                         <div class="TussenForm">
                             <label for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                                    valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><br>
+                                        valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><br>
                             </label>
                             <label for="familienaam">familienaam *
                                 <input type="text" name="familienaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                                    valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><br>
+                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><br>
                             </label>
                             <label for="datepicker">geboortedatum *
                                 <input type="text" name="geboortedatum" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                                    valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><br>
+                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><br>
                             </label>
                             <label for="straat">straat
                                 <input type="text" name="straat" id="straat"><br>
