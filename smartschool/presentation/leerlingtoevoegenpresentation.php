@@ -100,33 +100,35 @@ and open the template in the editor.
                 <nav class="hoofdmenu">
                     <ul>
                         <!--leraar-->
-                        <li><a href="">opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a></li>
+                        <li><a href="">Leerkracht</a></li>
+                        <li><a href="">Opvolging</a></li>
+                        <li><a class="actief" href="">leerlingen</a>
+                            <ul>
+                                <li><a href="klaslijst.php">Klaslijst</a></li>
+                                <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">agenda</a></li>
-                        <!--ouders-->
-                        <li><a href="">gegevens</a></li>                     
-                        <li><a href="">links</a></li>
                     </ul>
                 </nav>
             </header>
-            <img class="verfvlek" src="images/verfvlek.png" alt="verfvlek" />
             <section>
                 <article class="bgForm">
                     <!--hier komt de inhoud-->   
                     <!-- start form -->
-                    <form id="InvoerForm" method="post" name="formaanmelden" action="leerlingaanmelden.php?action=process" onsubmit="return validateForm();">
+                    <form class="InvoerForm" method="post" name="formaanmelden" action="leerlingaanmelden.php?action=process" onsubmit="return validateForm();">
                         <div class="TussenForm">
-                            <label for="voornaam">voornaam *
+                            <label class="In"  for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><br>
+                                    valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><span class="juist"></span><br>
                             </label>
-                            <label for="familienaam">familienaam *
+                            <label class="In" for="familienaam">familienaam *
                                 <input type="text" name="familienaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><br>
+                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><span class="juist"></span><br>
                             </label>
-                            <label for="datepicker">geboortedatum *
+                            <label class="In" for="datepicker">geboortedatum *
                                 <input type="text" name="geboortedatum" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><br>
+                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><span class="juist"></span><br>
                             </label>
                             <label for="straat">straat
                                 <input type="text" name="straat" id="straat"><br>
@@ -177,11 +179,17 @@ and open the template in the editor.
                 </article>
             </section>
             <section class="Uitloggen">
-                <a href="leerlingaanmelden.php?log=logout">uitloggen</a>
+                <a href="logout.php">uitloggen</a>
+            </section>
+            <section class="SideImages">
+                <img class="SideImageLeft" src="../images/sideImageA.jpg" alt=""/>
+                <img class="SideImageRight" src="../images/sideImageB.jpg" alt=""/>
+                <img class="SideImageLeft" src="../images/sideImageC.jpg" alt=""/>
             </section>
         </section>   
+        
         <footer>
-            <blockquote>Created by <a href="#">Niels</a>, <a href="#">Mathias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
+            <blockquote>Created by <a href="#">Niels</a>, <a href="#">Matthias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
         </footer>
 
     </body>

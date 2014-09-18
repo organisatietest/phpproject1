@@ -8,6 +8,11 @@
     src: url('../Fonts/hello_goodbye/hellogoodbye.otf');
 }
 
+@font-face {
+    font-family:Caviar ;
+    src: url('../Fonts/caviar_dreams/CaviarDreams.ttf');
+}
+
 /*Op iedere pagina hetzelfde*/
 
 *{
@@ -38,11 +43,10 @@ body{
 
 h1{
     background:url('../images/header.png') no-repeat;
-    height:200px;
-    width:600px;
+    height:100px;
+    width:450px;
     float: left;
-    margin-top:-150px;
-    margin-left: -50px;
+    margin-top:-100px;
 }
 
 a:link{
@@ -101,88 +105,98 @@ footer > blockquote{
     background: url('../images/linedpaper.png');
     float:right;
    position: relative;
-   margin-top: 50px;
-   margin-right: -108px;
+   margin-top:-9.5em;
     box-shadow: -5px 5px 20px #4d4d4d;
 }
 .Uitloggen > a{
-    display: inline-block;
-    padding:1em;
+    display: block;
+    padding:1em 1em 1em 1em;
     text-decoration: none;
     font-family:hello;
+    -webkit-transition: padding 1s; /* For Safari 3.1 to 6.0 */
+    transition: padding 1s;
 }
 .Uitloggen > a:hover{
-    border: 1px dotted maroon;
+    padding:3em 1em 1em 1em;
 }
 
 /*Hoofdmenu*/
-
 .hoofdmenu{
-    background:url('../images/linedpaper.png');
-    width:25%;
+    z-index: 9999;
+    position: relative;
     float: right;
-    margin-top: 7em;
-    margin-right: 5em;
-    box-shadow: -5px 5px 20px #4d4d4d;
-}
-
-.hoofdmenu > ul{
-    list-style-type: none;
-    padding:2em;
-}
-
-.hoofdmenu > ul > li{
- padding: 1em;
- text-align: initial;
-
-}
-
-.hoofdmenu > ul > li:before {
-  display: block;
-  margin-left: -1.2em; /*same as padding-left set on li*/
-  width: 1.2em; /*same as padding-left set on li*/
- 
-}
-
-.hoofdmenu > ul > li > a{
-   font-family: hello;
-   text-decoration:none;
-   display: block;
-   color:#46437b;
-   -webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
-    transition: color 1s;
+    margin-top: -4.5em;
+    font-family: Caviar;
    
 }
-
-.hoofdmenu > ul > li > a:hover{
-   color:red;
+.hoofdmenu ul ul {
+	display: none;
 }
 
-
-
+	.hoofdmenu ul li:hover > ul {
+		display: block;
+	}
+.hoofdmenu ul {
+	list-style: none;
+	position: relative;
+	display: inline-block;
+}
+	.hoofdmenu ul:after {
+		content: ""; clear: both; display: block;
+	}
+.hoofdmenu ul li {
+	float: left;
+}
+	.hoofdmenu ul li:hover {
+            color:darkred;
+	}
+		.hoofdmenu ul li:hover a {
+			 color: darkred;
+		}
+	
+	.hoofdmenu ul li a {
+		display: inline-block; 
+                padding:1em;
+		 color: black;; text-decoration: none;
+	}
+.hoofdmenu ul ul {
+	position: absolute; 
+        top: 100%;
+        background:url('../images/linedpaper.png');
+        box-shadow: -5px 5px 15px #4d4d4d;
+        padding:0.2em;
+}
+	.hoofdmenu ul ul li { 
+            float: none;
+                font-size: 12px;
+		position: relative;
+                
+	}
+		.hoofdmenu ul ul li a {
+			display: block;
+			 color: black;
+		}	
+                .hoofdmenu ul ul li a:visited {
+			
+			 color: black;
+		}
+			.hoofdmenu ul ul li a:hover {
+                                border-bottom: 1px darkred solid;
+                                margin-bottom:-1px;
+                                color: darkred;
+			}
+.actief:visited{
+   color:darkgreen;
+   border-bottom: 1px solid darkgreen;
+                        }    
+                        .actief:link{
+   color:darkgreen;    
+   border-bottom: 1px solid darkgreen;
+                        }   
+                                                .actief:hover{
+   color:darkgreen;         
+                        } 
 /*verandert als je op andere pagina belandt*/
-
-.actief{
-    background:url('../images/vinkje.png') no-repeat;
-   
-}
-
-.actief > a{
-    padding-left: 2.5em;
-    color:greenyellow;
-    
-    background-position: left;
-}
-
-.actief > a:visited{
-    
-    color:green;
-
-}
-
-.hoofdmenu > ul > .actief > a:hover{
-  color:green;
-}
 
 .hoofding{
     visibility: hidden;
@@ -355,7 +369,6 @@ h2{
     margin-left: auto;
     margin-right:auto;
     box-shadow: -20px 20px 50px #4d4d4d;
-    border-radius: 10px;
     overflow: visible;
     height: 50em;
     margin-bottom: 5em;
@@ -370,6 +383,7 @@ h2{
    background: url('../images/bgImageA.png');
    padding:1em;
    width:400px;
+   height:200px;
         margin-top: 25px;
     margin-left: 50px;
    overflow:hidden;
@@ -389,17 +403,19 @@ h2{
 .bgKlaslijst{
     background: url('../images/bgImageC.png') repeat;
     height:700px;
-    width:550px;
+    width:850px;
     margin-top: 50px;
     margin-left: 50px;
     position: absolute;
     box-shadow: -5px 5px 20px #4d4d4d;
     border-radius: 15px;
 }
-
+.bgKlaslijst > img{
+    float: left;
+}
 .klaslijst{
     background: url('../images/bgTempForm.png') repeat;
-    width:500px;
+    width:800px;
     height:650px;
     overflow: scroll;
         margin-top: 25px;
@@ -433,13 +449,22 @@ h2{
     margin-left: auto;
     margin-right:auto;
     box-shadow: -20px 20px 50px #4d4d4d;
-    border-radius: 10px;
     overflow: visible;
     height: 50em;
     margin-bottom: 5em;
 }
 
-
+.wikkelLeerkrachtToevoegen{
+    background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
+    width:60em;
+    margin-top:150px;
+    margin-left: auto;
+    margin-right:auto;
+    box-shadow: -20px 20px 50px #4d4d4d;
+    overflow: visible;
+    height: 40em;
+    margin-bottom: 5em;
+}
 
 /*Leerlingen toevoegen formulier*/
 
@@ -450,6 +475,19 @@ h2{
     margin-left: 100px;
     
     position: absolute;
+}
+
+.bgFormLeerkracht{
+    background: url('../images/bgFormTemp.png') no-repeat;
+    height:500px;
+    width:550px;
+    margin-left: 50px;
+    margin-top: 50px;
+    position: absolute;
+}
+.bgFormLeerkracht > form{
+    margin-top: 55px;
+    margin-left: 35px;
 }
 
 .buttonToevoegen{
@@ -468,20 +506,20 @@ h2{
 
 /*Volledig formulier voor het invoeren van neuwe leerlingen*/
 
-#InvoerForm{
+.InvoerForm{
     margin-left: 60px;
     margin-top:35px;
     width:75%;
     float: left;
     background: url('../images/bgTempForm.png');
         box-shadow: -5px 5px 20px #4d4d4d;
+  
 }
 
-#InvoerForm > .TussenForm{
+.InvoerForm > .TussenForm{
     margin: 1em;   
 }
-
-#InvoerForm > .TussenForm > label{
+.InvoerForm > .TussenForm > label{
     display: inline-block;
     float: left;
     clear: left;
@@ -491,8 +529,28 @@ h2{
     padding: 0.5em;
     font-family: hello;
 }
-
-#InvoerForm > .TussenForm > label > input{
+.SideImages{
+    float: right;
+    position: relative;
+    width: 25%;
+    height: 100%;
+        margin-top:2em;
+}
+.SideImages > img{
+   width: 14em;
+   padding: 0.5em;
+   background-color: white;
+   margin: 2em;
+   margin-left: -2em;
+   box-shadow: -5px 5px 20px #4d4d4d;
+}
+.SideImageLeft{
+    transform: rotate(350deg);
+}
+.SideImageRight{
+    transform: rotate(10deg);
+}
+.InvoerForm > .TussenForm > label > input{
     display: inline-block;
     float: right;
     background:none;
@@ -500,7 +558,7 @@ h2{
     border: groove 1px white;
     width:15em;
 }
-#InvoerForm > .TussenForm > label > input:focus{
+.InvoerForm > .TussenForm > label > input:focus{
     border: groove 1px #515850;
   -webkit-box-shadow:0 0 6px #515850;
   -moz-box-shadow:0 0 5px #515850;
@@ -511,26 +569,12 @@ h2{
 
 
 /*Checkboc voor het invoerformulier*/
-
-[id^="Ingevuld-1-"]{
+input[type="checkbox"]{
     border:none;
     float:left;
     position: absolute;
    visibility: hidden;
    margin-top:0.2em;
-   
-}
-#Ingevuld-1-1{
-   margin-left:15em;
-   
-}
-#Ingevuld-1-2{
-   margin-left:14.2em;
-   
-}
-#Ingevuld-1-3{
-   margin-left:13.2em;
-   
 }
 #valid_email{
         border:none;
@@ -545,12 +589,16 @@ h2{
     border:none;
     background: green;
 }
-[id^="Ingevuld-1-"]:checked{
-    visibility: visible;
+input[type="checkbox"]:checked + .juist{
+    width:15px;
+    height:15px;
     border:none;
-    background: green;
+    content: url('../images/vinkje.png');
+    float: right;
+    position:relative;
+    margin-right: 1em;
+   
 }
-
 .Vergeet{
     float: left;
     position: relative;

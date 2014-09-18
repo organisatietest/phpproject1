@@ -14,7 +14,7 @@ and open the template in the editor.
         <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
   
-        <title>Smartschool</title>
+        <title>Smartschool > Klaslijst</title>
 
         <link rel="stylesheet" href="css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
@@ -28,18 +28,21 @@ and open the template in the editor.
                     <ul>
                         <!--leraar-->
                         <li><a href="">opvolging</a></li>
-                        <li class="actief"><a href="">leerlingen</a></li>
+                        <li><a class="actief" href="">leerlingen</a>
+                            <ul>
+                                <li><a class="actief" href="klaslijst.php">Klaslijst</a></li>
+                                <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                            </ul>
+                        </li>
+                        
                         <li><a href="">agenda</a></li>
-                        <!--ouders-->
-                        <li><a href="">gegevens</a></li>                     
-                        <li><a href="">links</a></li>
                     </ul>
                 </nav>
             </header>
-            <img class="verfvlek" src="images/verfvlek.png" alt="verfvlek" />
             <section>
                 <article class="bgKlaslijst">
                     <!--hier komt de inhoud-->   
+                    
                     <div class="klaslijst"><!--omvatende div die de klaslijst heeft als inhoud-->
                         <?php foreach ($klaslijst as $leerling){ ?>
                         <div class="passpoort"><!--repeterende div die voor iedere leerling van de klas herhaald wordt-->
@@ -53,7 +56,7 @@ and open the template in the editor.
                 </article>
             </section>
             <section class="Uitloggen">
-                <a href="klaslijst.php?log=logout">uitloggen</a>
+                <a href="logout.php">uitloggen</a>
             </section>
         </section>   
         <footer>
