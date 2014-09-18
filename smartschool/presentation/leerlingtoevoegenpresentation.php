@@ -179,7 +179,7 @@ and open the template in the editor.
                 </article>
             </section>
             <section class="Uitloggen">
-                <a href="logout.php">uitloggen</a>
+                <a href="leerlingaanmelden.php?log=logout">uitloggen</a>
             </section>
             <section class="SideImages">
                 <img class="SideImageLeft" src="../images/sideImageA.jpg" alt=""/>
@@ -189,7 +189,7 @@ and open the template in the editor.
         </section>   
         
         <footer>
-            <blockquote>Created by <a href="#">Niels</a>, <a href="#">Matthias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
+            <blockquote>Created by <a href="#">Niels</a>, <a href="#">Mathias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
         </footer>
 
     </body>
