@@ -89,7 +89,7 @@ and open the template in the editor.
         </script>
         <title>Smartschool</title>
 
-        <link rel="stylesheet" href="../css/style.css" media="screen">
+        <link rel="stylesheet" href="css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
     </head>
     <body>
@@ -104,7 +104,7 @@ and open the template in the editor.
                         <li><a href="">Opvolging</a></li>
                         <li><a class="actief" href="">leerlingen</a>
                             <ul>
-                                <li><a class="actief" href="klaslijst.php">Klaslijst</a></li>
+                                <li><a href="klaslijst.php">Klaslijst</a></li>
                                 <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
                             </ul>
                         </li>
@@ -118,17 +118,17 @@ and open the template in the editor.
                     <!-- start form -->
                     <form class="InvoerForm" method="post" name="formaanmelden" action="leerlingaanmelden.php?action=process" onsubmit="return validateForm();">
                         <div class="TussenForm">
-                            <label for="voornaam">voornaam *
+                            <label class="In"  for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><br>
+                                    valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><span class="juist"></span><br>
                             </label>
-                            <label for="familienaam">familienaam *
+                            <label class="In" for="familienaam">familienaam *
                                 <input type="text" name="familienaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><br>
+                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><span class="juist"></span><br>
                             </label>
-                            <label for="datepicker">geboortedatum *
+                            <label class="In" for="datepicker">geboortedatum *
                                 <input type="text" name="geboortedatum" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><br>
+                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><span class="juist"></span><br>
                             </label>
                             <label for="straat">straat
                                 <input type="text" name="straat" id="straat"><br>
@@ -180,6 +180,11 @@ and open the template in the editor.
             </section>
             <section class="Uitloggen">
                 <a href="logout.php">uitloggen</a>
+            </section>
+            <section class="SideImages">
+                <img class="SideImageLeft" src="../images/sideImageA.jpg" alt=""/>
+                <img class="SideImageRight" src="../images/sideImageB.jpg" alt=""/>
+                <img class="SideImageLeft" src="../images/sideImageC.jpg" alt=""/>
             </section>
         </section>   
         
