@@ -370,7 +370,6 @@ h2{
    background: url('../images/bgImageA.png');
    padding:1em;
    width:400px;
-   height:200px;
         margin-top: 25px;
     margin-left: 50px;
    overflow:hidden;
@@ -512,12 +511,26 @@ h2{
 
 
 /*Checkboc voor het invoerformulier*/
-input[type="checkbox"]{
+
+[id^="Ingevuld-1-"]{
     border:none;
     float:left;
     position: absolute;
    visibility: hidden;
    margin-top:0.2em;
+   
+}
+#Ingevuld-1-1{
+   margin-left:15em;
+   
+}
+#Ingevuld-1-2{
+   margin-left:14.2em;
+   
+}
+#Ingevuld-1-3{
+   margin-left:13.2em;
+   
 }
 #valid_email{
         border:none;
@@ -532,16 +545,12 @@ input[type="checkbox"]{
     border:none;
     background: green;
 }
-input[type="checkbox"]:checked + .juist{
-    width:15px;
-    height:15px;
+[id^="Ingevuld-1-"]:checked{
+    visibility: visible;
     border:none;
-    content: url('../images/vinkje.png');
-    float: right;
-    position:relative;
-    margin-right: 1em;
-   
+    background: green;
 }
+
 .Vergeet{
     float: left;
     position: relative;
