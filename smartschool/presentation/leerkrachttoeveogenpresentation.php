@@ -76,32 +76,34 @@ and open the template in the editor.
         </script>
         <title>Smartschool</title>
 
-        <link rel="stylesheet" href="css/style.css" media="screen">
+        <link rel="stylesheet" href="../css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
     </head>
     <body>
-        <section class="wikkelLeerlingToevoegen">
+        <section class="wikkelLeerkrachtToevoegen">
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
 
                 <nav class="hoofdmenu">
                     <ul>
                         <!--leraar-->
-                        <li><a href="">opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a></li>
+                        <li><a class="actief" href="">Leerkracht</a></li>
+                        <li><a href="">Opvolging</a></li>
+                        <li><a href="">leerlingen</a>
+                            <ul>
+                                <li><a href="klaslijst.php">Klaslijst</a></li>
+                                <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">agenda</a></li>
-                        <!--ouders-->
-                        <li><a href="">gegevens</a></li>                     
-                        <li><a href="">links</a></li>
                     </ul>
                 </nav>
             </header>
-            <img class="verfvlek" src="images/verfvlek.png" alt="verfvlek" />
             <section>
-                <article class="bgForm">
+                <article class="bgFormLeerkracht">
                     <!--hier komt de inhoud-->   
                     <!-- start form -->
-                    <form id="InvoerForm" method="post" name="formaanmelden" action="leerkrachttoeveogenpresentation.php?action=process" onsubmit="return validateForm();">
+                    <form class="InvoerForm" method="post" name="formaanmelden" action="leerkrachttoeveogenpresentation.php?action=process" onsubmit="return validateForm();">
                         <div class="TussenForm">
                             <label for="emailadresouders">emailadres voor ouder *
                                 <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" required>
@@ -129,6 +131,9 @@ and open the template in the editor.
                     </form>
                     <!-- einde form-->
                 </article>
+            </section>
+            <section class="Uitloggen">
+                <a href="../logout.php">uitloggen</a>
             </section>
         </section>   
         <footer>

@@ -89,7 +89,7 @@ and open the template in the editor.
         </script>
         <title>Smartschool</title>
 
-        <link rel="stylesheet" href="css/style.css" media="screen">
+        <link rel="stylesheet" href="../css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
     </head>
     <body>
@@ -100,21 +100,23 @@ and open the template in the editor.
                 <nav class="hoofdmenu">
                     <ul>
                         <!--leraar-->
-                        <li><a href="">opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a></li>
+                        <li><a href="">Leerkracht</a></li>
+                        <li><a href="">Opvolging</a></li>
+                        <li><a class="actief" href="">leerlingen</a>
+                            <ul>
+                                <li><a class="actief" href="klaslijst.php">Klaslijst</a></li>
+                                <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">agenda</a></li>
-                        <!--ouders-->
-                        <li><a href="">gegevens</a></li>                     
-                        <li><a href="">links</a></li>
                     </ul>
                 </nav>
             </header>
-            <img class="verfvlek" src="images/verfvlek.png" alt="verfvlek" />
             <section>
                 <article class="bgForm">
                     <!--hier komt de inhoud-->   
                     <!-- start form -->
-                    <form id="InvoerForm" method="post" name="formaanmelden" action="leerlingaanmelden.php?action=process" onsubmit="return validateForm();">
+                    <form class="InvoerForm" method="post" name="formaanmelden" action="leerlingaanmelden.php?action=process" onsubmit="return validateForm();">
                         <div class="TussenForm">
                             <label for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
@@ -176,7 +178,11 @@ and open the template in the editor.
                     <!-- einde form-->
                 </article>
             </section>
+            <section class="Uitloggen">
+                <a href="logout.php">uitloggen</a>
+            </section>
         </section>   
+        
         <footer>
             <blockquote>Created by <a href="#">Niels</a>, <a href="#">Matthias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
         </footer>
