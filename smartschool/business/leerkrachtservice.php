@@ -19,4 +19,10 @@ class leerkrachtservice{
         
         return $wachtwoord;
     }
+    
+    public function leerkrachtlijst(){
+        $leerkrachtDAO = new leerkrachtDAO();
+        $lijst = $leerkrachtDAO->leerkrachtlijst();
+        return $lijst;
+    }
 }

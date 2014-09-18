@@ -43,12 +43,11 @@ if(isset($_GET["submited"]) && $_GET["submited"]){
 
 if(isset($_SESSION["aangemeld"])){//controle ingelogd of niet met bij ingelogd contlore op gebruikers niveau
     if(isset($_SESSION["aangemeld"]) && isset($_SESSION["rechten"]) && $_SESSION["rechten"]=="admin_level"){
-        header("location: leerkrachtaanmelden.php");
+        header("location: leerkrachtlijst.php");
     }elseif(isset ($_SESSION["aangemeld"]) && isset($_SESSION["rechten"]) && $_SESSION["rechten"]=="leerkracht_level"){
         header("location: klaslijst.php");
     }elseif(isset ($_SESSION["aangemeld"]) && isset($_SESSION["rechten"]) && $_SESSION["rechten"]=="ouders_level"){
-        //header("location: leerlingaanmelden.php");    //deze staat in comentaat nog geen pagina
-        echo 'welkom ouder';//deze regel zal vervangen worden door de nodige pagina
+        header("location: oudersgegevens.php");
     }else{
         header("location: home.php");
     }

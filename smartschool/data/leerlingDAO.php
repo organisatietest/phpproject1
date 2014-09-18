@@ -6,22 +6,24 @@ $bestaandleerling = null;
 
 class leerlingDAO {
 
-    public function getById($id) {
-        $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
-        $sql = "select gebruikersid, naam, voornaam, wachtwoord, telefoonnr, emailadres, woonplaats, postcode
-                , straat , nummer from gebruiker where gebruiker.id = " . $id;
+    public function getById($id){
+        $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
+        $sql = "select leerlingid, voornaam, familienaam, geboortedatum, straat, huisnr,bus,postcode, telefoonnr
+    , klasid, voornaamouder1, familienaamouder1, voornaamouder2, familienaamouder2, GSMouder1
+    , GSMouder2, emailadres, wachtwoord from leerling where leerlingid ='$id'";
         $resultSet = $dbh->query($sql);
         $rij = $resultSet->fetch();
-        $gebruiker = gebruiker::create($rij["gebruikersid"], $rij["naam"], $rij["voornaam"], $rij["wachtwoord"]
-                        , $rij["telefoonnummer"], $rij["emailadres"], $rij["woonplaats"], $rij["postcode"]
-                        , $rij["straat"], $rij["nummer"], $rij["geblokkeerd"]);
+        $leerling = leerling::create($rij["leerlingid"], $rij["voornaam"], $rij["familienaam"], $rij["geboortedatum"]
+                        , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"],$rij["klasid"]
+                        , $rij["voornaamouder1"], $rij["voornaamouder2"], $rij["familienaamouder1"], $rij["familienaamouder2"]
+                        ,$rij["GSMouder1"],$rij["GSMouder2"],$rij["emailadres"],$rij["wachtwoord"]);
         $dbh = null;
-        return $gebruiker;
+        return $leerling;
     }
-    
-    public function getByKlasId($klasid){
+
+        public function getByKlasId($klasid){
         $klaslijst = array();
-        $dbh =new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
+        $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
         $sql = "select leerlingid, voornaam, familienaam, geboortedatum, straat, huisnr,bus,postcode, telefoonnr
     , klasid, voornaamouder1, familienaamouder1, voornaamouder2, familienaamouder2, GSMouder1
     , GSMouder2, emailadres, wachtwoord from leerling where klasid ='$klasid'";

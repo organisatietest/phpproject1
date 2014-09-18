@@ -17,7 +17,13 @@ class leerlingservice {
         return $klaslijst;
     }
     
-    public function logincheck($emailadres,$wachtwoord){
+    public function getleerlingbyid($id){
+        $leerlingDAO = new leerlingDAO();
+        $leerling = $leerlingDAO->getById($id);
+        return $leerling;
+    }
+
+        public function logincheck($emailadres,$wachtwoord){
         $leerlingDAO = new leerlingDAO();
         $leerlingLogin = $leerlingDAO->getByGebruiker($emailadres, $wachtwoord);
         return $leerlingLogin;

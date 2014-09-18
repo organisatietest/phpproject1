@@ -23,7 +23,20 @@ class leerkrachtDAO{
         return $leerkracht;
     }
     
-    public function getByGebruiker($emailadres,$wachtwoord){
+    public function  leerkrachtlijst(){
+        $lijst = array();
+        $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
+        $sql = "select leerkrachtid,emailadres,wachtwoord,voornaam,familienaam,geboortedatum,foto,klasid,admin from leerkracht where admin=false";
+        $resultset = $dbh->query($sql);
+        foreach ($resultset as $rij){
+            $leerkracht = leerkracht::create($rij["leerkrachtid"],$rij["emailadres"],$rij["wachtwoord"],$rij["voornaam"],$rij["familienaam"],$rij["geboortedatum"],$rij["foto"],$rij["klasid"],$rij["admin"]);
+            array_push($lijst, $leerkracht);
+        }
+        $dbh = null;
+        return $lijst;
+    }
+
+        public function getByGebruiker($emailadres,$wachtwoord){
         $sql = "select leerkrachtid,emailadres,wachtwoord,voornaam,familienaam,geboortedatum,foto,klasid,admin from leerkracht where emailadres ='$emailadres' and wachtwoord='$wachtwoord' ";
         $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
         $resultset = $dbh->query($sql);
