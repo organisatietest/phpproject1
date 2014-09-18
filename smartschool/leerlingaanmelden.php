@@ -14,7 +14,8 @@ if(isset($_GET["log"]) && $_GET["log"] == "logout" && isset($_SESSION["aangemeld
 }
 
 //controle voor het level van authenticatie controle structuur
-if (isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"] && isset($_SESSION["rechten"]) && $_SESSION["rechten"] == "leerkracht_level") {
+if (isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"] && isset($_SESSION["rechten"]) &&
+        $_SESSION["rechten"] == "leerkracht_level" && !isset($_GET["log"])) {
         //alle controle voor invoeging in db
         if (!isset($_GET["action"])) {
             $action = null;
