@@ -176,6 +176,9 @@ and open the template in the editor.
                     <!-- einde form-->
                 </article>
             </section>
+            <section class="Uitloggen">
+                <a href="klaslijst.php?log=logout">uitloggen</a>
+            </section>
         </section>   
         <footer>
             <blockquote>Created by <a href="#">Niels</a>, <a href="#">Matthias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>

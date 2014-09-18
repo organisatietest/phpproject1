@@ -3,13 +3,19 @@
 session_start();
 
 require_once ("business/leerlingservice.php");
+require_once ("business/leerkrachtservice.php");
 require_once ("exceptions/EmailadresBestaatException.php");
 
 $leerlingsvc = new leerlingservice;
 
-if (isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"]) {
-    if (isset($_SESSION["rechten"]) && $_SESSION["rechten"] == "leerkracht_level") {
+if(isset($_GET["log"]) && $_GET["log"] == "logout" && isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"] &&
+        isset($_SESSION["rechten"]) && $_SESSION["rechten"] == "leerkracht_level"){
+    session_destroy();
+}
 
+//controle voor het level van authenticatie controle structuur
+if (isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"] && isset($_SESSION["rechten"]) && $_SESSION["rechten"] == "leerkracht_level") {
+        //alle controle voor invoeging in db
         if (!isset($_GET["action"])) {
             $action = null;
         } else
@@ -96,7 +102,6 @@ if (isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"]) {
                 $error = $_GET["error"];
             include("presentation/leerlingtoevoegenpresentation.php");
         }
-    }
 }else {
     header("location: home.php");
 }

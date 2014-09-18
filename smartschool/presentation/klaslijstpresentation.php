@@ -53,7 +53,7 @@ and open the template in the editor.
                 </article>
             </section>
             <section class="Uitloggen">
-                <a href="">uitloggen</a>
+                <a href="klaslijst.php?log=logout">uitloggen</a>
             </section>
         </section>   
         <footer>
