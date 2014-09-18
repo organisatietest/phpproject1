@@ -1,4 +1,5 @@
 <?php
+require_once("data/dbconfig.php");
 $id=$_POST['id'];
 
 
@@ -7,7 +8,7 @@ $id=$_POST['id'];
 
 // connexion à la base de données
  try {
- $bdd = new PDO('mysql:host=localhost;dbname=smartschool', 'root', '');
+ $bdd = new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
  } catch(Exception $e) {
  exit('Impossible de se connecter à la base de données.');
  }
