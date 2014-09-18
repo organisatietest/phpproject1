@@ -76,7 +76,7 @@ and open the template in the editor.
         </script>
         <title>Smartschool > Leerkracht toevoegen</title>
 
-        <link rel="stylesheet" href="../css/style.css" media="screen">
+        <link rel="stylesheet" href="css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
     </head>
     <body>
