@@ -5,7 +5,7 @@
 
 @font-face {
     font-family:hello ;
-    src: url('../Fonts/hello_goodbye/hellogoodbye.otf');
+    src: url('../Fonts/girls_have_many_secrets/Girls Have Many Secrets.ttf');
 }
 
 @font-face {
@@ -20,25 +20,9 @@
     padding:0;
 }
 
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing:    border-box;
-  box-sizing:         border-box;
-}
-
-html {
-  height: 100%;
-}
-
 body{
-    position: relative;
     margin: 0;
-    padding-bottom: 4rem;
-    min-height: 100%;
-    background: url('../images/bgImageLeerkrachtOuders.png') repeat;
-    
+    background: url('../images/wood.png') repeat;
 }
 
 h1{
@@ -47,6 +31,7 @@ h1{
     width:450px;
     float: left;
     margin-top:-100px;
+    margin-left: 600px;
 }
 
 a:link{
@@ -70,22 +55,6 @@ a:visited{
     
 }
 
-footer{
-   position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-   background:url('../images/bgImageA.png');
-}
-
-footer > blockquote{
-    font-family: hello;
-    padding-top: 1.5em;
-    padding-left: 1em;
-}
-
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -100,27 +69,100 @@ footer > blockquote{
     background: url('../images/bgImageInhoudLeerkrachtOuders.png');
     
 }
-
-.Uitloggen{
-    background: url('../images/linedpaper.png');
-    float:right;
-   position: relative;
-   margin-top:-9.5em;
-    box-shadow: -5px 5px 20px #4d4d4d;
+h3{
+    position: absolute;
+    margin-top: -5em;
+   margin-left: 4em;
+   font-family: hello;
+   font-size: 2em;
+   border-bottom: double 5px black;
+   
 }
-.Uitloggen > a{
-    display: block;
-    padding:1em 1em 1em 1em;
-    text-decoration: none;
-    font-family:hello;
-    -webkit-transition: padding 1s; /* For Safari 3.1 to 6.0 */
-    transition: padding 1s;
-}
-.Uitloggen > a:hover{
-    padding:3em 1em 1em 1em;
-}
-
 /*Hoofdmenu*/
+nav
+{
+    position: fixed;
+    left: -17em;
+    top: 0;
+    bottom: 0;
+    background:url('../images/bgNav.png');
+    box-shadow: 4px 0 5px rgba(0,0,0,0.2);
+    z-index: 1;
+    cursor: pointer;
+    border-radius:0 15px 15px 0;
+    font-family: Caviar;
+    height: 24em;
+    content: 'Menu';
+}
+ 
+nav:after
+{
+
+}
+nav ul
+{
+    
+    width: 19em;
+    list-style-type: none;
+    margin: 0;
+    padding: 1em;
+    margin-top: 2em;
+}
+nav:hover
+{
+    left: 0;
+}
+nav ul li
+{
+    margin: 0.2em;
+    
+    
+}
+nav ul ul{
+    margin-top: -0.5em;
+    margin-left: -1em;
+    margin-bottom: -0.7em;
+    width: 14em;
+}
+nav ul ul li{
+    font-size: 12px;
+}
+nav ul li a
+{
+    background:url('../images/bgImageC.png');
+    padding: 0.5em;
+    display: block;
+    border-left: 5px darkred solid;
+    text-decoration: none;
+    box-shadow: 4px 0 5px rgba(0,0,0,0.2);
+    color:white;
+}
+nav ul li a:visited{
+    color:white;
+}
+nav ul li a:hover
+{
+    text-decoration: none;
+    border-left-color: green;
+    background: url('../images/bgImageB.png');
+    color: white;
+}
+.uitlog{
+    background:url('../images/bgImageC.png');
+    color:white;
+    border:none;
+}
+.uitlog:visited{
+    color:white;
+}
+.uitlog:link{
+    color: white;
+}
+.uitlog:hover{
+    background: white;
+    color:darkred;
+}
+/*
 .hoofdmenu{
     z-index: 9999;
     position: relative;
@@ -185,16 +227,19 @@ footer > blockquote{
                                 margin-bottom:-1px;
                                 color: darkred;
 			}
+*/
+.actief{
+    border-left-color: green;
+}
 .actief:visited{
-   color:darkgreen;
-   border-bottom: 1px solid darkgreen;
+   background: url('../images/bgImageB.png');
                         }    
                         .actief:link{
-   color:darkgreen;    
-   border-bottom: 1px solid darkgreen;
+   color:white;    
+    background: url('../images/bgImageB.png');
                         }   
                                                 .actief:hover{
-   color:darkgreen;         
+   color:white;         
                         } 
 /*verandert als je op andere pagina belandt*/
 
@@ -363,16 +408,16 @@ h2{
 /*Klaslijst*/
 
 .wikkel{
-    background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
-    width:60em;
+    width:70em;
     margin-top:150px;
     margin-left: auto;
     margin-right:auto;
-    box-shadow: -20px 20px 50px #4d4d4d;
     overflow: visible;
-    height: 50em;
+    height: 40em;
     margin-bottom: 5em;
-    min-height: 100%;
+    background:url('../images/linedpaper.png');
+        border:10px solid darkgreen;
+        border-radius: 25px;
 }
 
 
@@ -383,14 +428,12 @@ h2{
    background: url('../images/bgImageA.png');
    padding:1em;
    width:400px;
-   height:200px;
+   height:100px;
         margin-top: 25px;
-    margin-left: 50px;
    overflow:hidden;
    font-family: hello;
     box-shadow: -5px 5px 20px #4d4d4d;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: 1em;
 }
 
 .passpoort > img{
@@ -402,9 +445,9 @@ h2{
 
 .bgKlaslijst{
     background: url('../images/bgImageC.png') repeat;
-    height:700px;
-    width:850px;
-    margin-top: 50px;
+    height:600px;
+    width:525px;
+    margin-top: 25px;
     margin-left: 50px;
     position: absolute;
     box-shadow: -5px 5px 20px #4d4d4d;
@@ -415,8 +458,8 @@ h2{
 }
 .klaslijst{
     background: url('../images/bgTempForm.png') repeat;
-    width:800px;
-    height:650px;
+    width:475px;
+    height:550px;
     overflow: scroll;
         margin-top: 25px;
     margin-left: 25px;
@@ -443,15 +486,16 @@ h2{
 /*LeerlingenToevoegen.php*/
 
 .wikkelLeerlingToevoegen{
-    background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
-    width:60em;
+    width:70em;
     margin-top:150px;
     margin-left: auto;
     margin-right:auto;
-    box-shadow: -20px 20px 50px #4d4d4d;
     overflow: visible;
-    height: 50em;
+    height: 40em;
     margin-bottom: 5em;
+    background:url('../images/linedpaper.png');
+        border:10px solid darkgreen;
+        border-radius: 25px;
 }
 
 .wikkelLeerkrachtToevoegen{
@@ -460,7 +504,6 @@ h2{
     margin-top:150px;
     margin-left: auto;
     margin-right:auto;
-    box-shadow: -20px 20px 50px #4d4d4d;
     overflow: visible;
     height: 40em;
     margin-bottom: 5em;
@@ -468,14 +511,7 @@ h2{
 
 /*Leerlingen toevoegen formulier*/
 
-.bgForm{
-    background: url('../images/bgForm2.png') no-repeat;
-    height:800px;
-    width:550px;
-    margin-left: 100px;
-    
-    position: absolute;
-}
+
 
 .bgFormLeerkracht{
     background: url('../images/bgFormTemp.png') no-repeat;
@@ -494,7 +530,11 @@ h2{
     font-family: hello;
     padding: 1em;
     width:250px;
-    margin-left: 4em;
+    position: relative;
+    margin-left: 37em;
+    margin-top: 25em;
+    background: none;
+    border:solid 2px black;
 }
 
 .buttonToevoegen:hover{
@@ -507,54 +547,39 @@ h2{
 /*Volledig formulier voor het invoeren van neuwe leerlingen*/
 
 .InvoerForm{
-    margin-left: 60px;
-    margin-top:35px;
-    width:75%;
+    margin-left: 4em;
+    margin-top: -6em;
+    width:60em;
+    height:450px;
     float: left;
     background: url('../images/bgTempForm.png');
-        box-shadow: -5px 5px 20px #4d4d4d;
-  
+    box-shadow: 8px 0 10px rgba(0,0,0,0.2);
+    position: absolute;
 }
 
 .InvoerForm > .TussenForm{
+    position: absolute;
     margin: 1em;   
 }
 .InvoerForm > .TussenForm > label{
     display: inline-block;
     float: left;
     clear: left;
-    width: 250px;
+    width: 350px;
     text-align: left;
     margin:0.2em;
     padding: 0.5em;
     font-family: hello;
 }
-.SideImages{
-    float: right;
-    position: relative;
-    width: 25%;
-    height: 100%;
-        margin-top:2em;
+.InvoerForm > .FormRechts{
+    margin-left: 30em;
 }
-.SideImages > img{
-   width: 14em;
-   padding: 0.5em;
-   background-color: white;
-   margin: 2em;
-   margin-left: -2em;
-   box-shadow: -5px 5px 20px #4d4d4d;
-}
-.SideImageLeft{
-    transform: rotate(350deg);
-}
-.SideImageRight{
-    transform: rotate(10deg);
-}
+
 .InvoerForm > .TussenForm > label > input{
     display: inline-block;
     float: right;
     background:none;
-    margin-right: -8em;
+    margin-right: -2em;
     border: groove 1px white;
     width:15em;
 }
@@ -569,13 +594,14 @@ h2{
 
 
 /*Checkboc voor het invoerformulier*/
-input[type="checkbox"]{
+/*input[type="checkbox"]{
     border:none;
     float:left;
     position: absolute;
    visibility: hidden;
    margin-top:0.2em;
 }
+*/
 #valid_email{
         border:none;
     float:left;
@@ -615,72 +641,39 @@ input[type="checkbox"]:checked + .juist{
     text-decoration: none;
    
 }
-
-/*
-.tempForm{
-    margin-left: 75px;
-    margin-top:10px;
-    width:62%;
-    float: left;
-    background: url('../images/bgTempForm.png');
-        box-shadow: -5px 5px 20px #4d4d4d;
+#doodle{
+    position: relative;
+    margin-left: 57em;
+    height:10em;
+    margin-top: 2em;
 }
-.tempForm > div{
-    margin: 1em;
-    
-    
-}
-.tempForm > div > label{
-     display: inline-block;
-    float: left;
-    clear: left;
-    width: 250px;
-    text-align: left;
-    margin:0.2em;
-    padding: 0.5em;
-    font-family: hello;
-}
-.tempForm > div > label > input{
-    display: inline-block;
-    float: right;
-    background:none;
-    border: groove 1px white;
-}
-.tempForm > div > label > input:focus{
-    border: groove 1px #515850;
-  -webkit-box-shadow:0 0 6px #515850;
-  -moz-box-shadow:0 0 5px #515850;
-  box-shadow:0 0 5px #515850;
-  outline: none;
-}
-*/
-.submenu{
-    width:25%;
-    float: left;
-    position:relative;
-}
-.submenu > ul{
-    list-style-type: none;
-
-}
-.submenu > ul > li{
-
-}
-.submenu > ul > li > a{
-    color:white;
-    font-family: hello;
-   padding:0.5em;
-   text-decoration: none;
-      display: block;
-    
-           background-image: url('../images/bgImageB.png');
-    margin: 1em;  
-     box-shadow: -5px 5px 20px #4d4d4d;
+footer{  
   
-   
-}
-.submenu > ul > li > a:hover{
-   margin-left:-1em;
-   padding-left:1em;
-    background-image: url('../images/bgImageC.png');
+  float:right;
+  text-align:center;     
+  width: 200px;    
+  margin: 25px;
+  margin-top: -12em;
+  margin-left: 50em;
+  margin-right: auto;
+  min-height:125px;
+  max-height:125px;
+  padding-top:5px;
+  position:absolute;   
+  border:1px solid #E8E8E8;  
+  border-top:60px solid #fdfd86;
+  font-family:hello;    
+  font-size:18px;      
+  border-bottom-right-radius: 60px 5px;
+  display:inline-block;    
+  background: #ffff88; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffff88), color-stop(82%,#ffff88), color-stop(82%,#ffff88), color-stop(100%,#ffffc6)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
+background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ffffc6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+transform: rotate(10deg);
+box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
 }

@@ -100,24 +100,27 @@ and open the template in the editor.
                 <nav class="hoofdmenu">
                     <ul>
                         <!--leraar-->
-                        <li><a href="">Leerkracht</a></li>
-                        <li><a href="">Opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a>
+                        <li><a href="leerkrachtaanmelden.php">Leerkracht</a></li>
+                        <li><a href="aanwezigheden.php">Opvolging</a></li>
+                        <li><a class="actief" href="klaslijst.php">leerlingen</a>
                             <ul>
                                 <li><a href="klaslijst.php">Klaslijst</a></li>
-                                <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                                <li><a class="actief" href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
                             </ul>
                         </li>
                         <li><a href="">agenda</a></li>
+                        <li><a class="uitlog" href="../logout.php">uitloggen</a></li>
                     </ul>
                 </nav>
             </header>
             <section>
                 <article class="bgForm">
+                    <img id="doodle" src="images/arrow.png" alt="arrow"/>
                     <!--hier komt de inhoud-->   
                     <!-- start form -->
+                    <h3>Invoeren van gegevens leerling</h3>
                     <form class="InvoerForm" method="post" name="formaanmelden" action="leerlingaanmelden.php?action=process" onsubmit="return validateForm();">
-                        <div class="TussenForm">
+                        <div class="TussenForm FormLinks">
                             <label class="In"  for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
                                     valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><span class="juist"></span><br>
@@ -148,6 +151,8 @@ and open the template in the editor.
                             <label for="tel">telefoonnummer
                                 <input type="text" name="telefoonnr" placeholder="0561234567" id="tel"><br>
                             </label>
+                        </div>
+                        <div class="TussenForm FormRechts">
                             <label for="vnouder1">voornaam ouder 1
                                 <input type="text" name="voornaamouder1" id="vnouder1"><br>
                             </label>
@@ -170,27 +175,20 @@ and open the template in the editor.
                                 <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadres" autocomplete="off" required>
                                 <span id="emailerror" class="available"></span><br>
                             </label>
+                            </div>
                             <div id="rsp_email"><!-- --></div><br>
                             <input class="buttonToevoegen" type="submit" 
                                    value="toevoegen"><br>
-                        </div>
                     </form>
                     <!-- einde form-->
+                    
                 </article>
             </section>
-            <section class="Uitloggen">
-                <a href="leerlingaanmelden.php?log=logout">uitloggen</a>
-            </section>
-            <section class="SideImages">
-                <img class="SideImageLeft" src="../images/sideImageA.jpg" alt=""/>
-                <img class="SideImageRight" src="../images/sideImageB.jpg" alt=""/>
-                <img class="SideImageLeft" src="../images/sideImageC.jpg" alt=""/>
-            </section>
-        </section>   
-        
+           
+        </section>
         <footer>
-            <blockquote>Created by <a href="#">Niels</a>, <a href="#">Mathias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
+            <blockquote>Created by <a href="#">Niels</a>, <a href="#">Matthias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
         </footer>
-
+        
     </body>
 </html>
