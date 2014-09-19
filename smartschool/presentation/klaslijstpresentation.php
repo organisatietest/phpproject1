@@ -36,14 +36,16 @@ and open the template in the editor.
                             </ul>
                         </li>
                         <li><a href="">agenda</a></li>
-                        <li><a class="uitlog" href="../logout.php">uitloggen</a></li>
+                        <li><a class="uitlog" href="klaslijst.php?log=logout">uitloggen</a></li>
                     </ul>
                 </nav>
             </header>
             <section>
                 <article class="bgKlaslijst">
-                    <!--hier komt de inhoud-->   
-                    
+                    <!--hier komt de inhoud-->  
+                 
+                    <img id="doodle" src="images/arrow.png" alt="arrow"/>
+                    <h3 id="KL">Klaslijst bekijken</h3>
                     <div class="klaslijst"><!--omvatende div die de klaslijst heeft als inhoud-->
                         <?php foreach ($klaslijst as $leerling){ ?>
                         <div class="passpoort"><!--repeterende div die voor iedere leerling van de klas herhaald wordt-->

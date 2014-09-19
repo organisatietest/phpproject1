@@ -76,7 +76,7 @@ and open the template in the editor.
         </script>
         <title>Smartschool > Leerkracht toevoegen</title>
 
-        <link rel="stylesheet" href="../css/style.css" media="screen">
+        <link rel="stylesheet" href="css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
     </head>
     <body>
@@ -87,16 +87,16 @@ and open the template in the editor.
                 <nav class="hoofdmenu">
                     <ul>
                         <!--leraar-->
-                        <li><a class="actief" href="">Leerkracht</a></li>
-                        <li><a href="">Opvolging</a></li>
-                        <li><a href="">leerlingen</a>
+                        <li><a class="actief" href="leerkrachtaanmelden.php">Leerkracht</a></li>
+                        <li><a href="aanwezigheden.php">Opvolging</a></li>
+                        <li><a href="klaslijst.php">leerlingen</a>
                             <ul>
                                 <li><a href="klaslijst.php">Klaslijst</a></li>
-                                <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                                <li><a  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
                             </ul>
                         </li>
                         <li><a href="">agenda</a></li>
-                        <li><a href="../logout.php">uitloggen</a></li>
+                        <li><a class="uitlog" href="leerkrachtaanmelden.php?log=logout">uitloggen</a></li>
                     </ul>
                 </nav>
             </header>
@@ -104,7 +104,9 @@ and open the template in the editor.
                 <article class="bgFormLeerkracht">
                     <!--hier komt de inhoud-->   
                     <!-- start form -->
-                    <form class="InvoerForm" method="post" name="formaanmelden" action="leerkrachttoeveogenpresentation.php?action=process" onsubmit="return validateForm();">
+                    <img id="doodle" src="images/arrow.png" alt="arrow"/>
+                    <h3 id="LT">Toevoegen van nieuwe leerkrachten</h3>
+                    <form class="InvoerForm InvoerLeerkracht" method="post" name="formaanmelden" action="leerkrachttoeveogenpresentation.php?action=process" onsubmit="return validateForm();">
                         <div class="TussenForm">
                             <label for="emailadresouders">emailadres voor ouder *
                                 <input type="mail" name="emailadres" placeholder="abc123@example.com" id="emailadresouders" required>
@@ -127,14 +129,11 @@ and open the template in the editor.
                             <label for="klas">klas
                                 <input type="text" name="klas" placeholder="klas" id="klas"><br>
                             </label>
-                            <input class="buttonToevoegen" type="submit" value="toevoegen"><br>
+                            <input class="buttonToevoegen ToevoegenLeerkracht" type="submit" value="toevoegen"><br>
                         </div>
                     </form>
                     <!-- einde form-->
                 </article>
-            </section>
-            <section class="Uitloggen">
-                <a href="../logout.php">uitloggen</a>
             </section>
         </section>   
         <footer>

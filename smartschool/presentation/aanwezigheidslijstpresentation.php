@@ -27,19 +27,24 @@ and open the template in the editor.
                 <nav class="hoofdmenu">
                     <ul>
                         <!--leraar-->
-                        <li><a href="">opvolging</a></li>
-                        <li class="actief"><a href="">leerlingen</a></li>
+                        <li><a href="leerkrachtaanmelden.php">Leerkracht</a></li>
+                        <li><a class="actief" href="aanwezigheden.php">Opvolging</a></li>
+                        <li><a href="klaslijst.php">leerlingen</a>
+                            <ul>
+                                <li><a href="klaslijst.php">Klaslijst</a></li>
+                                <li><a  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">agenda</a></li>
-                        <!--ouders-->
-                        <li><a href="">gegevens</a></li>                     
-                        <li><a href="">links</a></li>
+                        <li><a class="uitlog" href="aanwezigheden.php?log=logout">uitloggen</a></li>
                     </ul>
                 </nav>
             </header>
-            <img class="verfvlek" src="images/verfvlek.png" alt="verfvlek" />
             <section>
                 <article class="bgKlaslijst">
                     <!--hier komt de inhoud--> 
+                    <img id="doodle" src="images/arrow.png" alt="arrow"/>
+                    <h3 id="AW">Afwezigheden aanvinken</h3>
                     <form method="post" action="aanwezigheden.php?action=afw" id="inlogform">
                         <div class="klaslijst"><!--omvatende div die de klaslijst heeft als inhoud-->
                             <?php foreach ($klaslijst as $leerling) { ?>
@@ -47,8 +52,8 @@ and open the template in the editor.
                                 <div class="passpoort"><!--repeterende div die voor iedere leerling van de klas herhaald wordt-->
                                     <img src="Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"><br/>
                                     <b>Voornaam</b>: <?php echo " ", $leerling->getVoornaam(); ?><br/>
-                                    Familienaam: <?php echo " ", $leerling->getFamilienaam(); ?><br/>
-                                    Geboortedatum: <?php echo " ", $leerling->getGeboortedatum(); ?><br/>
+                                    <b>Familienaam</b>: <?php echo " ", $leerling->getFamilienaam(); ?><br/>
+                                    <b>Geboortedatum</b>: <?php echo " ", $leerling->getGeboortedatum(); ?><br/>
                                     <label id="afwezig">afwezig</label>
                                     <?php print($leerling->getLeerlingid());?>
                                     <input type="checkbox" name="afwezig<?php echo $leerling->getLeerlingid()?>" id="afwezig"/>
@@ -56,12 +61,9 @@ and open the template in the editor.
 
                             <?php } ?>
                         </div><!--einde omvatende div-->
-                        <input type="submit" value="afwezigheden doorgeven"/>
+                        <input id="AfwezigDoor" type="submit" value="afwezigheden doorgeven"/>
                     </form>
                 </article>
-            </section>
-            <section class="Uitloggen">
-                <a href="">uitloggen</a>
             </section>
         </section>   
         <footer>

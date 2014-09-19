@@ -25,36 +25,39 @@ and open the template in the editor.
                 <h1><span class="hoofding">Smart School</span></h1>
 
                 <nav class="hoofdmenu">
+                    <h4>Menu</h4>
                     <ul>
                         <!--leraar-->
-                        <li><a href="">opvolging</a></li>
-                        <li class="actief"><a href="">leerlingen</a></li>
+                        <li><a class="actief" href="leerkrachtlijst.php">Leerkracht</a></li>
+                        <li><a href="aanwezigheden.php">Opvolging</a></li>
+                        <li><a href="klaslijst.php">leerlingen</a>
+                            <ul>
+                                <li><a href="klaslijst.php">Klaslijst</a></li>
+                                <li><a  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">agenda</a></li>
-                        <!--ouders-->
-                        <li><a href="">gegevens</a></li>                     
-                        <li><a href="">links</a></li>
+                        <li><a class="uitlog" href="leerkrachtlijst.php?log=logout">uitloggen</a></li>
                     </ul>
                 </nav>
             </header>
-            <img class="verfvlek" src="images/verfvlek.png" alt="verfvlek" />
             <section>
                 <article class="bgKlaslijst">
-                    <!--hier komt de inhoud-->   
+                    <!--hier komt de inhoud-->  
+                    <img id="doodle" src="images/arrow.png" alt="arrow"/>
+                    <h3 id="LL">Leerkrachten</h3>
                     <div class="klaslijst"><!--omvatende div die de klaslijst heeft als inhoud-->
                         <?php foreach ($leerkrachtlijst as $leerkracht){ ?>
                         <div class="passpoort"><!--repeterende div die voor iedere leerling van de klas herhaald wordt-->
                             <img src="Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"><br/>
                             <b>Voornaam</b>: <?php echo " ",$leerkracht->getVoornaam(); ?><br/>
-                            Familienaam: <?php echo " ",$leerkracht->getFamilienaam(); ?><br/>
-                            Geboortedatum: <?php echo " ",$leerkracht->getGeboortedatum(); ?><br/>
+                            <b>Familienaam:</b> <?php echo " ",$leerkracht->getFamilienaam(); ?><br/>
+                            <b>Geboortedatum:</b> <?php echo " ",$leerkracht->getGeboortedatum(); ?><br/>
                             Klas: <?php echo " ",$leerkracht->getKlasid(); ?><br/>
                         </div><!--einde reeterende div-->
                         <?php } ?>
                     </div><!--einde omvatende div-->
                 </article>
-            </section>
-            <section class="Uitloggen">
-                <a href="leerkrachtlijst.php?log=logout">uitloggen</a>
             </section>
         </section>   
         <footer>
