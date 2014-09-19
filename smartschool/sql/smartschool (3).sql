@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2014 at 11:01 AM
+-- Generation Time: Sep 19, 2014 at 09:28 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -36,16 +36,24 @@ CREATE TABLE IF NOT EXISTS `afwezigheden` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `agenda`
+-- Table structure for table `evenement`
 --
 
-CREATE TABLE IF NOT EXISTS `agenda` (
-  `agendaid` int(5) NOT NULL AUTO_INCREMENT,
-  `datum` date NOT NULL,
-  `agendapunt` varchar(25) NOT NULL,
-  `omschrijving` text NOT NULL,
-  PRIMARY KEY (`agendaid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `evenement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_bin NOT NULL,
+  `start` datetime NOT NULL,
+  `end` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `evenement`
+--
+
+INSERT INTO `evenement` (`id`, `title`, `start`, `end`) VALUES
+(3, 'tester', '2014-09-15 00:00:00', '2014-09-17 00:00:00'),
+(11, 'test', '2014-09-23 00:00:00', '2014-09-23 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -78,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `klas` (
 --
 
 CREATE TABLE IF NOT EXISTS `leerkracht` (
-  `leerkrachid` int(3) NOT NULL AUTO_INCREMENT,
+  `leerkrachtid` int(3) NOT NULL AUTO_INCREMENT,
   `emailadres` varchar(50) NOT NULL,
   `wachtwoord` varchar(40) NOT NULL,
   `voornaam` varchar(20) NOT NULL,
@@ -86,8 +94,17 @@ CREATE TABLE IF NOT EXISTS `leerkracht` (
   `geboortedatum` date NOT NULL,
   `foto` varchar(50) NOT NULL,
   `klasid` int(3) NOT NULL,
-  PRIMARY KEY (`leerkrachid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `admin` tinyint(1) NOT NULL,
+  PRIMARY KEY (`leerkrachtid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `leerkracht`
+--
+
+INSERT INTO `leerkracht` (`leerkrachtid`, `emailadres`, `wachtwoord`, `voornaam`, `familienaam`, `geboortedatum`, `foto`, `klasid`, `admin`) VALUES
+(1, 'admin@smartschool.be', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin', 'unknown', '1111-11-11', '', 1, 1),
+(2, 'paul.de_bakker@skynet.be', '5116bc3b41f7a391438d6c6a23cd540f4d70d5e8', 'paul', 'de bakker', '1978-04-01', '', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -115,8 +132,21 @@ CREATE TABLE IF NOT EXISTS `leerling` (
   `GSMouder2` int(15) NOT NULL,
   `emailadres` varchar(50) NOT NULL,
   `wachtwoord` varchar(40) NOT NULL,
-  PRIMARY KEY (`leerlingid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`leerlingid`),
+  UNIQUE KEY `emailadres` (`emailadres`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `leerling`
+--
+
+INSERT INTO `leerling` (`leerlingid`, `voornaam`, `familienaam`, `geboortedatum`, `foto`, `straat`, `huisnr`, `bus`, `postcode`, `telefoonnr`, `klasid`, `voornaamouder1`, `familienaamouder1`, `voornaamouder2`, `familienaamouder2`, `GSMouder1`, `GSMouder2`, `emailadres`, `wachtwoord`) VALUES
+(1, 'fdsqfdqs', 'gfqdfsqgsdq', '2014-09-22', '', 'fdsqfdsq', 6, 'a3', 8659, 561234567, 1, 'fdsqmphnfsq', 'gfqgjpfq', 'qgjdkosqmjg', 'gdsqjgkodsqjp', 561234567, 561234567, '123b@hotmail.com', 'c9ef04c0132062413bdeaf3fe59d3c3a3602a019'),
+(2, 'niels', 'vromanos', '2014-02-09', '', '', 0, '', 0, 0, 1, '', '', '', '', 0, 0, 'abd@hotmail.com', '5ea90870feae5cb40fbcd09b6ece0084ac613bfa'),
+(3, 'karel', 'schoep', '2014-09-15', '', '', 0, '', 0, 0, 0, '', '', '', '', 0, 0, 'karelschoep@hotmail.com', 'fa7eca88d2efd20161e807a1b17715d42513d0d6'),
+(4, 'hans', 'schoep', '2009-01-14', '', '', 0, '', 0, 0, 1, '', '', '', '', 0, 0, 'paschoep@hotmail.com', '874c0585e6774c8d14f2470273c1bacfa0558cec'),
+(5, 'zot', 'fdsqfq', '2009-01-12', '', '', 0, '', 0, 0, 0, '', '', '', '', 0, 0, 'fdsqfq@hotmail.com', 'e65162d9d20548e44339a880d21f8e74e7526928'),
+(6, 'jfkdllsq', 'fdsqgfsq', '2014-09-16', '', '', 0, '', 0, 0, 0, '', '', '', '', 0, 0, 'niels.012345@hotmail.com', '2ac39dc3ecbd7255c32f0db3e3d686288b1e972d');
 
 -- --------------------------------------------------------
 
