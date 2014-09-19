@@ -50,11 +50,10 @@ and open the template in the editor.
                                     Familienaam: <?php echo " ", $leerling->getFamilienaam(); ?><br/>
                                     Geboortedatum: <?php echo " ", $leerling->getGeboortedatum(); ?><br/>
                                     <label id="afwezig">afwezig</label>
-                                    <?php print($leerling->getLeerlingid());?>
-                                    <input type="checkbox" name="afwezig<?php echo $leerling->getLeerlingid()?>" value="<?php echo $leerling->getLeerlingid()?>" id="afwezig"/>
+                                    <input type="checkbox" name="afwezig<?php echo $j ?>"/>
                                 </div><!--einde reeterende div-->
 
-                            <?php } ?>
+                            <?php $j++; } ?>
                         </div><!--einde omvatende div-->
                         <input type="submit" value="afwezigheden doorgeven"/>
                     </form>

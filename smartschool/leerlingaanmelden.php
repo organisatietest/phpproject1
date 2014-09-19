@@ -95,7 +95,8 @@ if (isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"] && isset($_SESSION["
                     exit(0);
                 }
             } else {
-                print("oke");
+                header("location:aanmelden.php?error=fouteinvoer");
+                exit(0);
             }
         } else {
             if (!isset($_GET["error"])) {
