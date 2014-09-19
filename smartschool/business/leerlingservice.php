@@ -23,10 +23,20 @@ class leerlingservice {
         return $leerling;
     }
 
-        public function logincheck($emailadres,$wachtwoord){
+    public function logincheck($emailadres,$wachtwoord){
         $leerlingDAO = new leerlingDAO();
         $leerlingLogin = $leerlingDAO->getByGebruiker($emailadres, $wachtwoord);
         return $leerlingLogin;
+    }
+    
+    public function klassize($klasid){
+        $leerlingDAO = new leerlingDAO();
+        $klaslijst = $leerlingDAO->getByKlasId($klasid);
+        $klassize =0;
+        foreach ($klaslijst as $leerling){
+            $klassize = $klassize+1;
+        }
+        return $klassize;
     }
 
     public function verwijderGebruiker($id) {
