@@ -38,6 +38,11 @@ class leerlingservice {
         }
         return $klassize;
     }
+    
+    public function deleteleerling($id){
+        $leerlingDAO = new leerlingDAO();
+        $leerlingDAO->delete($id);
+    }
 
     public function verwijderGebruiker($id) {
         $GebruikerDAO = new gebruikerDAO();

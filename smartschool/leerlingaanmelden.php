@@ -16,6 +16,7 @@ if(isset($_GET["log"]) && $_GET["log"] == "logout" && isset($_SESSION["aangemeld
 //controle voor het level van authenticatie controle structuur
 if (isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"] && isset($_SESSION["rechten"]) &&
         $_SESSION["rechten"] == "leerkracht_level" && !isset($_GET["log"])) {
+    $leerkacht=  unserialize($_SESSION["gebruiker"]); //
         //alle controle voor invoeging in db
         if (!isset($_GET["action"])) {
             $action = null;
@@ -84,7 +85,7 @@ if (isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"] && isset($_SESSION["
                     $datetime = new DateTime($geboortedatum);
                     $leerlingsvc->voegNieuwLeerlingToe($voornaam, $familienaam
                             , $datetime->format('Y,m,d'), $straat, $huisnr
-                            , $bus, $postcode, $telefoonnr, 0, $voornaamouder1
+                            , $bus, $postcode, $telefoonnr, $leerkacht->getKlasid(), $voornaamouder1    //klasid van het leerkracht object die via sesie doorgegeven wordt
                             , $familienaamouder1, $voornaamouder2, $familienaamouder2
                             , $GSMouder1, $GSMouder2, $emailadres);
                     header("location:leerlingaanmelden.php");

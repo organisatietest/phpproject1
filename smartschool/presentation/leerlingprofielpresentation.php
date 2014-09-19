@@ -44,17 +44,13 @@ and open the template in the editor.
                     <!--hier komt de inhoud-->   
                     
                     <div class="klaslijst"><!--omvatende div die de klaslijst heeft als inhoud-->
-                        <?php foreach ($klaslijst as $leerling){ ?>
                         <div class="passpoort"><!--repeterende div die voor iedere leerling van de klas herhaald wordt-->
-                            <a href="leerlingprofiel.php?leerlingid=<?php echo $leerling->getLeerlingid();?>"><img src="Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"></a><br/>
+                            <img src="Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"><br/>
                             <b>Voornaam</b>: <?php echo " ",$leerling->getVoornaam(); ?><br/>
                             Familienaam: <?php echo " ",$leerling->getFamilienaam(); ?><br/>
                             Geboortedatum: <?php echo " ",$leerling->getGeboortedatum(); ?><br/>
-                            <a href="klaslijst.php?del=yes&id=<?php echo $leerling->getLeerlingid();?>">delete</a>
-                            <span>&nbsp;</span>
-                            <a href="leerlingprofiel.php?update=yes&leerlingid=<?php echo $leerling->getLeerlingid();?>">update</a>
+                            
                         </div><!--einde reeterende div-->
-                        <?php } ?>
                     </div><!--einde omvatende div-->
                 </article>
             </section>

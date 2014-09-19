@@ -14,16 +14,20 @@ if(isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"] && isset($_SESSION["r
     $leerkacht=  unserialize($_SESSION["gebruiker"]);
     $leerlingsvc = new leerlingservice();
     $klasid=$leerkacht->getKlasid();//haalt klasid op om toegang tot andere klassen te vermijden
-    
-    if(isset($_GET["del"]) && $_GET["del"]=="yes" && isset($_GET["id"])){
-        $todeleteid = $_GET["id"];
-        $leerlingsvc->deleteleerling($todeleteid);
-        header("location: klaslijst.php");
+    if(isset($_GET["leerlingid"]) && !isset($_GET["update"])){
+        $id = $_GET["leerlingid"];
+        $leerling = $leerlingsvc->getleerlingbyid($id);
+        include("presentation/leerlingprofielpresentation.php");
     }else{
-        
+        if(isset($_GET["update"]) && $_GET["update"] == "yes" && isset($_GET["leerlingid"])){
+            $id = $_GET["leerlingid"];
+            $leerling = $leerlingsvc->getleerlingbyid($id);
+            include("presentation/updateleerlingpresentation.php");
+        }else{
+            header("location: klaslijst.php");
+        }
     }
-    $klaslijst=$leerlingsvc->klasLijst($klasid);//hier kun je het klasid invullen om te kiezen welke lijst je wil laden
-    include("presentation/klaslijstpresentation.php"); 
 }else{
     header("location: home.php");
 }
+

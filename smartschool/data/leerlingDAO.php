@@ -38,7 +38,7 @@ class leerlingDAO {
         $dbh = null;
         return $klaslijst;
     }
-    
+    //deze functie dient om de inlog te zien.
     public function getByGebruiker($emailadres,$wachtwoord){
         $sql = "select leerlingid, voornaam, familienaam, geboortedatum, straat, huisnr,bus,postcode, telefoonnr
         , klasid, voornaamouder1, familienaamouder1, voornaamouder2, familienaamouder2, GSMouder1
@@ -117,10 +117,10 @@ class leerlingDAO {
         } else
             throw new mailmisluktException();
     }
-
-    public function delete($id) {
-        $sql = "delete from gebruiker where id = " . $id;
-        $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
+    
+    public function delete($id){
+        $dbh = new PDO(DBconfig::$DB_CONNSTRING,  DBconfig::$DB_USERNAME,  DBconfig::$DB_PASSWORD);
+        $sql = "delete from leerling where leerlingid = ".$id;
         $dbh->exec($sql);
         $dbh = null;
     }
