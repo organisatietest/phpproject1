@@ -27,15 +27,16 @@ and open the template in the editor.
                 <nav class="hoofdmenu">
                     <ul>
                         <!--leraar-->
-                        <li><a href="">opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a>
+                        <li><a href="leerkrachtaanmelden.php">Leerkracht</a></li>
+                        <li><a href="aanwezigheden.php">Opvolging</a></li>
+                        <li><a class="actief" href="klaslijst.php">leerlingen</a>
                             <ul>
                                 <li><a class="actief" href="klaslijst.php">Klaslijst</a></li>
-                                <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                                <li><a  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
                             </ul>
                         </li>
-                        
                         <li><a href="">agenda</a></li>
+                        <li><a class="uitlog" href="../logout.php">uitloggen</a></li>
                     </ul>
                 </nav>
             </header>
@@ -48,15 +49,12 @@ and open the template in the editor.
                         <div class="passpoort"><!--repeterende div die voor iedere leerling van de klas herhaald wordt-->
                             <img src="Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"><br/>
                             <b>Voornaam</b>: <?php echo " ",$leerling->getVoornaam(); ?><br/>
-                            Familienaam: <?php echo " ",$leerling->getFamilienaam(); ?><br/>
-                            Geboortedatum: <?php echo " ",$leerling->getGeboortedatum(); ?><br/>
+                            <b>Familienaam</b>: <?php echo " ",$leerling->getFamilienaam(); ?><br/>
+                            <b>Geboortedatum</b>: <?php echo " ",$leerling->getGeboortedatum(); ?><br/>
                         </div><!--einde reeterende div-->
                         <?php } ?>
                     </div><!--einde omvatende div-->
                 </article>
-            </section>
-            <section class="Uitloggen">
-                <a href="logout.php">uitloggen</a>
             </section>
         </section>   
         <footer>

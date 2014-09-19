@@ -100,9 +100,9 @@ and open the template in the editor.
                 <nav class="hoofdmenu">
                     <ul>
                         <!--leraar-->
-                        <li><a href="">Leerkracht</a></li>
-                        <li><a href="">Opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a>
+                        <li><a href="leerkrachtaanmelden.php">Leerkracht</a></li>
+                        <li><a href="aanwezigheden.php">Opvolging</a></li>
+                        <li><a class="actief" href="klaslijst.php">leerlingen</a>
                             <ul>
                                 <li><a href="klaslijst.php">Klaslijst</a></li>
                                 <li><a class="actief" href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
@@ -179,14 +179,13 @@ and open the template in the editor.
                             <div id="rsp_email"><!-- --></div><br>
                             <input class="buttonToevoegen" type="submit" 
                                    value="toevoegen"><br>
-                        </div>
                     </form>
                     <!-- einde form-->
                     
                 </article>
             </section>
-        </section>   
-        
+           
+        </section>
         <footer>
             <blockquote>Created by <a href="#">Niels</a>, <a href="#">Matthias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
         </footer>

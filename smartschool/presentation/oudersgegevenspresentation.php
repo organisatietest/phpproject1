@@ -27,12 +27,16 @@ and open the template in the editor.
                 <nav class="hoofdmenu">
                     <ul>
                         <!--leraar-->
-                        <li><a href="">opvolging</a></li>
-                        <li class="actief"><a href="">leerlingen</a></li>
+                        <li><a href="leerkrachtaanmelden.php">Leerkracht</a></li>
+                        <li><a href="aanwezigheden.php">Opvolging</a></li>
+                        <li><a class="actief" href="klaslijst.php">leerlingen</a>
+                            <ul>
+                                <li><a href="klaslijst.php">Klaslijst</a></li>
+                                <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">agenda</a></li>
-                        <!--ouders-->
-                        <li><a href="">gegevens</a></li>                     
-                        <li><a href="">links</a></li>
+                        <li><a class="uitlog" href="../logout.php">uitloggen</a></li>
                     </ul>
                 </nav>
             </header>

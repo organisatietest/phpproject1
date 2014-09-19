@@ -408,16 +408,16 @@ h2{
 /*Klaslijst*/
 
 .wikkel{
-    background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
-    width:60em;
+    width:70em;
     margin-top:150px;
     margin-left: auto;
     margin-right:auto;
-    box-shadow: -20px 20px 50px #4d4d4d;
     overflow: visible;
-    height: 50em;
+    height: 40em;
     margin-bottom: 5em;
-    min-height: 100%;
+    background:url('../images/linedpaper.png');
+        border:10px solid darkgreen;
+        border-radius: 25px;
 }
 
 
@@ -428,7 +428,7 @@ h2{
    background: url('../images/bgImageA.png');
    padding:1em;
    width:400px;
-   height:130px;
+   height:100px;
         margin-top: 25px;
    overflow:hidden;
    font-family: hello;
@@ -445,9 +445,9 @@ h2{
 
 .bgKlaslijst{
     background: url('../images/bgImageC.png') repeat;
-    height:700px;
-    width:850px;
-    margin-top: 50px;
+    height:600px;
+    width:525px;
+    margin-top: 25px;
     margin-left: 50px;
     position: absolute;
     box-shadow: -5px 5px 20px #4d4d4d;
@@ -458,8 +458,8 @@ h2{
 }
 .klaslijst{
     background: url('../images/bgTempForm.png') repeat;
-    width:800px;
-    height:650px;
+    width:475px;
+    height:550px;
     overflow: scroll;
         margin-top: 25px;
     margin-left: 25px;
@@ -549,7 +549,7 @@ h2{
 .InvoerForm{
     margin-left: 4em;
     margin-top: -6em;
-    width:71%;
+    width:60em;
     height:450px;
     float: left;
     background: url('../images/bgTempForm.png');
@@ -648,16 +648,18 @@ input[type="checkbox"]:checked + .juist{
     margin-top: 2em;
 }
 footer{  
+  
   float:right;
   text-align:center;     
   width: 200px;    
   margin: 25px;
   margin-top: -12em;
-  margin-right:5em;
+  margin-left: 50em;
+  margin-right: auto;
   min-height:125px;
   max-height:125px;
   padding-top:5px;
-  position:relative;   
+  position:absolute;   
   border:1px solid #E8E8E8;  
   border-top:60px solid #fdfd86;
   font-family:hello;    
