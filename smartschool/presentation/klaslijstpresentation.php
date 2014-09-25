@@ -53,6 +53,9 @@ and open the template in the editor.
                             <b>Voornaam</b>: <?php echo " ",$leerling->getVoornaam(); ?><br/>
                             <b>Familienaam</b>: <?php echo " ",$leerling->getFamilienaam(); ?><br/>
                             <b>Geboortedatum</b>: <?php echo " ",$leerling->getGeboortedatum(); ?><br/>
+                            <a href="klaslijst.php?del=yes&id=<?php echo $leerling->getLeerlingid();?>">delete</a>
+                            <span>&nbsp;</span>
+                            <a href="leerlingprofiel.php?update=yes&leerlingid=<?php echo $leerling->getLeerlingid();?>">update</a>
                         </div><!--einde reeterende div-->
                         <?php } ?>
                     </div><!--einde omvatende div-->
