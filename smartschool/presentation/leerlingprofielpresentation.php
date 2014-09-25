@@ -23,19 +23,20 @@ and open the template in the editor.
         <section class="wikkel">
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
-
                 <nav class="hoofdmenu">
+                    <h4>Menu</h4>
                     <ul>
                         <!--leraar-->
-                        <li><a href="">opvolging</a></li>
-                        <li><a class="actief" href="">leerlingen</a>
+                        <li><a href="leerkrachtlijst.php">Leerkracht</a></li>
+                        <li><a href="aanwezigheden.php">Opvolging</a></li>
+                        <li><a class="actief" href="klaslijst.php">leerlingen</a>
                             <ul>
                                 <li><a class="actief" href="klaslijst.php">Klaslijst</a></li>
-                                <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                                <li><a  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
                             </ul>
                         </li>
-                        
                         <li><a href="">agenda</a></li>
+                        <li><a class="uitlog" href="leerkrachtlijst.php?log=logout">uitloggen</a></li>
                     </ul>
                 </nav>
             </header>

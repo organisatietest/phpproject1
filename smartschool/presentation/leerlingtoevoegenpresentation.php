@@ -96,11 +96,11 @@ and open the template in the editor.
         <section class="wikkelLeerlingToevoegen">
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
-
                 <nav class="hoofdmenu">
+                    <h4>Menu</h4>
                     <ul>
                         <!--leraar-->
-                        <li><a href="leerkrachtaanmelden.php">Leerkracht</a></li>
+                        <li><a href="leerkrachtlijst.php">Leerkracht</a></li>
                         <li><a href="aanwezigheden.php">Opvolging</a></li>
                         <li><a class="actief" href="klaslijst.php">leerlingen</a>
                             <ul>

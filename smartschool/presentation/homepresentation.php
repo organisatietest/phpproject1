@@ -36,7 +36,7 @@ and open the template in the editor.
                 </form>
             </section>
              </section>   
-            <footer>
+            <footer class="IndexFooter">
                 <blockquote>Created by <a href="#">Niels</a>, <a href="#">Mathias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
             </footer>
          

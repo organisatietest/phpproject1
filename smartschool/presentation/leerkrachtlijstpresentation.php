@@ -14,7 +14,7 @@ and open the template in the editor.
         <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
   
-        <title>Smartschool</title>
+        <title>Smartschool > Leerkrachten</title>
 
         <link rel="stylesheet" href="css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
@@ -53,7 +53,7 @@ and open the template in the editor.
                             <b>Voornaam</b>: <?php echo " ",$leerkracht->getVoornaam(); ?><br/>
                             <b>Familienaam:</b> <?php echo " ",$leerkracht->getFamilienaam(); ?><br/>
                             <b>Geboortedatum:</b> <?php echo " ",$leerkracht->getGeboortedatum(); ?><br/>
-                            Klas: <?php echo " ",$leerkracht->getKlasid(); ?><br/>
+                            <b>Klas:</b> <?php echo " ",$leerkracht->getKlasid(); ?><br/>
                         </div><!--einde reeterende div-->
                         <?php } ?>
                     </div><!--einde omvatende div-->

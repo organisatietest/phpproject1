@@ -14,7 +14,7 @@ and open the template in the editor.
         <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
 
-        <title>Smartschool</title>
+        <title>Smartschool > aanwezigheden</title>
 
         <link rel="stylesheet" href="css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
@@ -23,21 +23,21 @@ and open the template in the editor.
         <section class="wikkel">
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
-
                 <nav class="hoofdmenu">
+                    <h4>Menu</h4>
                     <ul>
                         <!--leraar-->
-                        <li><a href="leerkrachtaanmelden.php">Leerkracht</a></li>
+                        <li><a href="leerkrachtlijst.php">Leerkracht</a></li>
                         <li><a class="actief" href="aanwezigheden.php">Opvolging</a></li>
                         <li><a href="klaslijst.php">leerlingen</a>
                             <ul>
                                 <li><a href="klaslijst.php">Klaslijst</a></li>
-                                <li><a  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                                <li><a href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
                             </ul>
                         </li>
                         <li><a href="">agenda</a></li>
                         <li><a class="uitlog" href="aanwezigheden.php?log=logout">uitloggen</a></li>
-                    </ul>
+                     </ul>
                 </nav>
             </header>
             <section>

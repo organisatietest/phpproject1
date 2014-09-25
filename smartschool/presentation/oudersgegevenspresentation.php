@@ -16,7 +16,7 @@ and open the template in the editor.
   
         <title>Smartschool</title>
 
-        <link rel="stylesheet" href="css/style.css" media="screen">
+        <link rel="stylesheet" href="../css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
     </head>
     <body>
@@ -46,11 +46,13 @@ and open the template in the editor.
                     <!--hier komt de inhoud-->   
                     <div class="klaslijst"><!--omvatende div die de klaslijst heeft als inhoud-->
                         <div class="passpoort"><!--repeterende div die voor iedere leerling van de klas herhaald wordt-->
+                            <p>
                             <img src="Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"><br/>
                             <b>Voornaam</b>: <?php echo " ",$leerling->getVoornaam(); ?><br/>
                             Familienaam: <?php echo " ",$leerling->getFamilienaam(); ?><br/>
                             Geboortedatum: <?php echo " ",$leerling->getGeboortedatum(); ?><br/>
                             Klas: <?php echo " ",$leerling->getKlasid(); ?><br/>
+                            </p>
                         </div><!--einde reeterende div-->
                     </div><!--einde omvatende div-->
                 </article>
