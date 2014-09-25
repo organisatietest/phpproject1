@@ -33,7 +33,12 @@ h1{
     margin-top:-100px;
     margin-left: 600px;
 }
-
+h4{
+    text-align: right;
+    padding-right: 1em;
+    padding-top: 1em;
+    color: white;
+}
 a:link{
     color:maroon;
     font-weight: bolder;
@@ -93,6 +98,8 @@ nav
     font-family: Caviar;
     height: 24em;
     content: 'Menu';
+    -webkit-transition: left 1.5s; /* For Safari 3.1 to 6.0 */
+    transition: left 1.5s;
 }
  
 nav:after
@@ -106,7 +113,6 @@ nav ul
     list-style-type: none;
     margin: 0;
     padding: 1em;
-    margin-top: 2em;
 }
 nav:hover
 {
@@ -134,7 +140,7 @@ nav ul li a
     display: block;
     border-left: 5px darkred solid;
     text-decoration: none;
-    box-shadow: 4px 0 5px rgba(0,0,0,0.2);
+    box-shadow: 10px 5px 10px rgba(0,0,0,0.2);
     color:white;
 }
 nav ul li a:visited{
@@ -148,9 +154,12 @@ nav ul li a:hover
     color: white;
 }
 .uitlog{
-    background:url('../images/bgImageC.png');
+    background:darkred;
     color:white;
     border:none;
+    margin-top: 2em;
+    text-align: center;
+    border-radius: 15px;
 }
 .uitlog:visited{
     color:white;
@@ -315,7 +324,7 @@ h2{
     float:left;
     position: relative;
     padding-top:10px;
-    margin-left: -175px;
+    margin-left: 200px;
 }
 
 
@@ -445,9 +454,9 @@ h2{
 
 .bgKlaslijst{
     background: url('../images/bgImageC.png') repeat;
-    height:600px;
+    height:500px;
     width:525px;
-    margin-top: 25px;
+    margin-top: 100px;
     margin-left: 50px;
     position: absolute;
     box-shadow: -5px 5px 20px #4d4d4d;
@@ -459,7 +468,7 @@ h2{
 .klaslijst{
     background: url('../images/bgTempForm.png') repeat;
     width:475px;
-    height:550px;
+    height:450px;
     overflow: scroll;
         margin-top: 25px;
     margin-left: 25px;
@@ -499,14 +508,16 @@ h2{
 }
 
 .wikkelLeerkrachtToevoegen{
-    background: url('../images/bgImageInhoudLeerkrachtOuders.png') repeat;
-    width:60em;
+width:70em;
     margin-top:150px;
     margin-left: auto;
     margin-right:auto;
     overflow: visible;
     height: 40em;
     margin-bottom: 5em;
+    background:url('../images/linedpaper.png');
+        border:10px solid darkgreen;
+        border-radius: 25px;
 }
 
 /*Leerlingen toevoegen formulier*/
@@ -514,9 +525,8 @@ h2{
 
 
 .bgFormLeerkracht{
-    background: url('../images/bgFormTemp.png') no-repeat;
     height:500px;
-    width:550px;
+    width:300px;
     margin-left: 50px;
     margin-top: 50px;
     position: absolute;
@@ -676,4 +686,43 @@ background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ffffc6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 transform: rotate(10deg);
 box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
+}
+
+.passpoort > input[type="checkbox"]{
+    width:30px;
+    height: 30px;
+    float: right;
+    margin-top: -3em;
+}
+#AfwezigDoor{
+    float: right;
+    margin-right: -25em;
+    height: 4em;
+    padding: 1em;
+    background:url('../images/linedpaper.png');
+    box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
+}
+#AfwezigDoor:hover{
+    background-color: black;
+}
+#AW{
+    margin-top: -2em;
+}
+#KL{
+    margin-top: -2em;
+}
+.InvoerLeerkracht{
+    width:450px;
+    height: 350px;
+}
+
+.ToevoegenLeerkracht{
+    margin:1em 1em 0 5em;
+}
+#LT{
+    width: 15em;
+    margin-bottom:-10em;
+}
+#LL{
+    margin-top: -2em;
 }

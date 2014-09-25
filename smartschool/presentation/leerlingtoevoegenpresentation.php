@@ -109,7 +109,7 @@ and open the template in the editor.
                             </ul>
                         </li>
                         <li><a href="">agenda</a></li>
-                        <li><a class="uitlog" href="../logout.php">uitloggen</a></li>
+                        <li><a class="uitlog" href="leerlingaanmelden.php?log=logout">uitloggen</a></li>
                     </ul>
                 </nav>
             </header>
