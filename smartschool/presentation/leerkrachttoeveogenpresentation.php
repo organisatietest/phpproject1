@@ -83,20 +83,20 @@ and open the template in the editor.
         <section class="wikkelLeerkrachtToevoegen">
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
-
-                <nav class="hoofdmenu">
+                <nav>
+                    <h4>Menu</h4><img id="MenuIcon" src="images/menuIcon.png" alt="menuIcon.png"/>
                     <ul>
                         <!--leraar-->
-                        <li><a class="actief" href="leerkrachtaanmelden.php">Leerkracht</a></li>
-                        <li><a href="aanwezigheden.php">Opvolging</a></li>
-                        <li><a href="klaslijst.php">leerlingen</a>
+                        <li><a class="actief" href="leerkrachtlijst.php">Leerkracht<img id="LeerkrachtIcon" src="images/leerkrachtIcon.png" alt="leerkrachtIcon.png"/></a></li>
+                        <li><a href="aanwezigheden.php">Aanwezigheden<img id="AanwezigheidIcon" src="images/aanwezigheidIcon.png" alt="aanwezigheidIcon.png" /></a></li>
+                        <li><a href="klaslijst.php">leerlingen<img id="LeerlingIcon" src="images/leerlingIcon.png" alt="leerlingIcon.png" /></a>
                             <ul>
                                 <li><a href="klaslijst.php">Klaslijst</a></li>
                                 <li><a  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
                             </ul>
                         </li>
-                        <li><a href="">agenda</a></li>
-                        <li><a class="uitlog" href="leerkrachtaanmelden.php?log=logout">uitloggen</a></li>
+                        <li><a href="">agenda<img src="images/agendaIcon.png" alt="agendaIcon.png" /></a></li>
+                        <li><a class="uitlog" href="leerkrachtlijst.php?log=logout">uitloggen<img id="closeIcon" src="images/closeIcon.png" alt="UitlogIcon.png"/></a></li>
                     </ul>
                 </nav>
             </header>
@@ -116,15 +116,15 @@ and open the template in the editor.
                             </label>
                             <label for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><br>
+                                        valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><span class="juist"></span><br>
                             </label>
                             <label for="familienaam">familienaam *
                                 <input type="text" name="familienaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><br>
+                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><span class="juist"></span><br>
                             </label>
                             <label for="datepicker">geboortedatum *
                                 <input type="text" name="geboortedatum" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><br>
+                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><span class="juist"></span><br>
                             </label>
                             <label for="klas">klas
                                 <input type="text" name="klas" placeholder="klas" id="klas"><br>

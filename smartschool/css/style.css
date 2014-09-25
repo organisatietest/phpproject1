@@ -575,10 +575,11 @@ width:70em;
     padding: 1em;
     width:250px;
     position: relative;
-    margin-left: 37em;
-    margin-top: 25em;
+    margin-left: 34em;
+    margin-top: 23em;
     background: none;
     border:solid 2px black;
+    font-weight: bolder;
 }
 
 .buttonToevoegen:hover{
@@ -593,12 +594,13 @@ width:70em;
 .InvoerForm{
     margin-left: 4em;
     margin-top: -6em;
-    width:60em;
+    width:67em;
     height:450px;
     float: left;
     background: url('../images/bgTempForm.png');
     box-shadow: 8px 0 10px rgba(0,0,0,0.2);
     position: absolute;
+    font-size: 0.8em;
 }
 
 .InvoerForm > .TussenForm{
@@ -614,9 +616,10 @@ width:70em;
     margin:0.2em;
     padding: 0.5em;
     font-family: blokletters_potloodpotlood;
+    font-weight: bolder;
 }
 .InvoerForm > .FormRechts{
-    margin-left: 30em;
+    margin-left: 35em;
 }
 
 .InvoerForm > .TussenForm > label > input{
@@ -758,15 +761,16 @@ box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
     margin-top: -2em;
 }
 .InvoerLeerkracht{
-    width:450px;
-    height: 350px;
+    margin-top: 2em;
+    width:425px;
+    height: 340px;
 }
 
 .ToevoegenLeerkracht{
     margin:1em 1em 0 5em;
 }
 #LT{
-    width: 15em;
+    width: 20em;
     margin-bottom:-10em;
 }
 #LL{

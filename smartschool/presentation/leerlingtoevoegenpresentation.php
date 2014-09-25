@@ -96,20 +96,20 @@ and open the template in the editor.
         <section class="wikkelLeerlingToevoegen">
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
-                <nav class="hoofdmenu">
-                    <h4>Menu</h4>
+                <nav>
+                    <h4>Menu</h4><img id="MenuIcon" src="images/menuIcon.png" alt="menuIcon.png"/>
                     <ul>
                         <!--leraar-->
-                        <li><a href="leerkrachtlijst.php">Leerkracht</a></li>
-                        <li><a href="aanwezigheden.php">Opvolging</a></li>
-                        <li><a class="actief" href="klaslijst.php">leerlingen</a>
+                        <li><a href="leerkrachtlijst.php">Leerkracht<img id="LeerkrachtIcon" src="images/leerkrachtIcon.png" alt="leerkrachtIcon.png"/></a></li>
+                        <li><a href="aanwezigheden.php">Aanwezigheden<img id="AanwezigheidIcon" src="images/aanwezigheidIcon.png" alt="aanwezigheidIcon.png" /></a></li>
+                        <li><a class="actief" href="klaslijst.php">leerlingen<img id="LeerlingIcon" src="images/leerlingIcon.png" alt="leerlingIcon.png" /></a>
                             <ul>
                                 <li><a href="klaslijst.php">Klaslijst</a></li>
-                                <li><a class="actief" href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                                <li><a class="actief"  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
                             </ul>
                         </li>
-                        <li><a href="">agenda</a></li>
-                        <li><a class="uitlog" href="leerlingaanmelden.php?log=logout">uitloggen</a></li>
+                        <li><a href="">agenda<img src="images/agendaIcon.png" alt="agendaIcon.png" /></a></li>
+                        <li><a class="uitlog" href="leerlingaanmelden.php?log=logout">uitloggen<img id="closeIcon" src="images/closeIcon.png" alt="UitlogIcon.png"/></a></li>
                     </ul>
                 </nav>
             </header>
@@ -121,15 +121,15 @@ and open the template in the editor.
                     <h3>Invoeren van gegevens leerling</h3>
                     <form class="InvoerForm" method="post" name="formaanmelden" action="leerlingaanmelden.php?action=process" onsubmit="return validateForm();">
                         <div class="TussenForm FormLinks">
-                            <label class="In"  for="voornaam">voornaam *
+                            <label  for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
                                     valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><span class="juist"></span><br>
                             </label>
-                            <label class="In" for="familienaam">familienaam *
+                            <label for="familienaam">familienaam *
                                 <input type="text" name="familienaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
                                         valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><span class="juist"></span><br>
                             </label>
-                            <label class="In" for="datepicker">geboortedatum *
+                            <label for="datepicker">geboortedatum *
                                 <input type="text" name="geboortedatum" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
                                         valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><span class="juist"></span><br>
                             </label>
