@@ -24,20 +24,20 @@ and open the template in the editor.
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
 
-                <nav class="hoofdmenu">
-                    <h4>Menu</h4>
+                <nav>
+                    <h4>Menu</h4><img id="MenuIcon" src="images/menuIcon.png" alt="menuIcon.png"/>
                     <ul>
                         <!--leraar-->
-                        <li><a class="actief" href="leerkrachtlijst.php">Leerkracht</a></li>
-                        <li><a href="aanwezigheden.php">Opvolging</a></li>
-                        <li><a href="klaslijst.php">leerlingen</a>
+                        <li><a class="actief" href="leerkrachtlijst.php">Leerkracht<img id="LeerkrachtIcon" src="images/leerkrachtIcon.png" alt="leerkrachtIcon.png"/></a></li>
+                        <li><a href="aanwezigheden.php">Aanwezigheden<img id="AanwezigheidIcon" src="images/aanwezigheidIcon.png" alt="aanwezigheidIcon.png" /></a></li>
+                        <li><a href="klaslijst.php">leerlingen<img id="LeerlingIcon" src="images/leerlingIcon.png" alt="leerlingIcon.png" /></a>
                             <ul>
                                 <li><a href="klaslijst.php">Klaslijst</a></li>
                                 <li><a  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
                             </ul>
                         </li>
-                        <li><a href="">agenda</a></li>
-                        <li><a class="uitlog" href="leerkrachtlijst.php?log=logout">uitloggen</a></li>
+                        <li><a href="">agenda<img src="images/agendaIcon.png" alt="agendaIcon.png" /></a></li>
+                        <li><a class="uitlog" href="leerkrachtlijst.php?log=logout">uitloggen<img id="closeIcon" src="images/closeIcon.png" alt="UitlogIcon.png"/></a></li>
                     </ul>
                 </nav>
             </header>

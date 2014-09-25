@@ -46,10 +46,11 @@ h1{
     margin-left: 600px;
 }
 h4{
-    text-align: right;
-    padding-right: 1em;
+    text-align: left;
+    padding-left: 2em;
     padding-top: 1em;
     color: white;
+    margin-bottom: -1em;
 }
 a:link{
     color:maroon;
@@ -109,15 +110,17 @@ nav
     cursor: pointer;
     border-radius:0 10px 10px 0;
     font-family: Caviar;
-    height: 24em;
+    height: 26em;
     content: 'Menu';
     -webkit-transition: left 1.5s; /* For Safari 3.1 to 6.0 */
     transition: left 1.5s;
 }
- 
-nav:after
-{
 
+#MenuIcon{
+    height: 25px;
+    margin-left: 18em;
+    
+    vertical-align: middle;
 }
 nav ul
 {
@@ -148,13 +151,30 @@ nav ul ul li{
 }
 nav ul li a
 {
-    background:url('../images/bgImageC.png');
+    background:url('../images/bgImageD.png');
     padding: 0.5em;
     display: block;
     border-left: 5px darkred solid;
     text-decoration: none;
     box-shadow: 10px 5px 10px rgba(0,0,0,0.2);
     color:white;
+}
+nav ul li a img{
+    margin-left: 11em;
+    height:25px;
+    vertical-align: middle;
+}
+#LeerlingIcon{
+    margin-left: 10em;
+}
+#AanwezigheidIcon{
+    margin-left:6.7em;
+}
+#LeerkrachtIcon{
+    margin-left: 9.7em;
+}
+#closeIcon{
+    margin-left: 10.5em;
 }
 nav ul li a:visited{
     color:white;
@@ -454,9 +474,10 @@ h2{
    margin-top: 25px;
    overflow:hidden;
    font-family: blokletters_potloodpotlood;
-    box-shadow: -5px 5px 20px #4d4d4d;
+    box-shadow: -5px 5px 10px #4d4d4d;
     margin-left: 2em;
-    font-size: 0.8em
+    font-size: 0.8em;
+        border-radius:10px;
 }
 
 .passpoort > img{
