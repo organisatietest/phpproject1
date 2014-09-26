@@ -27,7 +27,6 @@ and open the template in the editor.
                     <h4>Menu</h4><img id="MenuIcon" src="images/menuIcon.png" alt="menuIcon.png"/>
                     <ul>
                         <!--leraar-->
-                        <li><a href="leerkrachtlijst.php">Leerkracht<img id="LeerkrachtIcon" src="images/leerkrachtIcon.png" alt="leerkrachtIcon.png"/></a></li>
                         <li><a class="actief" href="aanwezigheden.php">Aanwezigheden<img id="AanwezigheidIcon" src="images/aanwezigheidIcon.png" alt="aanwezigheidIcon.png" /></a></li>
                         <li><a href="klaslijst.php">leerlingen<img id="LeerlingIcon" src="images/leerlingIcon.png" alt="leerlingIcon.png" /></a>
                             <ul>
