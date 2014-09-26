@@ -54,12 +54,12 @@ and open the template in the editor.
                                     <b>Voornaam</b>: <?php echo " ", $leerling->getVoornaam(); ?><br/>
                                     <b>Familienaam</b>: <?php echo " ", $leerling->getFamilienaam(); ?><br/>
                                     <b>Geboortedatum</b>: <?php echo " ", $leerling->getGeboortedatum(); ?><br/>
-                                    <label id="afwezig">afwezig</label>
-                                    <?php print($leerling->getLeerlingid());?>
-                                    <input type="checkbox" name="afwezig<?php echo $leerling->getLeerlingid()?>" id="afwezig"/>
+                                    <input type="checkbox" name="afwezig<?php  echo $j ?>" id="afwezig" <?php if($afwezighedenlijstvalues[$j]){?>checked<?php } ?>/>
                                 </div><!--einde reeterende div-->
 
-                            <?php } ?>
+                                <?php $j++;
+                            }
+                            ?>
                         </div><!--einde omvatende div-->
                         <input id="AfwezigDoor" type="submit" value="afwezigheden doorgeven"/>
                     </form>
@@ -69,6 +69,12 @@ and open the template in the editor.
         <footer>
             <blockquote>Created by <a href="#">Niels</a>, <a href="#">Mathias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
         </footer>
+        <script type="text/javascript" charset="utf-8">
+
+            $(function() {
+                $('body').hide().show();
+            });
+        </script>
     </body>
 </html>
 

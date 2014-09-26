@@ -14,7 +14,7 @@ class afwezigheid {
     
     public static function create($id,$leerlingid,$datum){
         if (!isset(self::$idmap[$id])){
-            self::$idmap= new afwezigheid($id, $leerlingid, $datum);
+            self::$idmap[$id]= new afwezigheid($id, $leerlingid, $datum);
         }
         return self::$idmap[$id];
     }

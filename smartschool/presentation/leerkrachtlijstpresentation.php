@@ -63,5 +63,11 @@ and open the template in the editor.
         <footer>
             <blockquote>Created by <a href="#">Niels</a>, <a href="#">Mathias</a>, <a href="#">Kevin</a> en <a href="#">Nick</a></blockquote>
         </footer>
+        <script type="text/javascript" charset="utf-8">
+
+            $(function() {
+                $('body').hide().show();
+            });
+        </script>
     </body>
 </html>
