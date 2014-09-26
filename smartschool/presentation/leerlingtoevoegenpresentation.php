@@ -87,7 +87,7 @@ and open the template in the editor.
                 }
             }
         </script>
-        <title>Smartschool</title>
+        <title>Smartschool > leerlingen toevoegen</title>
 
         <link rel="stylesheet" href="css/style.css" media="screen">
         <!--hier al een shiv gebruiken voor html5 en wat met normalize.css?-->
@@ -107,7 +107,7 @@ and open the template in the editor.
                                 <li><a class="actief"  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
                             </ul>
                         </li>
-                        <li><a href="">agenda<img src="images/agendaIcon.png" alt="agendaIcon.png" /></a></li>
+                        <li><a href="default.html">agenda<img src="images/agendaIcon.png" alt="agendaIcon.png" /></a></li>
                         <li><a class="uitlog" href="leerlingaanmelden.php?log=logout">uitloggen<img id="closeIcon" src="images/closeIcon.png" alt="UitlogIcon.png"/></a></li>
                     </ul>
                 </nav>

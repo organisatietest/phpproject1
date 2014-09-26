@@ -342,7 +342,7 @@ nav ul li a:hover
 
 /*Titel Welkom*/
 
-h2{
+.WelkomAni{
     font-family: chalk;
     font-size: 40px;
      height:100px;
@@ -810,4 +810,26 @@ box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
 }
 .IndexFooter > blockquote > a:visited{
     color:#fdb5f5;
+}
+#calendar{
+       float: left;
+        padding:1em;
+        width: 60%;
+        margin-left: 5em;
+        margin-top: 2em;
+    
+}
+.bgUitlegAgenda{
+    margin-top: 5em;
+    float: right;
+    background: url('../images/bgImageA.png');
+    width:15em;
+    padding: 2em;
+    font-family: blokletters_potloodpotlood;
+    font-weight: bolder;
+    border-radius: 15px;
+    box-shadow: 8px 10px 20px rgba(0,0,0,0.2);
+}
+.bgUitlegAgenda > ul > li{
+    padding: 0.5em;
 }

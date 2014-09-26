@@ -20,7 +20,7 @@ and open the template in the editor.
                 <h1><span class="hoofding">Smart School</span></h1>
             </header>
             <section id="bgInloggen">
-                <h2><span class="Welkom">Welkom</span></h2>
+                <h2 class="WelkomAni"><span class="Welkom">Welkom</span></h2>
                 <form id="InlogForm" method="post" action="home.php?submited=true">
                         <div class="TussenInlogForm">
                             <label for="gebruikersnaam">Gebruikersnaam
