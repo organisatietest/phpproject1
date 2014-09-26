@@ -122,15 +122,15 @@ and open the template in the editor.
                         <div class="TussenForm FormLinks">
                             <label  for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                    valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><span class="juist"></span><br>
+                                    valid_naam.checked = this.value;" id="voornaam" required><input  class="verwijderen" type="checkbox" disabled name="valid_naam"><span class="juist"></span><br>
                             </label>
                             <label for="familienaam">familienaam *
                                 <input type="text" name="familienaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><span class="juist"></span><br>
+                                        valid_fnaam.checked = this.value;" id="familienaam" required><input  class="verwijderen" type="checkbox" disabled name="valid_fnaam"><span class="juist"></span><br>
                             </label>
                             <label for="datepicker">geboortedatum *
                                 <input type="text" name="geboortedatum" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><span class="juist"></span><br>
+                                        valid_datum.checked = this.value;" id="datepicker" required><input class="verwijderen" type="checkbox" disabled name="valid_datum"><span class="juist"></span><br>
                             </label>
                             <label for="straat">straat
                                 <input type="text" name="straat" id="straat"><br>

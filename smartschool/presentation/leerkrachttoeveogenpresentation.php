@@ -89,7 +89,7 @@ and open the template in the editor.
                         <!--leraar-->
                         <li><a class="actief" href="leerkrachtlijst.php">Leerkracht<img id="LeerkrachtIcon" src="images/leerkrachtIcon.png" alt="leerkrachtIcon.png"/></a>
                          <ul>
-                                <li><a href="leerkrachtlijst.php">Lijst van alle leerkrachten</a></li>
+                                <li><a href="leerlingprofiel.php">Lijst van alle leerkrachten</a></li>
                                 <li><a class="actief"  href="leerkrachtaanmelden.php">Leerkrachten toevoegen</a></li>
                          </ul>
                         </li>
@@ -113,15 +113,15 @@ and open the template in the editor.
                             </label>
                             <label for="voornaam">voornaam *
                                 <input type="text" name="voornaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_naam.checked = this.value;" id="voornaam" required><input type="checkbox" disabled name="valid_naam"><span class="juist"></span><br>
+                                        valid_naam.checked = this.value;" id="voornaam" required><input  class="verwijderen" type="checkbox" disabled name="valid_naam"><span class="juist"></span><br>
                             </label>
                             <label for="familienaam">familienaam *
                                 <input type="text" name="familienaam" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_fnaam.checked = this.value;" id="familienaam" required><input type="checkbox" disabled name="valid_fnaam"><span class="juist"></span><br>
+                                        valid_fnaam.checked = this.value;" id="familienaam" required><input  class="verwijderen" type="checkbox" disabled name="valid_fnaam"><span class="juist"></span><br>
                             </label>
                             <label for="datepicker">geboortedatum *
                                 <input type="text" name="geboortedatum" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
-                                        valid_datum.checked = this.value;" id="datepicker" required><input type="checkbox" disabled name="valid_datum"><span class="juist"></span><br>
+                                        valid_datum.checked = this.value;" id="datepicker" required><input  class="verwijderen" type="checkbox" disabled name="valid_datum"><span class="juist"></span><br>
                             </label>
                             <label for="klas">klas
                                 <input type="text" name="klas" placeholder="klas" id="klas"><br>
