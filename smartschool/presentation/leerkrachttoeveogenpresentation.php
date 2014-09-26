@@ -12,7 +12,6 @@ and open the template in the editor.
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-        <!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
         <script type="text/javascript" src="ajaxrequest.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
 
@@ -85,19 +84,19 @@ and open the template in the editor.
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
 
-                <nav class="hoofdmenu">
+                <nav class="StyleAdmin">
+                    <h4>Menu</h4><img id="MenuIcon" src="images/menuIcon.png" alt="menuIcon.png"/>
                     <ul>
                         <!--leraar-->
-                        <li><a class="actief" href="leerkrachtaanmelden.php">Leerkracht</a></li>
-                        <li><a href="aanwezigheden.php">Opvolging</a></li>
-                        <li><a href="klaslijst.php">leerlingen</a>
-                            <ul>
-                                <li><a href="klaslijst.php">Klaslijst</a></li>
-                                <li><a  href="leerlingaanmelden.php">Leerlingen toevoegen</a></li>
+                        <li><a class="actief" href="leerkrachtlijst.php">Leerkracht<img id="LeerkrachtIcon" src="images/leerkrachtIcon.png" alt="leerkrachtIcon.png"/></a>
+                            
+                                <ul>
+                                <li><a  href="leerkrachtlijst.php">Lijst van alle leerkrachten</a></li>
+                                <li><a class="actief" href="leerkrachtaanmelden.php">Leerkrachten toevoegen</a></li>
                             </ul>
+                           
                         </li>
-                        <li><a href="">agenda</a></li>
-                        <li><a class="uitlog" href="leerkrachtaanmelden.php?log=logout">uitloggen</a></li>
+                        <li><a class="uitlog" href="leerkrachtlijst.php?log=logout">uitloggen<img id="closeIcon" src="images/closeIcon.png" alt="UitlogIcon.png"/></a></li>
                     </ul>
                 </nav>
             </header>

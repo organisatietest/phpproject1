@@ -13,7 +13,7 @@ and open the template in the editor.
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
-  
+
         <title>Smartschool</title>
 
         <link rel="stylesheet" href="../css/style.css" media="screen">
@@ -48,11 +48,11 @@ and open the template in the editor.
                     <div class="klaslijst"><!--omvatende div die de klaslijst heeft als inhoud-->
                         <div class="passpoort"><!--repeterende div die voor iedere leerling van de klas herhaald wordt-->
                             <p>
-                            <img src="Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"><br/>
-                            <b>Voornaam</b>: <?php echo " ",$leerling->getVoornaam(); ?><br/>
-                            Familienaam: <?php echo " ",$leerling->getFamilienaam(); ?><br/>
-                            Geboortedatum: <?php echo " ",$leerling->getGeboortedatum(); ?><br/>
-                            Klas: <?php echo " ",$leerling->getKlasid(); ?><br/>
+                                <img src="Foto_leerling/defaul_foto.png" alt="default" style="width:100px;height:100px"><br/>
+                                <b>Voornaam</b>: <?php echo " ", $leerling->getVoornaam(); ?><br/>
+                                Familienaam: <?php echo " ", $leerling->getFamilienaam(); ?><br/>
+                                Geboortedatum: <?php echo " ", $leerling->getGeboortedatum(); ?><br/>
+                                Klas: <?php echo " ", $leerling->getKlasid(); ?><br/>
                             </p>
                         </div><!--einde reeterende div-->
                     </div><!--einde omvatende div-->
