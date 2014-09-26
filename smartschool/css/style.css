@@ -24,7 +24,17 @@
     font-style: normal;
 
 }
+@font-face {
+    font-family: '3dumb';
+    src: url('../Fonts/3dumb/3Dumb-webfont.eot');
+    src: url('../Fonts/3dumb/3Dumb-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/3dumb/3Dumb-webfont.woff') format('woff'),
+         url('../Fonts/3dumb/3Dumb-webfont.ttf') format('truetype'),
+         url('../Fonts/3dumb/3Dumb-webfont.svg#3dumbregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
 /*Op iedere pagina hetzelfde*/
 
 *{
@@ -92,8 +102,8 @@ h3{
    margin-left: 4em;
    font-family: blokletters_potloodpotlood;
    font-size: 2em;
-   border-bottom: double 5px #000F55;
    color:#000F55;
+   font-family: '3dumb';
    
 }
 /*Hoofdmenu*/
@@ -110,10 +120,12 @@ nav
     cursor: pointer;
     border-radius:0 10px 10px 0;
     font-family: Caviar;
-    height: 26em;
-    content: 'Menu';
+    height: 23.5em;
     -webkit-transition: left 1.5s; /* For Safari 3.1 to 6.0 */
     transition: left 1.5s;
+}
+.StyleAdmin{
+ height: 18em;
 }
 
 #MenuIcon{
@@ -555,21 +567,13 @@ width:70em;
 }
 
 /*Leerlingen toevoegen formulier*/
-
-
-
-.bgFormLeerkracht{
-    height:500px;
-    width:300px;
-    margin-left: 50px;
-    margin-top: 50px;
-    position: absolute;
-}
 .bgFormLeerkracht > form{
-    margin-top: 55px;
-    margin-left: 35px;
+    margin-top: -5em;
+    margin-left: 15em;
+    padding-left: 1em;
+    box-shadow: 5px 5px 20px #4d4d4d;
+    
 }
-
 .buttonToevoegen{
     font-family: blokletters_potloodpotlood;
     padding: 1em;
@@ -597,7 +601,8 @@ width:70em;
     width:67em;
     height:450px;
     float: left;
-    background: url('../images/bgTempForm.png');
+    background: url('../images/bgImageC.png');
+    border-radius: 10px;
     box-shadow: 8px 0 10px rgba(0,0,0,0.2);
     position: absolute;
     font-size: 0.8em;
@@ -605,7 +610,12 @@ width:70em;
 
 .InvoerForm > .TussenForm{
     position: absolute;
-    margin: 1em;   
+    margin: 1em; 
+    padding: 0.5em;
+     background: url('../images/linedpaper.png');
+     width: 31em;
+     height: 90%;
+     box-shadow: 8px 10px 20px rgba(0,0,0,0.2);
 }
 .InvoerForm > .TussenForm > label{
     display: inline-block;
@@ -619,7 +629,7 @@ width:70em;
     font-weight: bolder;
 }
 .InvoerForm > .FormRechts{
-    margin-left: 35em;
+    margin-left: 34em;
 }
 
 .InvoerForm > .TussenForm > label > input{
@@ -627,7 +637,8 @@ width:70em;
     float: right;
     background:none;
     margin-right: -2em;
-    border: groove 1px white;
+    border:none;
+    border-bottom: solid 1px black;
     width:15em;
 }
 .InvoerForm > .TussenForm > label > input:focus{
@@ -758,12 +769,12 @@ box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
     width: 13em;
 }
 #KL{
-    margin-top: -2em;
+    margin-top: -2.5em;
 }
 .InvoerLeerkracht{
     margin-top: 2em;
-    width:425px;
-    height: 340px;
+    width:450px;
+    height: 375px;
 }
 
 .ToevoegenLeerkracht{

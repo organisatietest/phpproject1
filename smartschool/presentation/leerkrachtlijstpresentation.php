@@ -24,7 +24,7 @@ and open the template in the editor.
             <header>
                 <h1><span class="hoofding">Smart School</span></h1>
 
-                <nav>
+                <nav class="StyleAdmin">
                     <h4>Menu</h4><img id="MenuIcon" src="images/menuIcon.png" alt="menuIcon.png"/>
                     <ul>
                         <!--leraar-->
