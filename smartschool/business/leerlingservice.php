@@ -60,7 +60,33 @@ class leerlingservice {
         $gebruiker = $gebruikerDAO->getByemailadres($emailadres);
         return $gebruiker;
     }
+    
+    public function updateLeerling($leerlingid,$voornaam, $familienaam, $geboortedatum, $straat, $huisnr,$bus,$postcode, $telefoonnr
+    , $klasid, $voornaamouder1, $familienaamouder1, $voornaamouder2, $familienaamouder2, $GSMouder1
+    , $GSMouder2, $emailadres,$wachtwoord){
+        $leerlingDAO = new leerlingDAO();
+        $leerling = self::getleerlingbyid($leerlingid);
+        $leerling->setVoornaam($voornaam);
+        $leerling->setFamilienaam($familienaam);
+        $leerling->setGeboortedatum($geboortedatum);
+        $leerling->setStraat($straat);
+        $leerling->setHuisnr($huisnr);
+        $leerling->setBus($bus);
+        $leerling->setPostcode($postcode);
+        $leerling->setTelefoonnr($telefoonnr);
+        $leerling->setKlasid($klasid);
+        $leerling->setVoornaamouder1($voornaamouder1);
+        $leerling->setFamilienaamouder1($familienaamouder1);
+        $leerling->setVoornaamouder2($voornaamouder2);
+        $leerling->setFamilienaamouder2($familienaamouder2);
+        $leerling->setGSMouder1($GSMouder1);
+        $leerling->setGSMouder2($GSMouder2);
+        $leerling->setWachtwoord($wachtwoord);
+        print_r($leerling);
+        $leerlingDAO->update($leerling);
+    }
 
+    
     public function updateGebruiker($naam, $voornaam, $telefoonnummer,$emailadres
                                 ,$woonplaats, $postcode, $straat, $nummer) {
         $gebruikerDAO = new gebruikerDAO();

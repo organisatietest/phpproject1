@@ -6,7 +6,7 @@ $bestaandleerling = null;
 
 class leerlingDAO {
 
-    public function getById($id){
+    public function getById($id) {
         $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
         $sql = "select leerlingid, voornaam, familienaam, geboortedatum, straat, huisnr,bus,postcode, telefoonnr
     , klasid, voornaamouder1, familienaamouder1, voornaamouder2, familienaamouder2, GSMouder1
@@ -14,51 +14,52 @@ class leerlingDAO {
         $resultSet = $dbh->query($sql);
         $rij = $resultSet->fetch();
         $leerling = leerling::create($rij["leerlingid"], $rij["voornaam"], $rij["familienaam"], $rij["geboortedatum"]
-                        , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"],$rij["klasid"]
+                        , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"], $rij["klasid"]
                         , $rij["voornaamouder1"], $rij["voornaamouder2"], $rij["familienaamouder1"], $rij["familienaamouder2"]
-                        ,$rij["GSMouder1"],$rij["GSMouder2"],$rij["emailadres"],$rij["wachtwoord"]);
+                        , $rij["GSMouder1"], $rij["GSMouder2"], $rij["emailadres"], $rij["wachtwoord"]);
         $dbh = null;
         return $leerling;
     }
 
-        public function getByKlasId($klasid){
+    public function getByKlasId($klasid) {
         $klaslijst = array();
         $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
         $sql = "select leerlingid, voornaam, familienaam, geboortedatum, straat, huisnr,bus,postcode, telefoonnr
     , klasid, voornaamouder1, familienaamouder1, voornaamouder2, familienaamouder2, GSMouder1
     , GSMouder2, emailadres, wachtwoord from leerling where klasid ='$klasid'";
         $resultSet = $dbh->query($sql);
-        foreach ($resultSet as $rij){
+        foreach ($resultSet as $rij) {
             $leerling = leerling::create($rij["leerlingid"], $rij["voornaam"], $rij["familienaam"], $rij["geboortedatum"]
-                        , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"],$rij["klasid"]
-                        , $rij["voornaamouder1"], $rij["voornaamouder2"], $rij["familienaamouder1"], $rij["familienaamouder2"]
-                        ,$rij["GSMouder1"],$rij["GSMouder2"],$rij["emailadres"],$rij["wachtwoord"]);
-        array_push($klaslijst, $leerling);
+                            , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"], $rij["klasid"]
+                            , $rij["voornaamouder1"], $rij["voornaamouder2"], $rij["familienaamouder1"], $rij["familienaamouder2"]
+                            , $rij["GSMouder1"], $rij["GSMouder2"], $rij["emailadres"], $rij["wachtwoord"]);
+            array_push($klaslijst, $leerling);
         }
         $dbh = null;
         return $klaslijst;
     }
+
     //deze functie dient om de inlog te zien.
-    public function getByGebruiker($emailadres,$wachtwoord){
+    public function getByGebruiker($emailadres, $wachtwoord) {
         $sql = "select leerlingid, voornaam, familienaam, geboortedatum, straat, huisnr,bus,postcode, telefoonnr
         , klasid, voornaamouder1, familienaamouder1, voornaamouder2, familienaamouder2, GSMouder1
-        , GSMouder2, emailadres, wachtwoord from leerling where emailadres ='".$emailadres."' and wachtwoord ='".$wachtwoord."' ";
+        , GSMouder2, emailadres, wachtwoord from leerling where emailadres ='" . $emailadres . "' and wachtwoord ='" . $wachtwoord . "' ";
         $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
         $resultset = $dbh->query($sql);
         $rij = $resultset->fetch();
         $leerling = leerling::create($rij["leerlingid"], $rij["voornaam"], $rij["familienaam"], $rij["geboortedatum"]
-                        , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"],$rij["klasid"]
+                        , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"], $rij["klasid"]
                         , $rij["voornaamouder1"], $rij["voornaamouder2"], $rij["familienaamouder1"], $rij["familienaamouder2"]
-                        ,$rij["GSMouder1"],$rij["GSMouder2"],$rij["emailadres"],$rij["wachtwoord"]);
+                        , $rij["GSMouder1"], $rij["GSMouder2"], $rij["emailadres"], $rij["wachtwoord"]);
         $dbh = null;
-        if($leerling->getLeerlingid()==0){
+        if ($leerling->getLeerlingid() == 0) {
             return false;
-        }else{
+        } else {
             return $leerling;
-        } 
+        }
     }
 
-    public function getByemailadresNaam($emailadres,$voornaam,$familienaam) {
+    public function getByemailadresNaam($emailadres, $voornaam, $familienaam) {
         $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
         $sql = "select leerlingid, voornaam, familienaam, geboortedatum, straat, huisnr,bus,postcode, telefoonnr
     , klasid, voornaamouder1, familienaamouder1, voornaamouder2, familienaamouder2, GSMouder1
@@ -68,24 +69,24 @@ class leerlingDAO {
         $dbh->exec($sql);
         $dbh = null;
         $gebruiker = leerling::create($rij["leerlingid"], $rij["voornaam"], $rij["familienaam"], $rij["geboortedatum"]
-                        , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"],$rij["klasid"]
+                        , $rij["straat"], $rij["huisnr"], $rij["bus"], $rij["postcode"], $rij["telefoonnr"], $rij["klasid"]
                         , $rij["voornaamouder1"], $rij["voornaamouder2"], $rij["familienaamouder1"], $rij["familienaamouder2"]
-                        ,$rij["GSMouder1"],$rij["GSMouder2"],$emailadres,$rij["wachtwoord"]);
+                        , $rij["GSMouder1"], $rij["GSMouder2"], $emailadres, $rij["wachtwoord"]);
         return $gebruiker;
     }
 
     public function create($voornaam, $familienaam, $geboortedatum, $straat, $huisnr, $bus, $postcode, $telefoonnr
     , $klasid, $voornaamouder1, $familienaamouder1, $voornaamouder2, $familienaamouder2, $GSMouder1
     , $GSMouder2, $emailadres, $wachtwoord) {
-        $bestaandleerling = $this->getByemailadresNaam($emailadres,$voornaam,$familienaam);
+        $bestaandleerling = $this->getByemailadresNaam($emailadres, $voornaam, $familienaam);
         if ($bestaandleerling->getLeerlingid() == 0) {
             $sql = "insert into leerling (voornaam, familienaam, geboortedatum, straat, huisnr,bus,postcode, telefoonnr
     , klasid, voornaamouder1, familienaamouder1, voornaamouder2, familienaamouder2, GSMouder1
     , GSMouder2, emailadres, wachtwoord)
                 values ('" . $voornaam . "', '" . $familienaam . "','" . $geboortedatum . "','" . $straat . "','"
                     . $huisnr . "','" . $bus . "','" . $postcode . "','" . $telefoonnr . "','" . $klasid . "','"
-                    . $voornaamouder1 . "', '" .$familienaamouder1."', '" .$voornaamouder2."', '" .$familienaamouder2."', '"
-                    .$GSMouder1."', '" .$GSMouder2."', '" .$emailadres."', '" .$wachtwoord."')";
+                    . $voornaamouder1 . "', '" . $familienaamouder1 . "', '" . $voornaamouder2 . "', '" . $familienaamouder2 . "', '"
+                    . $GSMouder1 . "', '" . $GSMouder2 . "', '" . $emailadres . "', '" . $wachtwoord . "')";
             $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
             $test = $dbh->exec($sql);
             $leerlingid = $dbh->lastInsertId();
@@ -98,7 +99,7 @@ class leerlingDAO {
             throw new EmailadresBestaatException();
         }
     }
-    
+
     public function randomPassword($emailadres) {
         $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
         $pass = array(); //remember to declare $pass as an array
@@ -117,28 +118,41 @@ class leerlingDAO {
         } else
             throw new mailmisluktException();
     }
-    
-    public function delete($id){
-        $dbh = new PDO(DBconfig::$DB_CONNSTRING,  DBconfig::$DB_USERNAME,  DBconfig::$DB_PASSWORD);
-        $sql = "delete from leerling where leerlingid = ".$id;
+
+    public function delete($id) {
+        $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
+        $sql = "delete from leerling where leerlingid = " . $id;
         $dbh->exec($sql);
         $dbh = null;
     }
 
-    public function update($gebruiker1) {
-        $sql = "update gebruiker set naam='" . $gebruiker1->getNaam() .
-                "', voornaam='" . $gebruiker1->getVoornaam() .
-                "', wachtwoord='" . $gebruiker1->getWachtwoord() .
-                "', telefoonnummer='" . $gebruiker1->getTelefoonnummer() .
-                "', woonplaats='" . $gebruiker1->getWoonplaats() .
-                "', postcode='" . $gebruiker1->getPostcode() .
-                "', straat='" . $gebruiker1->getStraat() .
-                "', nummer='" . $gebruiker1->getNummer() .
-                "' where emailadres = '" . $gebruiker1->getEmailadres() . "'";
-        $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
+    public function update($leerling) {
+        $id = $leerling->getLeerlingid();
+        $sql = "update leerling set voornaam='" . $leerling->getVoornaam() . "', familienaam='" . $leerling->getFamilienaam() . "', geboortedatum='" . $leerling->getGeboortedatum() . "', straat='" . $leerling->getStraat() . "'
+        , huisnr='" . $leerling->getHuisnr() . "', bus='" . $leerling->getBus() . "',postcode='" . $leerling->getPostcode() . "', telefoonnr='" . $leerling->getTelefoonnr() . "'
+        , klasid='" . $leerling->getKlasid() . "', voornaamouder1='" . $leerling->getVoornaamouder1() . "', familienaamouder1='" . $leerling->getFamilienaamouder1() . "', voornaamouder2='" . $leerling->getVoornaamouder2() . "', familienaamouder2='" . $leerling->getFamilienaamouder2() . "', GSMouder1='" . $leerling->getGSMouder1() . "'
+        , GSMouder2='" . $leerling->getGSMouder2() . "', emailadres='" . $leerling->getEmailadres() . "', wachtwoord='" . $leerling->getWachtwoord() . "' where leerlingid = " . $id;
+        $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBconfig::$DB_USERNAME, DBconfig::$DB_PASSWORD);
+        echo '<br/> ';
+        print_r($sql);
         $dbh->exec($sql);
         $dbh = null;
     }
+
+//    public function update($gebruiker1) {
+//        $sql = "update gebruiker set naam='" . $gebruiker1->getNaam() .
+//                "', voornaam='" . $gebruiker1->getVoornaam() .
+//                "', wachtwoord='" . $gebruiker1->getWachtwoord() .
+//                "', telefoonnummer='" . $gebruiker1->getTelefoonnummer() .
+//                "', woonplaats='" . $gebruiker1->getWoonplaats() .
+//                "', postcode='" . $gebruiker1->getPostcode() .
+//                "', straat='" . $gebruiker1->getStraat() .
+//                "', nummer='" . $gebruiker1->getNummer() .
+//                "' where emailadres = '" . $gebruiker1->getEmailadres() . "'";
+//        $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
+//        $dbh->exec($sql);
+//        $dbh = null;
+//    }
 
     public function login($emailadres, $password) {
         $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
