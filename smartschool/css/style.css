@@ -1,18 +1,40 @@
 @font-face {
-    font-family:chalk;
-    src: url('../Fonts/dk-cool-crayon/DK Cool Crayon.ttf');
+    font-family: 'blokletters_potloodpotlood';
+    src: url('../fonts/potlood/Blokletters-Potlood-webfont.eot');
+    src: url('../fonts/potlood/Blokletters-Potlood-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/potlood/Blokletters-Potlood-webfont.woff') format('woff'),
+         url('../fonts/potlood/Blokletters-Potlood-webfont.ttf') format('truetype'),
+         url('../fonts/potlood/Blokletters-Potlood-webfont.svg#blokletters_potloodpotlood') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
-
 @font-face {
-    font-family:hello ;
-    src: url('../Fonts/girls_have_many_secrets/Girls Have Many Secrets.ttf');
+    font-family:chalk;
+    src: url('../Fonts/dk-cool-crayon/DK Cool Crayon.ttf') format('truetype');
+    
 }
-
 @font-face {
     font-family:Caviar ;
-    src: url('../Fonts/caviar_dreams/CaviarDreams.ttf');
-}
+    src: url('../Fonts/caviardreams/CaviarDreams-webfont.eot');
+    src: url('../Fonts/caviardreams/CaviarDreams-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/caviardreams/CaviarDreams-webfont.woff') format('woff'),
+         url('../Fonts/caviardreams/CaviarDreams-webfont.ttf') format('truetype'),
+         url('../Fonts/caviardreams/CaviarDreams-webfont.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
+@font-face {
+    font-family: '3dumb';
+    src: url('../Fonts/3dumb/3Dumb-webfont.eot');
+    src: url('../Fonts/3dumb/3Dumb-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/3dumb/3Dumb-webfont.woff') format('woff'),
+         url('../Fonts/3dumb/3Dumb-webfont.ttf') format('truetype'),
+         url('../Fonts/3dumb/3Dumb-webfont.svg#3dumbregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 /*Op iedere pagina hetzelfde*/
 
 *{
@@ -34,10 +56,11 @@ h1{
     margin-left: 600px;
 }
 h4{
-    text-align: right;
-    padding-right: 1em;
+    text-align: left;
+    padding-left: 2em;
     padding-top: 1em;
     color: white;
+    margin-bottom: -1em;
 }
 a:link{
     color:maroon;
@@ -48,8 +71,7 @@ a:link{
 }
 
 a:hover{
-    text-decoration: underline;
-    
+    text-decoration: underline;   
 }
 
 a:visited{
@@ -78,33 +100,39 @@ h3{
     position: absolute;
     margin-top: -5em;
    margin-left: 4em;
-   font-family: hello;
+   font-family: blokletters_potloodpotlood;
    font-size: 2em;
-   border-bottom: double 5px black;
+   color:#000F55;
+   font-family: '3dumb';
    
 }
 /*Hoofdmenu*/
 nav
 {
+    margin-top: 1em;
     position: fixed;
     left: -17em;
     top: 0;
     bottom: 0;
     background:url('../images/bgNav.png');
-    box-shadow: 4px 0 5px rgba(0,0,0,0.2);
+    box-shadow: 4px 10px 10px rgba(0,0,0,0.2);
     z-index: 1;
     cursor: pointer;
-    border-radius:0 15px 15px 0;
+    border-radius:0 10px 10px 0;
     font-family: Caviar;
-    height: 24em;
-    content: 'Menu';
+    height: 23.5em;
     -webkit-transition: left 1.5s; /* For Safari 3.1 to 6.0 */
     transition: left 1.5s;
 }
- 
-nav:after
-{
+.StyleAdmin{
+ height: 18em;
+}
 
+#MenuIcon{
+    height: 25px;
+    margin-left: 18em;
+    
+    vertical-align: middle;
 }
 nav ul
 {
@@ -135,13 +163,30 @@ nav ul ul li{
 }
 nav ul li a
 {
-    background:url('../images/bgImageC.png');
+    background:url('../images/bgImageD.png');
     padding: 0.5em;
     display: block;
     border-left: 5px darkred solid;
     text-decoration: none;
     box-shadow: 10px 5px 10px rgba(0,0,0,0.2);
     color:white;
+}
+nav ul li a img{
+    margin-left: 11em;
+    height:25px;
+    vertical-align: middle;
+}
+#LeerlingIcon{
+    margin-left: 10em;
+}
+#AanwezigheidIcon{
+    margin-left:6.7em;
+}
+#LeerkrachtIcon{
+    margin-left: 9.7em;
+}
+#closeIcon{
+    margin-left: 10.5em;
 }
 nav ul li a:visited{
     color:white;
@@ -297,7 +342,7 @@ nav ul li a:hover
 
 /*Titel Welkom*/
 
-h2{
+.WelkomAni{
     font-family: chalk;
     font-size: 40px;
      height:100px;
@@ -340,8 +385,8 @@ h2{
 }
 
 #InlogForm{
-    padding-top:5em;
-    margin-left: 300px;
+    padding-top:2em;
+    margin-left: 20em;
     margin-right: auto;
     width:50%;
         
@@ -357,7 +402,7 @@ h2{
      display: inline-block;
     float: left;
     clear: left;
-    width: 300px;
+    width: 15em;
     text-align: left;
     margin:0.2em;
     padding: 0.5em;
@@ -372,7 +417,7 @@ h2{
     background:none;
     margin-top:0.2em;
     margin-right: -2em;
-    width:10em;
+    width:20em;
     border:none;
     border-bottom: 1px solid #fdb5f5;
     font-family: chalk;
@@ -394,7 +439,7 @@ h2{
         width:225px;
         float:left;
         position: relative;
-        margin-left: 50px;
+        margin-left: 2em;
 }
 
 .opmaakInlogKnop > input[type="submit"]{
@@ -438,11 +483,13 @@ h2{
    padding:1em;
    width:400px;
    height:100px;
-        margin-top: 25px;
+   margin-top: 25px;
    overflow:hidden;
-   font-family: hello;
-    box-shadow: -5px 5px 20px #4d4d4d;
-    margin-left: 1em;
+   font-family: blokletters_potloodpotlood;
+    box-shadow: -5px 5px 10px #4d4d4d;
+    margin-left: 2em;
+    font-size: 0.8em;
+        border-radius:10px;
 }
 
 .passpoort > img{
@@ -451,7 +498,6 @@ h2{
    position:relative;
    
 }
-
 .bgKlaslijst{
     background: url('../images/bgImageC.png') repeat;
     height:500px;
@@ -487,7 +533,9 @@ h2{
     background: none;
 }
 .klaslijst::-webkit-scrollbar-thumb{
-    background: url('../images/bgScroll.png');
+    background: url('../images/bgImageA.png');
+    box-shadow: -5px 5px 20px #4d4d4d;
+    border-radius: 5px;
 }
 
 
@@ -521,30 +569,23 @@ width:70em;
 }
 
 /*Leerlingen toevoegen formulier*/
-
-
-
-.bgFormLeerkracht{
-    height:500px;
-    width:300px;
-    margin-left: 50px;
-    margin-top: 50px;
-    position: absolute;
-}
 .bgFormLeerkracht > form{
-    margin-top: 55px;
-    margin-left: 35px;
+    margin-top: -5em;
+    margin-left: 15em;
+    padding-left: 1em;
+    box-shadow: 5px 5px 20px #4d4d4d;
+    
 }
-
 .buttonToevoegen{
-    font-family: hello;
+    font-family: blokletters_potloodpotlood;
     padding: 1em;
     width:250px;
     position: relative;
-    margin-left: 37em;
-    margin-top: 25em;
+    margin-left: 34em;
+    margin-top: 23em;
     background: none;
     border:solid 2px black;
+    font-weight: bolder;
 }
 
 .buttonToevoegen:hover{
@@ -559,17 +600,24 @@ width:70em;
 .InvoerForm{
     margin-left: 4em;
     margin-top: -6em;
-    width:60em;
+    width:67em;
     height:450px;
     float: left;
-    background: url('../images/bgTempForm.png');
+    background: url('../images/bgImageC.png');
+    border-radius: 10px;
     box-shadow: 8px 0 10px rgba(0,0,0,0.2);
     position: absolute;
+    font-size: 0.8em;
 }
 
 .InvoerForm > .TussenForm{
     position: absolute;
-    margin: 1em;   
+    margin: 1em; 
+    padding: 0.5em;
+     background: url('../images/linedpaper.png');
+     width: 31em;
+     height: 90%;
+     box-shadow: 8px 10px 20px rgba(0,0,0,0.2);
 }
 .InvoerForm > .TussenForm > label{
     display: inline-block;
@@ -579,10 +627,11 @@ width:70em;
     text-align: left;
     margin:0.2em;
     padding: 0.5em;
-    font-family: hello;
+    font-family: blokletters_potloodpotlood;
+    font-weight: bolder;
 }
 .InvoerForm > .FormRechts{
-    margin-left: 30em;
+    margin-left: 34em;
 }
 
 .InvoerForm > .TussenForm > label > input{
@@ -590,7 +639,8 @@ width:70em;
     float: right;
     background:none;
     margin-right: -2em;
-    border: groove 1px white;
+    border:none;
+    border-bottom: solid 1px black;
     width:15em;
 }
 .InvoerForm > .TussenForm > label > input:focus{
@@ -604,14 +654,14 @@ width:70em;
 
 
 /*Checkboc voor het invoerformulier*/
-/*input[type="checkbox"]{
+.verwijderen{
     border:none;
     float:left;
     position: absolute;
    visibility: hidden;
    margin-top:0.2em;
 }
-*/
+
 #valid_email{
         border:none;
     float:left;
@@ -653,33 +703,38 @@ input[type="checkbox"]:checked + .juist{
 }
 #doodle{
     position: relative;
-    margin-left: 57em;
+    margin-left: 55em;
     height:10em;
     margin-top: 2em;
 }
-footer{  
+footer{
+       position: relative;
+    width:927px;
+    margin-left: auto;
+    margin-right:auto; 
+}
+footer > blockquote{  
   
   float:right;
   text-align:center;     
   width: 200px;    
   margin: 25px;
-  margin-top: -12em;
+  margin-top: -14em;
   margin-left: 50em;
-  margin-right: auto;
   min-height:125px;
   max-height:125px;
   padding-top:5px;
   position:absolute;   
   border:1px solid #E8E8E8;  
   border-top:60px solid #fdfd86;
-  font-family:hello;    
-  font-size:18px;      
+  font-family:blokletters_potloodpotlood;    
+  font-size:1em;      
   border-bottom-right-radius: 60px 5px;
   display:inline-block;    
   background: #ffff88; /* Old browsers */
-background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffff88), color-stop(82%,#ffff88), color-stop(82%,#ffff88), color-stop(100%,#ffffc6)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffff88), color-stop(82%,#ffff88), color-stop(82%,#ffff88), color-stop(100%,#ffffc6)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
 background: -o-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Opera 11.10+ */
 background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
 background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
@@ -696,33 +751,85 @@ box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
 }
 #AfwezigDoor{
     float: right;
-    margin-right: -25em;
+    margin-top: -13em;
+    margin-right: -20em;
     height: 4em;
     padding: 1em;
-    background:url('../images/linedpaper.png');
-    box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
+    background: none;
+    font-family: blokletters_potloodpotlood;
+    font-weight: bolder;
+    border: #000F55 groove medium;
+    color: #000F55;
 }
 #AfwezigDoor:hover{
-    background-color: black;
+    background-color: #000F55;
+    color: white;
 }
 #AW{
-    margin-top: -2em;
+    margin-left: 2em;
+    margin-top: -2.5em;
+    width: 13em;
 }
 #KL{
-    margin-top: -2em;
+    margin-top: -2.5em;
 }
 .InvoerLeerkracht{
+    margin-top: 2em;
     width:450px;
-    height: 350px;
+    height: 375px;
 }
 
 .ToevoegenLeerkracht{
     margin:1em 1em 0 5em;
 }
 #LT{
-    width: 15em;
+    width: 20em;
     margin-bottom:-10em;
 }
 #LL{
-    margin-top: -2em;
+    margin-top: -2.5em;
+}
+.IndexFooter{
+    margin-top: 5em;
+}
+.IndexFooter > blockquote{
+    width: 30em;
+    padding: 0;
+    margin: 0;
+    margin-top: 8em;
+    margin-left: 14em;
+    transform: none;
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-family: chawp;
+    color: white;
+}
+.IndexFooter > blockquote > a:link{
+    color:#fdb5f5;
+}
+.IndexFooter > blockquote > a:visited{
+    color:#fdb5f5;
+}
+#calendar{
+       float: left;
+        padding:1em;
+        width: 60%;
+        margin-left: 5em;
+        margin-top: 2em;
+    
+}
+.bgUitlegAgenda{
+    margin-top: 5em;
+    float: right;
+    background: url('../images/bgImageA.png');
+    width:15em;
+    padding: 2em;
+    font-family: blokletters_potloodpotlood;
+    font-weight: bolder;
+    border-radius: 15px;
+    box-shadow: 8px 10px 20px rgba(0,0,0,0.2);
+}
+.bgUitlegAgenda > ul > li{
+    padding: 0.5em;
 }
