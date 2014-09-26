@@ -116,7 +116,7 @@ and open the template in the editor.
                 <article class="bgForm">
                     <!--hier komt de inhoud-->   
                     <!-- start form -->
-                    <form class="InvoerForm" method="post" name="formaanmelden" action="leerlingaanmelden.php?action=process" onsubmit="return validateForm();">
+                    <form class="InvoerForm" method="post" name="formaanmelden" action="leerlingprofiel.php?update=yes&action=process&leerlingid=<?php echo $leerling->getLeerlingid();?>" onsubmit="return validateForm();">
                         <div class="TussenForm">
                             <label class="In"  for="voornaam">voornaam *
                                 <input type="text" name="voornaam" value="<?php echo $leerling->getVoornaam(); ?>" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');
@@ -169,7 +169,10 @@ and open the template in the editor.
                             <label for="emailadres">emailadres voor ouder *
                                 <input type="mail" name="emailadres" value="<?php echo $leerling->getEmailadres(); ?>" placeholder="abc123@example.com" id="emailadres" autocomplete="off" required>
                                 <span id="emailerror" class="available"></span><br>
-                            </label>
+                            <!--</label>
+                            <label for="wachtwoord">wachtwoord *
+                                <input type="password" name="wachtwoord" value="<?php //echo $leerling->getWachtwoord(); ?>" placeholder="" id="wachtwoord" autocomplete="off" required>
+                            </label>-->
                             <div id="rsp_email"><!-- --></div><br>
                             <input class="buttonToevoegen" type="submit" 
                                    value="bijwerken"><br>
