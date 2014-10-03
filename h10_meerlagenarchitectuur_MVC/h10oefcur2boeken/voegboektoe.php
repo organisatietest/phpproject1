@@ -5,7 +5,7 @@ require_once("business/boekservice.php");
 require_once("exceptions/titelbestaatexception.php");
 if ($_GET["action"] == "process") {
     try {
-        BoekService::voegNieuwBoekToe($_POST["txtTitel"], $_POST["selGenre"]);
+        boekService::voegNieuwBoekToe($_POST["txtTitel"], $_POST["selGenre"]);
         header("location: toonalleboeken.php");
         exit(0);
     } catch (TitelBestaatException $tbe) {
