@@ -1,7 +1,7 @@
 <?php
 class GreetingGenerator {
 public function getGreeting() {
-return "Hello world! what up?";
+return "Hello world! test test?";
 }
 }
 ?>
