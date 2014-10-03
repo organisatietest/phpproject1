@@ -25,12 +25,12 @@
 
 }
 @font-face {
-    font-family: '3dumb';
-    src: url('../Fonts/3dumb/3Dumb-webfont.eot');
-    src: url('../Fonts/3dumb/3Dumb-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../Fonts/3dumb/3Dumb-webfont.woff') format('woff'),
-         url('../Fonts/3dumb/3Dumb-webfont.ttf') format('truetype'),
-         url('../Fonts/3dumb/3Dumb-webfont.svg#3dumbregular') format('svg');
+    font-family: 'Calli';
+    src: url('../Fonts/calligraffiti/Calligraffiti-webfont.eot');
+    src: url('../Fonts/calligraffiti/Calligraffiti-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/calligraffiti/Calligraffiti-webfont.woff') format('woff'),
+         url('../Fonts/calligraffiti/Calligraffiti-webfont.ttf') format('truetype'),
+         url('../Fonts/calligraffiti/Calligraffiti-webfont.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -44,16 +44,16 @@
 
 body{
     margin: 0;
-    background: url('../images/wood.png') repeat;
+    background: url('../images/groovepaper.png') repeat;
 }
 
 h1{
     background:url('../images/header.png') no-repeat;
     height:100px;
     width:450px;
-    float: left;
-    margin-top:-100px;
-    margin-left: 600px;
+    float: right;
+    margin-top:-150px;
+    margin-left: auto;
 }
 h4{
     text-align: left;
@@ -62,6 +62,7 @@ h4{
     color: white;
     margin-bottom: -1em;
 }
+/*
 a:link{
     color:maroon;
     font-weight: bolder;
@@ -81,7 +82,7 @@ a:visited{
     letter-spacing: 2px;
     
 }
-
+*/
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -97,34 +98,138 @@ a:visited{
     
 }
 h3{
+    text-align: left;
     position: absolute;
-    margin-top: -5em;
-   margin-left: 4em;
+   margin-left: 5em;
+   margin-right: auto;
+   margin-top: 2em;
    font-family: blokletters_potloodpotlood;
    font-size: 2em;
    color:#000F55;
-   font-family: '3dumb';
+   font-family: 'calli';
    
 }
-/*Hoofdmenu*/
-nav
+
+/*
+    Hoofdmenu
+*/
+.hoofdmenu
 {
-    margin-top: 1em;
-    position: fixed;
-    left: -17em;
-    top: 0;
-    bottom: 0;
-    background:url('../images/bgNav.png');
-    box-shadow: 4px 10px 10px rgba(0,0,0,0.2);
     z-index: 1;
     cursor: pointer;
-    border-radius:0 10px 10px 0;
     font-family: Caviar;
-    height: 23.5em;
-    -webkit-transition: left 1.5s; /* For Safari 3.1 to 6.0 */
-    transition: left 1.5s;
+
 }
+.hoofdmenu  ul
+{
+    z-index: 1;
+    position: relative;
+    list-style-type: none;
+    padding: 1em;
+        margin-left: auto;
+    margin-right:auto;
+    width: 42.7em;
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 2em;
+}
+
+.hoofdmenu  ul  li
+{
+    margin: 0.2em;
+     display: inline-block;
+     width: 10em;
+     text-align: center;
+    
+    
+}
+.hoofdmenu ul li a
+{
+    padding: 0.5em;
+    display: block;
+    text-decoration: none;
+    color:white;
+}
+.hoofdmenu ul li  a img{
+    margin-left: 11em;
+    height:25px;
+    vertical-align: middle;
+}
+.hoofdmenu  ul  li  a:visited{
+    color:white;
+    border-bottom: white;
+}
+.hoofdmenu  ul li  a:hover
+{
+    	border-bottom: 10px solid white;
+        background-color: white;
+        color: black;
+        border-radius: 10px 10px 0 0;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.uitlog {
+    position: absolute;
+    float: right;
+    top:0;
+    right:0;
+    background:white;
+    color:darkred;
+    font-weight: bolder;
+    border:none;
+    text-align: center;
+    behavior: url(../images/border-radius/border-radius.htc);
+    padding: 1em;
+    border-radius: 0 0 0 10px;
+    text-decoration: none;
+    margin-top: 14em;
+    z-index: 99999;
+    font-family: caviar;
+
+}
+.uitlog:visited{
+    color:darkred;
+}
+.uitlog:link{
+    color: white;
+}
+.uitlog:hover{
+    background: darkred;
+    color:white;
+}
+.uitlog:hover + .OnderkantWeb{
+    float: bottom;
+    left:0;
+    bottom: 0;
+    background: url('../images/school.png') repeat;
+    height:43.5em;
+    width:100%;
+    position: relative;
+   box-shadow: 0px -5px 15px #4d4d4d;
+   border-top: solid 10px darkred;
+}
+
+.actief:link{
+	border-bottom: 10px solid white;
+        background-color: white;
+        color: black;
+        border-radius: 10px 10px 0 0;
+                        }   
+.actief:visited {
+color: black;
+                        }   
+                        
+
+                        
+.actief:hover{
+    
+  color: black;    
+                        } 
+       
 .StyleAdmin{
+    
  height: 18em;
 }
 
@@ -134,176 +239,40 @@ nav
     
     vertical-align: middle;
 }
-nav ul
-{
-    
-    width: 19em;
-    list-style-type: none;
-    margin: 0;
-    padding: 1em;
-}
-nav:hover
-{
-    left: 0;
-}
-nav ul li
-{
-    margin: 0.2em;
-    
-    
-}
-nav ul ul{
-    margin-top: -0.5em;
-    margin-left: -1em;
-    margin-bottom: -0.7em;
-    width: 14em;
-}
-nav ul ul li{
-    font-size: 12px;
-}
-nav ul li a
-{
-    background:url('../images/bgImageD.png');
-    padding: 0.5em;
-    display: block;
-    border-left: 5px darkred solid;
-    text-decoration: none;
-    box-shadow: 10px 5px 10px rgba(0,0,0,0.2);
-    color:white;
-}
-nav ul li a img{
-    margin-left: 11em;
-    height:25px;
-    vertical-align: middle;
-}
 #LeerlingIcon{
-    margin-left: 10em;
+    margin-left: 11.2em;
+    border:none;
+    outline:none
 }
 #AanwezigheidIcon{
-    margin-left:6.7em;
+    margin-left:8.4em;    
+    border:none;
+    outline:none
+    
 }
 #LeerkrachtIcon{
-    margin-left: 9.7em;
+    margin-left: 10.9em;
+    border:none;
+    outline:none
 }
 #closeIcon{
-    margin-left: 10.5em;
-}
-nav ul li a:visited{
-    color:white;
-}
-nav ul li a:hover
-{
-    text-decoration: none;
-    border-left-color: green;
-    background: url('../images/bgImageB.png');
-    color: white;
-}
-.uitlog{
-    background:darkred;
-    color:white;
+    margin-left: 11.4em;
     border:none;
-    margin-top: 2em;
-    text-align: center;
-    border-radius: 15px;
+    outline:none
 }
-.uitlog:visited{
-    color:white;
+#agendaIcon{
+    margin-left: 11.8em;
+    border:none;
+    outline:none
 }
-.uitlog:link{
-    color: white;
-}
-.uitlog:hover{
-    background: white;
-    color:darkred;
-}
-/*
-.hoofdmenu{
-    z-index: 9999;
-    position: relative;
-    float: right;
-    margin-top: -4.5em;
-    font-family: Caviar;
-   
-}
-.hoofdmenu ul ul {
-	display: none;
-}
-
-	.hoofdmenu ul li:hover > ul {
-		display: block;
-	}
-.hoofdmenu ul {
-	list-style: none;
-	position: relative;
-	display: inline-block;
-}
-	.hoofdmenu ul:after {
-		content: ""; clear: both; display: block;
-	}
-.hoofdmenu ul li {
-	float: left;
-}
-	.hoofdmenu ul li:hover {
-            color:darkred;
-	}
-		.hoofdmenu ul li:hover a {
-			 color: darkred;
-		}
-	
-	.hoofdmenu ul li a {
-		display: inline-block; 
-                padding:1em;
-		 color: black;; text-decoration: none;
-	}
-.hoofdmenu ul ul {
-	position: absolute; 
-        top: 100%;
-        background:url('../images/linedpaper.png');
-        box-shadow: -5px 5px 15px #4d4d4d;
-        padding:0.2em;
-}
-	.hoofdmenu ul ul li { 
-            float: none;
-                font-size: 12px;
-		position: relative;
-                
-	}
-		.hoofdmenu ul ul li a {
-			display: block;
-			 color: black;
-		}	
-                .hoofdmenu ul ul li a:visited {
-			
-			 color: black;
-		}
-			.hoofdmenu ul ul li a:hover {
-                                border-bottom: 1px darkred solid;
-                                margin-bottom:-1px;
-                                color: darkred;
-			}
-*/
-.actief{
-    border-left-color: green;
-}
-.actief:visited{
-   background: url('../images/bgImageB.png');
-                        }    
-                        .actief:link{
-   color:white;    
-    background: url('../images/bgImageB.png');
-                        }   
-                                                .actief:hover{
-   color:white;         
-                        } 
 /*verandert als je op andere pagina belandt*/
-
 .hoofding{
+    z-index: 10;
     visibility: hidden;
 }
-
-
-/*Foto onderaan pagina*/
-
+/*
+    Foto onderaan pagina
+*/
 .verfvlek{
     float: right;
     right:0;
@@ -311,12 +280,13 @@ nav ul li a:hover
     margin-top: 30em;
     margin-right: -15em;
 }
+/*
+    Log in scherm
+*/
 
-
-
-/*Log in scherm*/
-
-/*Body Inlog*/
+/*
+    Body Inlog
+*/
 
 #inlog{
     background:url('../images/bgInlog.png');
@@ -325,7 +295,9 @@ nav ul li a:hover
 
 
 
-/*Wrapper Inlog*/
+/*
+    Wrapper Inlog
+*/
 
 .wikkelInlog{
     position: relative;
@@ -340,7 +312,9 @@ nav ul li a:hover
 
 
 
-/*Titel Welkom*/
+/*
+    Titel Welkom
+*/
 
 .WelkomAni{
     font-family: chalk;
@@ -462,16 +436,11 @@ nav ul li a:hover
 /*Klaslijst*/
 
 .wikkel{
-    width:70em;
     margin-top:150px;
     margin-left: auto;
     margin-right:auto;
     overflow: visible;
-    height: 40em;
-    margin-bottom: 5em;
-    background:url('../images/linedpaper.png');
-        border:10px solid darkgreen;
-        border-radius: 25px;
+    max-height: 100%;
 }
 
 
@@ -490,6 +459,10 @@ nav ul li a:hover
     margin-left: 2em;
     font-size: 0.8em;
         border-radius:10px;
+        -moz-border-radius:10px;
+        -webkit-border-radius:10px;
+        behavior: url('../images/border-radius/border-radius.htc');
+  display: inline-block;
 }
 
 .passpoort > img{
@@ -498,28 +471,31 @@ nav ul li a:hover
    position:relative;
    
 }
-.bgKlaslijst{
-    background: url('../images/bgImageC.png') repeat;
-    height:500px;
-    width:525px;
-    margin-top: 100px;
-    margin-left: 50px;
-    position: absolute;
-    box-shadow: -5px 5px 20px #4d4d4d;
-    border-radius: 15px;
+.OnderkantWeb{
+    float: bottom;
+    left:0;
+    bottom: 0;
+    background: url('../images/school.png') repeat;
+    height:43.5em;
+    width:100%;
+    position: relative;
+   border-top: solid 10px white;
+    box-shadow: 0px -5px 15px #4d4d4d;
 }
-.bgKlaslijst > img{
+.OnderkantWeb > img{
     float: left;
 }
 .klaslijst{
+    margin-top: 10em;
     background: url('../images/bgTempForm.png') repeat;
-    width:475px;
-    height:450px;
+    width:75%;
+    height:50%;
     overflow: scroll;
-        margin-top: 25px;
-    margin-left: 25px;
-    position: absolute;
-    box-shadow: -5px 5px 20px #4d4d4d;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 20px #4d4d4d;
+    position: relative;
+    top:0;
 }
 
 
@@ -536,6 +512,9 @@ nav ul li a:hover
     background: url('../images/bgImageA.png');
     box-shadow: -5px 5px 20px #4d4d4d;
     border-radius: 5px;
+        -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    behavior: url('../images/border-radius/border-radius.htc');
 }
 
 
@@ -553,6 +532,9 @@ nav ul li a:hover
     background:url('../images/linedpaper.png');
         border:10px solid darkgreen;
         border-radius: 25px;
+            -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    behavior: url('../images/border-radius/border-radius.htc');
 }
 
 .wikkelLeerkrachtToevoegen{
@@ -566,6 +548,9 @@ width:70em;
     background:url('../images/linedpaper.png');
         border:10px solid darkgreen;
         border-radius: 25px;
+            -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    behavior: url('../images/border-radius/border-radius.htc');
 }
 
 /*Leerlingen toevoegen formulier*/
@@ -581,8 +566,8 @@ width:70em;
     padding: 1em;
     width:250px;
     position: relative;
-    margin-left: 34em;
-    margin-top: 23em;
+    margin-left: 48em;
+    margin-top:30em;
     background: none;
     border:solid 2px black;
     font-weight: bolder;
@@ -597,25 +582,14 @@ width:70em;
 
 /*Volledig formulier voor het invoeren van neuwe leerlingen*/
 
-.InvoerForm{
-    margin-left: 4em;
-    margin-top: -6em;
-    width:67em;
-    height:450px;
-    float: left;
-    background: url('../images/bgImageC.png');
-    border-radius: 10px;
-    box-shadow: 8px 0 10px rgba(0,0,0,0.2);
-    position: absolute;
-    font-size: 0.8em;
-}
+
 
 .InvoerForm > .TussenForm{
     position: absolute;
     margin: 1em; 
     padding: 0.5em;
      background: url('../images/linedpaper.png');
-     width: 31em;
+     width: 27em;
      height: 90%;
      box-shadow: 8px 10px 20px rgba(0,0,0,0.2);
 }
@@ -629,9 +603,10 @@ width:70em;
     padding: 0.5em;
     font-family: blokletters_potloodpotlood;
     font-weight: bolder;
+    font-size: 0.9em;
 }
 .InvoerForm > .FormRechts{
-    margin-left: 34em;
+    margin-left: 31em;
 }
 
 .InvoerForm > .TussenForm > label > input{
@@ -708,10 +683,10 @@ input[type="checkbox"]:checked + .juist{
     margin-top: 2em;
 }
 footer{
-       position: relative;
-    width:927px;
-    margin-left: auto;
-    margin-right:auto; 
+    float: left;
+   margin-top: -45em;
+    position: relative;
+    margin-left: -50em;
 }
 footer > blockquote{  
   
@@ -739,7 +714,7 @@ background: -o-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffff
 background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
 background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ffffc6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-transform: rotate(10deg);
+transform: rotate(350deg);
 box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
 }
 
@@ -750,9 +725,7 @@ box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
     margin-top: -3em;
 }
 #AfwezigDoor{
-    float: right;
-    margin-top: -13em;
-    margin-right: -20em;
+    float: left;
     height: 4em;
     padding: 1em;
     background: none;
@@ -760,6 +733,8 @@ box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
     font-weight: bolder;
     border: #000F55 groove medium;
     color: #000F55;
+    margin-top: 2em;
+    margin-left: 15em;
 }
 #AfwezigDoor:hover{
     background-color: #000F55;
@@ -771,7 +746,7 @@ box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
     width: 13em;
 }
 #KL{
-    margin-top: -2.5em;
+   
 }
 .InvoerLeerkracht{
     margin-top: 2em;
@@ -828,8 +803,108 @@ box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
     font-family: blokletters_potloodpotlood;
     font-weight: bolder;
     border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    behavior: url('../images/border-radius/border-radius.htc');
     box-shadow: 8px 10px 20px rgba(0,0,0,0.2);
 }
 .bgUitlegAgenda > ul > li{
     padding: 0.5em;
+}
+.bgBewDel{
+    display: block;
+    background: url('../images/bgImageB.png');
+        padding:0.5em;
+        margin-top: -5em;
+        width: 5em;
+        margin-left: 25.5em;
+        float: right;
+        position: absolute;
+        box-shadow: 4px 5px 5px rgba(0,0,0,0.2);
+        text-decoration: none;
+        
+}
+.bgBewDelRechts{
+    margin-top: -3em;
+    
+}
+.bgBewDel.drama:link{
+    color:white;
+    text-align: center;
+}
+.bgBewDel.drama:visited{
+    color:white;
+}
+.bgBewDel.drama:hover{
+    color:white;
+    text-decoration: none;
+    background: url('../images/bgImageC.png');
+    box-shadow: inset 4px 5px 5px rgba(0,0,0,0.2);
+}
+.InvoerForm{
+        margin-top: 10em;
+    background: url('../images/bgTempForm.png') repeat;
+    width:75%;
+    height:75%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 20px #4d4d4d;
+    position: relative;
+    top:0;
+}
+.submenu{
+    font-family: Caviar;
+    float: left;
+    margin-top: 5em;
+    
+}
+.submenu  ul
+{
+    position: absolute;
+    list-style-type: none;
+    
+        margin-left: auto;
+    width: 21em;
+    height: 1em;
+    
+}
+
+.submenu  ul  li
+{
+     display: block;
+     width: 8em;
+     text-align: right;
+    
+    
+}
+.submenu ul li a
+{
+    margin: 0;
+    font-size: 0.7em;
+    padding: 1em;
+    display: block;
+    text-decoration: none;
+    color:black;
+    border-right: dotted 1px black;
+}
+.submenu ul li a:hover
+{
+    color:darkred;
+    border-right-color: darkred;
+}
+.SubActief{
+    color:darkgreen;
+    border-right-color: darkgreen;
+    
+}
+.SubActief:visited{
+    color:darkgreen;
+    border-right-color: darkgreen;
+    
+    
+}
+.submenu ul li .SubActief:hover{
+    color:darkgreen;
+    border-right-color: darkgreen;
+    
 }
